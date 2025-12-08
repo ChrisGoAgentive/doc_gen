@@ -18,6 +18,22 @@
         padding: 20px;
         width: 60%;
     }
+    
+    .totals-section {
+        margin-top: 20px;
+        text-align: right;
+    }
+    .totals-row {
+        margin-bottom: 5px;
+    }
+    .grand-total {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 10px;
+        border-top: 1px solid #333;
+        display: inline-block;
+        padding-top: 5px;
+    }
 </style>
 {% endblock %}
 
@@ -65,8 +81,10 @@
         </tbody>
     </table>
 
-    <div style="margin-top: 20px; text-align: right;">
-        <h3>Total Authorized: ${{ grand_total }}</h3>
+    <div class="totals-section">
+        <div class="totals-row">Subtotal: ${{ subtotal }}</div>
+        <div class="totals-row">Tax: ${{ tax }}</div>
+        <div class="grand-total">Total Authorized: ${{ grand_total }}</div>
     </div>
 
     <div class="auth-section">

@@ -4,7 +4,7 @@ import os
 import sys
 import shutil
 from expenses.expense_generator import HTMLGenerator
-from expenses.expense_engine import ExpensePDFGenerator
+from pdf_engine import PDFGenerator
 
 def load_data(filepath):
     if not os.path.exists(filepath):
@@ -18,33 +18,35 @@ def load_data(filepath):
             return None
 
 def main():
-    parser = argparse.ArgumentParser(description="Generic Document Generator")
+    parser = argparse.ArgumentParser(description="Financial PDF Generator")
     
     # Required Arguments
     parser.add_argument('--data', required=True, help="Path to JSON data file")
-    parser.add_argument('--template', required=True, help="Name of the HTML template (e.g., invoice.html)")
+    parser.add_argument('--template', required=True, help="Name of the Jinja2 template to use (e.g., invoice.html)")
     
     # Optional Arguments
-    parser.add_argument('--out', default='output', help="Base output directory")
-    parser.add_argument('--id-key', default='document_id', help="JSON key to use for filenames (default: document_id)")
-    parser.add_argument('--pdf', action='store_true', help="Generate PDFs (requires Expense schema)")
+    parser.add_argument('--out', default='output', help="Output directory")
+    parser.add_argument('--id-key', default='document_id', help="JSON key to use for filenames")
     
     args = parser.parse_args()
 
-    # 1. Setup
+    # 1. Setup Generators
+    # HTMLGenerator handles the design (Jinja2)
     html_gen = HTMLGenerator(template_dir='templates')
-    pdf_gen = ExpensePDFGenerator() if args.pdf else None
+    # PDFGenerator handles the format conversion (HTML String -> PDF)
+    pdf_gen = PDFGenerator()
     
     data_source = load_data(args.data)
     if not data_source:
         sys.exit(1)
 
-    # Copy the reference data file to the output directory
+    # Ensure output directory exists
+    os.makedirs(args.out, exist_ok=True)
+
+    # Optional: Copy the source data to output for reference
     try:
-        os.makedirs(args.out, exist_ok=True)
         dest_path = os.path.join(args.out, os.path.basename(args.data))
         shutil.copy2(args.data, dest_path)
-        print(f"Reference file copied to: {dest_path}")
     except Exception as e:
         print(f"Warning: Failed to copy reference file: {e}")
 
@@ -63,19 +65,22 @@ def main():
         doc_id = doc.get(args.id_key, 'unknown_id')
         safe_id = "".join([c for c in doc_id if c.isalnum() or c in ('-','_')])
         
-        # Paths
-        html_out_path = os.path.join(args.out, 'html', f"{safe_id}.html")
+        # Define Output Path
+        pdf_out_path = os.path.join(args.out, f"{safe_id}.pdf")
         
-        # Render HTML
-        if html_gen.render_to_file(args.template, doc, html_out_path):
-            success_count += 1
-            
-        # Render PDF (Optional & Schema Dependent)
-        if args.pdf:
-            pdf_out_path = os.path.join(args.out, 'pdf', f"{safe_id}.pdf")
-            pdf_gen.render(doc, pdf_out_path)
+        # Step A: Render Template to HTML String (In-Memory)
+        html_content = html_gen.render(args.template, doc)
+        
+        if html_content:
+            # Step B: Convert HTML String to PDF File
+            if pdf_gen.render_html_to_pdf(html_content, pdf_out_path):
+                success_count += 1
+            else:
+                print(f"Failed to convert {safe_id} to PDF.")
+        else:
+            print(f"Failed to render template for {safe_id}")
 
-    print(f"--- Complete. Generated {success_count} HTML files. ---")
+    print(f"--- Complete. Generated {success_count} PDF files. ---")
 
 if __name__ == "__main__":
     main()

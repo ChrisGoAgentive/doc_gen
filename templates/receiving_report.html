@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ doc_type }} {{ document_id }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Receiving Report Specific Styling */
+    .header { border-bottom: 2px solid #27ae60; } /* Green for RR */
+    .doc-type-label { color: #27ae60; font-size: 2em; font-weight: bold; }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th { background-color: #eafaf1; color: #27ae60; padding: 10px; text-align: left; }
+    td { padding: 10px; border-bottom: 1px solid #eee; }
+    
+    .checklist-box {
+        width: 20px; height: 20px; border: 1px solid #333; display: inline-block; vertical-align: middle;
+    }
+</style>
+{% endblock %}
+
+{% block header_meta %}
+    <div class="text-right">
+        <div class="doc-type-label">{{ doc_type }}</div>
+        <p><strong>RR #: {{ document_id }}</strong><br>Ref PO: {{ ref_id }}<br>Date Received: {{ date }}</p>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div style="margin-bottom: 30px;">
+        <strong>Received From:</strong> {{ sender.company }}<br>
+        <strong>Received At:</strong> {{ recipient.company }} ({{ recipient.address }})
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Check</th>
+                <th>Item Description</th>
+                <th class="text-right">Qty Received</th>
+                <th>Condition</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td><div class="checklist-box"></div></td>
+                <td>{{ item.description }}</td>
+                <td class="text-right">{{ item.quantity }}</td>
+                <td>OK / Damaged</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div style="margin-top: 40px; background: #eee; padding: 15px;">
+        <strong>Receiver Notes:</strong><br>
+        {{ notes }}
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}{{ doc_type }} {{ document_id }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* PO Specific Styling */
+    .header { border-bottom: 2px solid #2980b9; } /* Blue for PO */
+    .doc-type-label { color: #2980b9; font-size: 2em; font-weight: bold; }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th { background-color: #f1f8ff; color: #2980b9; padding: 10px; text-align: left; }
+    td { padding: 10px; border-bottom: 1px solid #eee; }
+    
+    .auth-section {
+        margin-top: 50px;
+        border: 2px dashed #ccc;
+        padding: 20px;
+        width: 60%;
+    }
+</style>
+{% endblock %}
+
+{% block header_meta %}
+    <div class="text-right">
+        <div class="doc-type-label">{{ doc_type }}</div>
+        <p><strong>PO #: {{ document_id }}</strong><br>Date: {{ date }}</p>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+        <div>
+            <strong>Vendor (Seller):</strong><br>
+            {{ recipient.company }}<br>
+            {{ recipient.address }}<br>
+            {{ recipient.email }}
+        </div>
+        <div class="text-right">
+            <strong>Ship To (Buyer):</strong><br>
+            {{ sender.company }}<br>
+            {{ sender.address }}<br>
+            {{ sender.name }}
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item / Description</th>
+                <th class="text-right">Qty</th>
+                <th class="text-right">Unit Price</th>
+                <th class="text-right">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.description }}</td>
+                <td class="text-right">{{ item.quantity }}</td>
+                <td class="text-right">${{ item.unit_price }}</td>
+                <td class="text-right">${{ item.total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div style="margin-top: 20px; text-align: right;">
+        <h3>Total Authorized: ${{ grand_total }}</h3>
+    </div>
+
+    <div class="auth-section">
+        <strong>Authorization:</strong><br><br>
+        <p>{{ notes }}</p>
+        <br>
+        <div style="border-bottom: 1px solid #000; width: 200px; display: inline-block;"></div>
+        <br>Signature
+    </div>
+{% endblock %}

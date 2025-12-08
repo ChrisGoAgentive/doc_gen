@@ -28,7 +28,7 @@ env/
 Specific for VS Code's virtual environment setup
 
 .vscode/settings.json
-.output
+
 
 Editors and IDEs
 
@@ -51,3 +51,5 @@ Logs and databases
 
 *.log
 *.sqlite3
+
+output/

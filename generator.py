@@ -1,87 +1,136 @@
-import os
 import json
-import random
-from datetime import datetime
-from faker import Faker
 from jinja2 import Environment, FileSystemLoader
 
+# --- ReportLab Imports ---
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib import colors
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from reportlab.lib.units import inch
+
 class DocumentGenerator:
+    """
+    The Printer. 
+    Responsibility: Take valid data and format it into HTML or PDF.
+    Does NOT contain business logic or data creation logic.
+    """
     def __init__(self, template_dir='templates'):
-        self.fake = Faker()
         self.env = Environment(
             loader=FileSystemLoader(template_dir),
             autoescape=True
         )
 
-    def render_template(self, template_name, data):
+    def render_html_template(self, template_name, data):
+        """
+        Renders a Jinja2 HTML template.
+        """
         try:
             template = self.env.get_template(template_name)
             return template.render(**data)
         except Exception as e:
-            print(f"Error rendering template {template_name}: {e}")
+            print(f"Error rendering HTML template {template_name}: {e}")
             return None
-            
-    def load_data_from_json(self, json_filepath):
+
+    def render_pdf(self, data, filepath):
         """
-        Loads structured data from a JSON file.
+        Generates a PDF using ReportLab.
         """
         try:
-            with open(json_filepath, 'r') as f:
-                data = json.load(f)
-            return data
-        except FileNotFoundError:
-            print(f"Error: Data file not found at {json_filepath}")
-            return None
-        except json.JSONDecodeError:
-            print(f"Error: Failed to decode JSON from {json_filepath}")
-            return None
+            doc = SimpleDocTemplate(filepath, pagesize=letter)
+            styles = getSampleStyleSheet()
+            story = []
 
-    def generate_invoice_data(self, num_items=5):
-        """
-        Generates a dictionary of fake data suitable for an invoice.
-        """
-        items = []
-        total = 0.0
-        
-        for _ in range(num_items):
-            # Create realistic looking line items
-            qty = random.randint(1, 10)
-            unit_price = round(random.uniform(10.0, 500.0), 2)
-            line_total = round(qty * unit_price, 2)
+            # Dynamic Styling based on Doc Type
+            doc_type = data.get("doc_type", data.get("title", "DOCUMENT"))
+            theme_color = colors.black
+            if "INVOICE" in doc_type.upper(): theme_color = colors.navy
+            elif "PURCHASE" in doc_type.upper(): theme_color = colors.steelblue
+            elif "RECEIVING" in doc_type.upper(): theme_color = colors.forestgreen
+
+            # Styles
+            style_title = ParagraphStyle('TitleStyle', parent=styles['Heading1'], fontSize=24, spaceAfter=20, textColor=theme_color)
+            style_h2 = ParagraphStyle('H2Style', parent=styles['Heading2'], fontSize=14, spaceBefore=10, textColor=theme_color)
+            style_normal = styles['Normal']
+
+            # 1. Title
+            story.append(Paragraph(doc_type, style_title))
             
-            items.append({
-                "description": self.fake.catch_phrase(),
-                "quantity": qty,
-                "unit_price": unit_price,
-                "total": line_total
-            })
-            total += line_total
+            # 2. Meta Data (ID, Date)
+            meta_data = [
+                ["ID:", data.get('document_id', 'N/A')],
+                ["Date:", data.get('date', 'N/A')],
+                ["Ref:", data.get('ref_id', '-')]
+            ]
+            t_meta = Table(meta_data, colWidths=[1*inch, 2*inch], hAlign='LEFT')
+            t_meta.setStyle(TableStyle([('FONTNAME', (0,0), (0,-1), 'Helvetica-Bold')]))
+            story.append(t_meta)
+            story.append(Spacer(1, 0.3 * inch))
 
-        return {
-            "title": "INVOICE",
-            "document_id": f"INV-{self.fake.random_number(digits=6)}",
-            "date": datetime.now().strftime("%B %d, %Y"),
-            "due_date": self.fake.future_date(end_date="+30d").strftime("%B %d, %Y"),
-            "sender": {
-                "company": self.fake.company(),
-                "address": self.fake.address().replace('\n', ', '),
-                "email": self.fake.company_email()
-            },
-            "recipient": {
-                "name": self.fake.name(),
-                "company": self.fake.company(),
-                "address": self.fake.address().replace('\n', ', ')
-            },
-            "items": items,
-            "subtotal": round(total, 2),
-            "tax": round(total * 0.08, 2), # Mock 8% tax
-            "grand_total": round(total * 1.08, 2),
-            "notes": self.fake.text(max_nb_chars=100)
-        }
-    
+            # 3. Addresses
+            sender = data.get('sender', {})
+            recipient = data.get('recipient', {})
+            
+            details_data = [
+                [Paragraph("<b>From:</b>", style_h2), Paragraph("<b>To:</b>", style_h2)],
+                [
+                    Paragraph(f"{sender.get('company', '')}<br/>{sender.get('address', '')}<br/>{sender.get('name', '')}", style_normal),
+                    Paragraph(f"{recipient.get('company', '')}<br/>{recipient.get('address', '')}<br/>{recipient.get('name', '')}", style_normal)
+                ]
+            ]
 
-    def generate_purchase_order_data(self):
-        """
-        Example stub for next document type.
-        """
-        pass
+            details_table = Table(details_data, colWidths=[3.5 * inch, 3.5 * inch])
+            details_table.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'TOP')]))
+            story.append(details_table)
+            story.append(Spacer(1, 0.5 * inch))
+
+            # 4. Line Items
+            table_data = [["Description", "Qty", "Unit Price", "Total"]]
+            for item in data.get('items', []):
+                table_data.append([
+                    item.get('description', 'N/A'),
+                    str(item.get('quantity', 0)),
+                    f"${item.get('unit_price', 0.00):.2f}",
+                    f"${item.get('total', 0.00):.2f}"
+                ])
+
+            item_table = Table(table_data, colWidths=[4*inch, 0.5*inch, 1*inch, 1*inch])
+            item_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), theme_color),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+                ('ALIGN', (1, 1), (-1, -1), 'RIGHT'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 10),
+            ]))
+            story.append(item_table)
+            story.append(Spacer(1, 0.5 * inch))
+
+            # 5. Totals
+            if data.get('grand_total'):
+                totals_data = [
+                    ["Subtotal:", f"${data.get('subtotal', 0.00):.2f}"],
+                    ["Tax:", f"${data.get('tax', 0.00):.2f}"],
+                    ["TOTAL:", f"${data.get('grand_total', 0.00):.2f}"],
+                ]
+                totals_table = Table(totals_data, colWidths=[1.5 * inch, 1.5 * inch])
+                totals_table.setStyle(TableStyle([
+                    ('ALIGN', (0,0), (-1,-1), 'RIGHT'),
+                    ('FONTNAME', (0, 2), (-1, 2), 'Helvetica-Bold'),
+                    ('LINEABOVE', (0, 2), (-1, 2), 1, colors.black),
+                    ('TEXTCOLOR', (0, 2), (-1, 2), theme_color),
+                ]))
+                t_container = Table([['', totals_table]], colWidths=[4.5*inch, 3*inch])
+                story.append(t_container)
+
+            # 6. Notes
+            notes = data.get('notes')
+            if notes:
+                 story.append(Spacer(1, 0.3 * inch))
+                 story.append(Paragraph(f"<b>Notes/Auth:</b> {notes}", style_normal))
+
+            doc.build(story)
+            return True
+        except Exception as e:
+            print(f"Error generating PDF: {e}")
+            return False

@@ -66,8 +66,20 @@ def main():
         ]
         run_command(cmd)
 
+    print("\n--- Step 3: Generating 1099-R Tax Forms (PDF Fill) ---")
+    
+    # Define output directory nested within the withdrawals folder
+    f1099_output_dir = os.path.join(base_output_dir, "1099r_forms")
+    
+    # Execute the 1099 generator script
+    cmd_1099 = [
+        sys.executable, "withdrawals/generate_1099r.py",
+        "--out", f1099_output_dir
+    ]
+    run_command(cmd_1099)
+
     print("\n--- Pipeline Complete ---")
-    print(f"All 401(k) documents have been output to: {base_output_dir}")
+    print(f"All 401(k) documents (including 1099-Rs) have been output to: {base_output_dir}")
 
 if __name__ == "__main__":
     main()

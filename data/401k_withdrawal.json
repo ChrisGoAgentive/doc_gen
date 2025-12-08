@@ -1,0 +1,119 @@
+[
+  {
+    "document_id": "401K-EMP-291704",
+    "data": {
+      "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+      "participant_name": "Mark Johnson",
+      "participant_id": "EMP-291704",
+      "address": "600 Jeffery Parkways",
+      "city": "New Jamesside",
+      "state": "MT",
+      "zip": "29394",
+      "ssn": "229-18-1680",
+      "dob": "1973-02-18",
+      "phone": "8977007474",
+      "email": "mark.johnson@acmecorp.com",
+      "location_code": "LOC-120",
+      "is_us_citizen": true,
+      "confirmation_num": "96801077",
+      "auth_date": "2025-11-30",
+      "sep_date": "2025-12-02",
+      "withdrawal_fee": "50.00",
+      "est_net_payout": "215,264.87",
+      "gross_withdrawal_amount": "215,314.87",
+      "account_id": "ACT-12304",
+      "contribution_rate": "9%",
+      "investments": [
+        {
+          "name": "Vanguard Target Retirement 2050",
+          "beg_bal": "116,270.03",
+          "deposits": "6,459.45",
+          "gains": "6,459.44",
+          "transfers": "0.00",
+          "withdrawals": "-129,188.92",
+          "end_bal": "0.00",
+          "units": "0.000"
+        },
+        {
+          "name": "S&P 500 Index Fund",
+          "beg_bal": "58,135.01",
+          "deposits": "3,229.72",
+          "gains": "3,229.73",
+          "transfers": "0.00",
+          "withdrawals": "-64,594.46",
+          "end_bal": "0.00",
+          "units": "0.000"
+        },
+        {
+          "name": "International Growth Fund",
+          "beg_bal": "19,378.34",
+          "deposits": "1,076.57",
+          "gains": "1,076.58",
+          "transfers": "0.00",
+          "withdrawals": "-21,531.49",
+          "end_bal": "0.00",
+          "units": "0.000"
+        }
+      ],
+      "inv_total": {
+        "beg_bal": "193,783.38",
+        "deposits": "10,765.74",
+        "gains": "10,765.75",
+        "transfers": "0.00",
+        "withdrawals": "-215,314.87",
+        "end_bal": "0.00",
+        "units": "0.000"
+      },
+      "sources": [
+        {
+          "name": "Employee Deferral",
+          "beg_bal": "123,152.70",
+          "deposits": "8,843.30",
+          "gains": "10,200.25",
+          "withdrawals": "-142,107.81",
+          "end_bal": "0.00",
+          "pct_vested": "100%",
+          "vested_bal": "0.00"
+        },
+        {
+          "name": "Employer Match",
+          "beg_bal": "63,442.30",
+          "deposits": "4,421.65",
+          "gains": "5,254.67",
+          "withdrawals": "-73,207.06",
+          "end_bal": "0.00",
+          "pct_vested": "100%",
+          "vested_bal": "0.00"
+        }
+      ],
+      "src_total": {
+        "beg_bal": "186,595.00",
+        "deposits": "13,264.95",
+        "gains": "15,454.92",
+        "withdrawals": "-215,314.87",
+        "end_bal": "0.00",
+        "vested_bal": "0.00"
+      },
+      "history": {
+        "ytd_withdrawals": {
+          "employee": "0.00",
+          "employer": "0.00",
+          "total": "0.00"
+        },
+        "prev_year_bal": {
+          "employee": "123,152.70",
+          "employer": "63,442.30",
+          "total": "186,595.00"
+        }
+      },
+      "activity": [
+        {
+          "desc": "Withdrawal Fee",
+          "date": "2025-12-02",
+          "amount": "-50.00"
+        }
+      ],
+      "activity_total": "-50.00"
+    }
+  }
+]

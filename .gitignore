@@ -1,0 +1,54 @@
+Standard Python .gitignore file
+
+Byte-compiled / optimized / DLL files
+
+pycache/
+*.py[cod]
+*$py.class
+
+C extensions
+
+*.so
+
+Distribution / packaging
+
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+*.tar.gz
+
+Virtual environment files
+
+Commonly named .venv, venv, or env
+
+.venv/
+venv/
+env/
+
+Specific for VS Code's virtual environment setup
+
+.vscode/settings.json
+
+Editors and IDEs
+
+.vscode/
+.idea/
+*.swp
+*~
+
+Test/development files
+
+.pytest_cache/
+htmlcov/
+.coverage
+
+Jupyter/IPython Notebooks
+
+.ipynb_checkpoints
+
+Logs and databases
+
+*.log
+*.sqlite3

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resignation Letter</title>
+    <style>
+      @page {
+        size: letter;
+        margin: 1in;
+      }
+      body {
+        font-family: "Helvetica", "Arial", sans-serif;
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+      }
+      .header-block {
+        margin-bottom: 30px;
+      }
+      .recipient-block {
+        margin-bottom: 30px;
+      }
+      .date {
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-block">
+      <strong>{{ data.employee_name }}</strong><br />
+      {{ data.emp_address }}<br />
+      {{ data.emp_city_state_zip }}
+    </div>
+
+    <div class="date">{{ data.date }}</div>
+
+    <div class="recipient-block">
+      Human Resources Department<br />
+      {{ data.company_name }}<br />
+      {{ data.company_address }}
+    </div>
+
+    <p>Dear Human Resources,</p>
+
+    <p>
+      I am writing to formally notify you of my resignation from my position at
+      {{ data.company_name }}. My last day of work will be {{ data.sep_date }}.
+    </p>
+
+    <p>
+      I have appreciated the opportunities for professional growth and
+      development that {{ data.company_name }} has provided during my time here.
+      I am committed to ensuring a smooth transition and will do everything
+      possible to complete my current projects and assist in training my
+      replacement.
+    </p>
+
+    <p>
+      Please let me know how I can be of assistance during this transition
+      period. I wish {{ data.company_name }} continued success in the future.
+    </p>
+
+    <p>Sincerely,</p>
+
+    <br /><br />
+
+    <p>{{ data.employee_name }}</p>
+  </body>
+</html>

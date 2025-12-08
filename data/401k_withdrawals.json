@@ -1,0 +1,1746 @@
+[
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Mark Johnson",
+    "account_id": "***-**-1680",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "12,216.70",
+        "deposits": "1,310.12",
+        "gains": "-202.22",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "13,324.59",
+        "units": "136.904"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "9,162.53",
+        "deposits": "982.59",
+        "gains": "-212.41",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "9,932.70",
+        "units": "86.618"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "6,108.35",
+        "deposits": "655.06",
+        "gains": "-99.99",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "6,663.42",
+        "units": "50.191"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "3,054.18",
+        "deposits": "327.53",
+        "gains": "-55.89",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "3,325.82",
+        "units": "41.775"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "33,246.53",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "19,947.92",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "20,612.85",
+        "pct_vested": "100%",
+        "vested_bal": "20,612.85"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "11,636.29",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "12,633.68",
+        "pct_vested": "80%",
+        "vested_bal": "10,106.95"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "33,246.53",
+      "vested_bal": "30,586.81"
+    },
+    "contribution_rate": "9%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-291704"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "James Howard",
+    "account_id": "***-**-7528",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "2,747.68",
+        "deposits": "1,214.87",
+        "gains": "-1,089.45",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,873.10",
+        "units": "22.698"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "2,060.76",
+        "deposits": "911.15",
+        "gains": "-806.07",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,165.84",
+        "units": "27.669"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "1,373.84",
+        "deposits": "607.44",
+        "gains": "-416.36",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,564.92",
+        "units": "12.613"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "686.92",
+        "deposits": "303.72",
+        "gains": "-216.11",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "774.52",
+        "units": "5.955"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "7,378.39",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "4,427.03",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "4,574.60",
+        "pct_vested": "100%",
+        "vested_bal": "4,574.60"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "2,582.44",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "2,803.79",
+        "pct_vested": "80%",
+        "vested_bal": "2,243.03"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "7,378.39",
+      "vested_bal": "6,788.12"
+    },
+    "contribution_rate": "6%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-398591"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Timothy Wong",
+    "account_id": "***-**-4011",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "24,557.13",
+        "deposits": "1,552.93",
+        "gains": "697.03",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "26,807.09",
+        "units": "187.154"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "18,417.85",
+        "deposits": "1,164.70",
+        "gains": "449.19",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "20,031.73",
+        "units": "232.839"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "12,278.56",
+        "deposits": "776.47",
+        "gains": "315.77",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "13,370.80",
+        "units": "91.113"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "6,139.28",
+        "deposits": "388.23",
+        "gains": "164.90",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "6,692.42",
+        "units": "66.510"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "66,902.04",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "40,141.23",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "41,479.27",
+        "pct_vested": "100%",
+        "vested_bal": "41,479.27"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "23,415.71",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "25,422.78",
+        "pct_vested": "80%",
+        "vested_bal": "20,338.22"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "66,902.04",
+      "vested_bal": "61,549.88"
+    },
+    "contribution_rate": "4%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-957492"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Natasha Ryan",
+    "account_id": "***-**-6544",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "313.09",
+        "deposits": "637.31",
+        "gains": "-620.42",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "329.98",
+        "units": "2.629"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "234.82",
+        "deposits": "477.98",
+        "gains": "-517.58",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "195.22",
+        "units": "3.713"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "156.55",
+        "deposits": "318.65",
+        "gains": "-362.44",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "112.76",
+        "units": "0.855"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "78.27",
+        "deposits": "159.33",
+        "gains": "-158.43",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "79.17",
+        "units": "0.886"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "717.13",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "430.28",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "444.62",
+        "pct_vested": "100%",
+        "vested_bal": "444.62"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "250.99",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "272.51",
+        "pct_vested": "80%",
+        "vested_bal": "218.01"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "717.13",
+      "vested_bal": "659.76"
+    },
+    "contribution_rate": "4%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-902592"
+  },
+  {
+    "employee_name": "Jesse Mckay",
+    "emp_address": "489 Eric Track",
+    "emp_city_state_zip": "New Stephanie, NC 00575",
+    "company_name": "ACME Corp",
+    "company_address": "123 Innovation Drive, Tech City, CA 94000",
+    "hr_rep": "Sarah Connor",
+    "state": "NC",
+    "date": "November 16, 2025",
+    "sep_date": "November 18, 2025",
+    "document_id": "ESTATE-EMP-512340",
+    "template": "death_notification_template.html",
+    "output_folder": "estates"
+  },
+  {
+    "participant_name": "Jesse Mckay",
+    "location_code": "HQ-01",
+    "address": "489 Eric Track",
+    "city": "New Stephanie",
+    "state": "NC",
+    "zip": "00575",
+    "ssn": "270-65-2928",
+    "dob": "2001-12-22",
+    "participant_id": "EMP-512340",
+    "phone": "555-0123",
+    "is_us_citizen": true,
+    "email": "jesse.mckay@acmecorp.com",
+    "confirmation_num": "18724241",
+    "auth_date": "November 16, 2025",
+    "sep_date": "November 18, 2025",
+    "document_id": "WD-EMP-512340",
+    "template": "401k_withdrawal_template.html",
+    "output_folder": "withdrawals"
+  },
+  {
+    "employee_name": "Bradley Tucker",
+    "emp_address": "782 Rose Rest",
+    "emp_city_state_zip": "Brandtside, WV 96174",
+    "company_name": "ACME Corp",
+    "company_address": "123 Innovation Drive, Tech City, CA 94000",
+    "hr_rep": "Sarah Connor",
+    "state": "WV",
+    "date": "November 08, 2025",
+    "sep_date": "November 10, 2025",
+    "document_id": "RESIGN-EMP-747581",
+    "template": "resignation_template.html",
+    "output_folder": "resignations"
+  },
+  {
+    "participant_name": "Bradley Tucker",
+    "location_code": "HQ-01",
+    "address": "782 Rose Rest",
+    "city": "Brandtside",
+    "state": "WV",
+    "zip": "96174",
+    "ssn": "779-69-2061",
+    "dob": "1963-04-04",
+    "participant_id": "EMP-747581",
+    "phone": "555-0123",
+    "is_us_citizen": true,
+    "email": "bradley.tucker@acmecorp.com",
+    "confirmation_num": "35216942",
+    "auth_date": "November 08, 2025",
+    "sep_date": "November 10, 2025",
+    "document_id": "WD-EMP-747581",
+    "template": "401k_withdrawal_template.html",
+    "output_folder": "withdrawals"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Gina Chapman",
+    "account_id": "***-**-3900",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "8,361.96",
+        "deposits": "856.71",
+        "gains": "-105.84",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "9,112.83",
+        "units": "61.838"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "6,271.47",
+        "deposits": "642.53",
+        "gains": "-108.30",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "6,805.70",
+        "units": "51.344"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "4,180.98",
+        "deposits": "428.36",
+        "gains": "-72.22",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "4,537.11",
+        "units": "53.071"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "2,090.49",
+        "deposits": "214.18",
+        "gains": "-32.32",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,272.35",
+        "units": "40.767"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "22,728.00",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "13,636.80",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "14,091.36",
+        "pct_vested": "100%",
+        "vested_bal": "14,091.36"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "7,954.80",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "8,636.64",
+        "pct_vested": "80%",
+        "vested_bal": "6,909.31"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "22,728.00",
+      "vested_bal": "20,909.76"
+    },
+    "contribution_rate": "6%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-489710"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Cheryl West",
+    "account_id": "***-**-4093",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "2,806.77",
+        "deposits": "1,220.98",
+        "gains": "-890.15",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "3,137.60",
+        "units": "45.176"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "2,105.08",
+        "deposits": "915.74",
+        "gains": "-601.95",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,418.86",
+        "units": "37.503"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "1,403.38",
+        "deposits": "610.49",
+        "gains": "-411.18",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,602.69",
+        "units": "12.595"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "701.69",
+        "deposits": "305.25",
+        "gains": "-239.60",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "767.34",
+        "units": "8.595"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "7,926.50",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "4,755.90",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "4,914.43",
+        "pct_vested": "100%",
+        "vested_bal": "4,914.43"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "2,774.27",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "3,012.07",
+        "pct_vested": "80%",
+        "vested_bal": "2,409.66"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "7,926.50",
+      "vested_bal": "7,292.38"
+    },
+    "contribution_rate": "10%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-946279"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Mary Tucker",
+    "account_id": "***-**-9490",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "11,687.35",
+        "deposits": "741.25",
+        "gains": "289.93",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "12,718.54",
+        "units": "114.215"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "8,765.51",
+        "deposits": "555.94",
+        "gains": "223.59",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "9,545.04",
+        "units": "120.881"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "5,843.68",
+        "deposits": "370.63",
+        "gains": "138.96",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "6,353.26",
+        "units": "118.360"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "2,921.84",
+        "deposits": "185.31",
+        "gains": "57.19",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "3,164.34",
+        "units": "25.550"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "31,781.18",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "19,068.71",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "19,704.33",
+        "pct_vested": "100%",
+        "vested_bal": "19,704.33"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "11,123.41",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "12,076.85",
+        "pct_vested": "80%",
+        "vested_bal": "9,661.48"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "31,781.18",
+      "vested_bal": "29,238.69"
+    },
+    "contribution_rate": "10%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-71262"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Jason Silva",
+    "account_id": "***-**-5148",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "7,204.21",
+        "deposits": "919.78",
+        "gains": "-278.27",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "7,845.72",
+        "units": "54.596"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "5,403.16",
+        "deposits": "689.84",
+        "gains": "-186.18",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "5,906.82",
+        "units": "101.798"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "3,602.11",
+        "deposits": "459.89",
+        "gains": "-153.66",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "3,908.34",
+        "units": "44.725"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "1,801.05",
+        "deposits": "229.95",
+        "gains": "-61.48",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,969.51",
+        "units": "15.503"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "19,630.39",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "11,778.24",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "12,170.84",
+        "pct_vested": "100%",
+        "vested_bal": "12,170.84"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "6,870.64",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "7,459.55",
+        "pct_vested": "80%",
+        "vested_bal": "5,967.64"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "19,630.39",
+      "vested_bal": "18,059.96"
+    },
+    "contribution_rate": "7%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-530458"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Michele Carr",
+    "account_id": "***-**-0129",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "2,622.48",
+        "deposits": "1,549.20",
+        "gains": "-1,573.07",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,598.61",
+        "units": "17.419"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "1,966.86",
+        "deposits": "1,161.90",
+        "gains": "-1,119.52",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,009.24",
+        "units": "17.751"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "1,311.24",
+        "deposits": "774.60",
+        "gains": "-586.81",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,499.03",
+        "units": "11.930"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "655.62",
+        "deposits": "387.30",
+        "gains": "-378.39",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "664.53",
+        "units": "7.039"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "6,771.41",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "4,062.84",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "4,198.27",
+        "pct_vested": "100%",
+        "vested_bal": "4,198.27"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "2,369.99",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "2,573.13",
+        "pct_vested": "80%",
+        "vested_bal": "2,058.51"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "6,771.41",
+      "vested_bal": "6,229.69"
+    },
+    "contribution_rate": "5%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-529959"
+  },
+  {
+    "employee_name": "Mark Green",
+    "emp_address": "12805 Russell Canyon",
+    "emp_city_state_zip": "Michaelton, MH 47399",
+    "company_name": "ACME Corp",
+    "company_address": "123 Innovation Drive, Tech City, CA 94000",
+    "hr_rep": "Sarah Connor",
+    "state": "MH",
+    "date": "November 22, 2025",
+    "sep_date": "November 24, 2025",
+    "document_id": "SEP-EMP-261650",
+    "template": "separation_template.html",
+    "output_folder": "separations"
+  },
+  {
+    "participant_name": "Mark Green",
+    "location_code": "HQ-01",
+    "address": "12805 Russell Canyon",
+    "city": "Michaelton",
+    "state": "MH",
+    "zip": "47399",
+    "ssn": "565-91-7008",
+    "dob": "1995-07-07",
+    "participant_id": "EMP-261650",
+    "phone": "555-0123",
+    "is_us_citizen": true,
+    "email": "mark.green@acmecorp.com",
+    "confirmation_num": "97148737",
+    "auth_date": "November 22, 2025",
+    "sep_date": "November 24, 2025",
+    "document_id": "WD-EMP-261650",
+    "template": "401k_withdrawal_template.html",
+    "output_folder": "withdrawals"
+  },
+  {
+    "employee_name": "Robert Keith",
+    "emp_address": "5433 Donna Locks",
+    "emp_city_state_zip": "Joshualand, WI 37086",
+    "company_name": "ACME Corp",
+    "company_address": "123 Innovation Drive, Tech City, CA 94000",
+    "hr_rep": "Sarah Connor",
+    "state": "WI",
+    "date": "November 09, 2025",
+    "sep_date": "November 11, 2025",
+    "document_id": "RESIGN-EMP-534150",
+    "template": "resignation_template.html",
+    "output_folder": "resignations"
+  },
+  {
+    "participant_name": "Robert Keith",
+    "location_code": "HQ-01",
+    "address": "5433 Donna Locks",
+    "city": "Joshualand",
+    "state": "WI",
+    "zip": "37086",
+    "ssn": "880-61-3645",
+    "dob": "2001-10-18",
+    "participant_id": "EMP-534150",
+    "phone": "555-0123",
+    "is_us_citizen": false,
+    "email": "robert.keith@acmecorp.com",
+    "confirmation_num": "41523020",
+    "auth_date": "November 09, 2025",
+    "sep_date": "November 11, 2025",
+    "document_id": "WD-EMP-534150",
+    "template": "401k_withdrawal_template.html",
+    "output_folder": "withdrawals"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Tonya Baker",
+    "account_id": "***-**-5140",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "8,499.13",
+        "deposits": "1,330.79",
+        "gains": "-537.89",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "9,292.04",
+        "units": "62.735"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "6,374.35",
+        "deposits": "998.09",
+        "gains": "-398.86",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "6,973.58",
+        "units": "55.458"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "4,249.57",
+        "deposits": "665.40",
+        "gains": "-281.00",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "4,633.96",
+        "units": "34.711"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "2,124.78",
+        "deposits": "332.70",
+        "gains": "-157.92",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,299.56",
+        "units": "27.866"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "23,199.15",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "13,919.49",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "14,383.48",
+        "pct_vested": "100%",
+        "vested_bal": "14,383.48"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "8,119.70",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "8,815.68",
+        "pct_vested": "80%",
+        "vested_bal": "7,052.54"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "23,199.15",
+      "vested_bal": "21,343.22"
+    },
+    "contribution_rate": "7%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-695612"
+  },
+  {
+    "employee_name": "Cameron Fisher",
+    "emp_address": "8044 Russell Prairie Suite 777",
+    "emp_city_state_zip": "New Thomas, MH 96964",
+    "company_name": "ACME Corp",
+    "company_address": "123 Innovation Drive, Tech City, CA 94000",
+    "hr_rep": "Sarah Connor",
+    "state": "MH",
+    "date": "November 11, 2025",
+    "sep_date": "November 13, 2025",
+    "document_id": "SEP-EMP-88914",
+    "template": "separation_template.html",
+    "output_folder": "separations"
+  },
+  {
+    "participant_name": "Cameron Fisher",
+    "location_code": "HQ-01",
+    "address": "8044 Russell Prairie Suite 777",
+    "city": "New Thomas",
+    "state": "MH",
+    "zip": "96964",
+    "ssn": "694-96-2852",
+    "dob": "2005-01-26",
+    "participant_id": "EMP-88914",
+    "phone": "555-0123",
+    "is_us_citizen": true,
+    "email": "cameron.fisher@acmecorp.com",
+    "confirmation_num": "63163288",
+    "auth_date": "November 11, 2025",
+    "sep_date": "November 13, 2025",
+    "document_id": "WD-EMP-88914",
+    "template": "401k_withdrawal_template.html",
+    "output_folder": "withdrawals"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Alexander Sanchez",
+    "account_id": "***-**-0091",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "2,092.09",
+        "deposits": "1,235.88",
+        "gains": "-1,072.89",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,255.08",
+        "units": "16.617"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "1,569.07",
+        "deposits": "926.91",
+        "gains": "-823.40",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,672.57",
+        "units": "20.723"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "1,046.05",
+        "deposits": "617.94",
+        "gains": "-553.58",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,110.41",
+        "units": "17.864"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "523.02",
+        "deposits": "308.97",
+        "gains": "-214.51",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "617.48",
+        "units": "6.011"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "5,655.54",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "3,393.32",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "3,506.43",
+        "pct_vested": "100%",
+        "vested_bal": "3,506.43"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "1,979.44",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "2,149.10",
+        "pct_vested": "80%",
+        "vested_bal": "1,719.28"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "5,655.54",
+      "vested_bal": "5,203.09"
+    },
+    "contribution_rate": "5%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-624377"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Patrick Wells",
+    "account_id": "***-**-4544",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "3,019.53",
+        "deposits": "606.62",
+        "gains": "-314.25",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "3,311.90",
+        "units": "42.745"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "2,264.65",
+        "deposits": "454.97",
+        "gains": "-219.73",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,499.88",
+        "units": "38.420"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "1,509.76",
+        "deposits": "303.31",
+        "gains": "-164.03",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,649.05",
+        "units": "21.112"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "754.88",
+        "deposits": "151.66",
+        "gains": "-71.18",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "835.36",
+        "units": "10.023"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "8,296.19",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "4,977.71",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "5,143.64",
+        "pct_vested": "100%",
+        "vested_bal": "5,143.64"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "2,903.67",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "3,152.55",
+        "pct_vested": "80%",
+        "vested_bal": "2,522.04"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "8,296.19",
+      "vested_bal": "7,632.49"
+    },
+    "contribution_rate": "8%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-67348"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "James Carrillo",
+    "account_id": "***-**-9433",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "2,002.79",
+        "deposits": "710.75",
+        "gains": "-599.00",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "2,114.54",
+        "units": "14.364"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "1,502.09",
+        "deposits": "533.06",
+        "gains": "-386.94",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,648.21",
+        "units": "11.536"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "1,001.39",
+        "deposits": "355.37",
+        "gains": "-306.86",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "1,049.91",
+        "units": "11.158"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "500.70",
+        "deposits": "177.69",
+        "gains": "-135.20",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "543.18",
+        "units": "5.660"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "5,355.84",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "3,213.51",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "3,320.62",
+        "pct_vested": "100%",
+        "vested_bal": "3,320.62"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "1,874.55",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "2,035.22",
+        "pct_vested": "80%",
+        "vested_bal": "1,628.18"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "5,355.84",
+      "vested_bal": "4,927.38"
+    },
+    "contribution_rate": "5%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-423956"
+  },
+  {
+    "employee_name": "Matthew Miller",
+    "emp_address": "4170 Zoe Keys Apt. 100",
+    "emp_city_state_zip": "East Mary, RI 20474",
+    "company_name": "ACME Corp",
+    "company_address": "123 Innovation Drive, Tech City, CA 94000",
+    "hr_rep": "Sarah Connor",
+    "state": "RI",
+    "date": "November 21, 2025",
+    "sep_date": "November 23, 2025",
+    "document_id": "RESIGN-EMP-496564",
+    "template": "resignation_template.html",
+    "output_folder": "resignations"
+  },
+  {
+    "participant_name": "Matthew Miller",
+    "location_code": "HQ-01",
+    "address": "4170 Zoe Keys Apt. 100",
+    "city": "East Mary",
+    "state": "RI",
+    "zip": "20474",
+    "ssn": "346-98-6212",
+    "dob": "1981-10-04",
+    "participant_id": "EMP-496564",
+    "phone": "555-0123",
+    "is_us_citizen": false,
+    "email": "matthew.miller@acmecorp.com",
+    "confirmation_num": "40492788",
+    "auth_date": "November 21, 2025",
+    "sep_date": "November 23, 2025",
+    "document_id": "WD-EMP-496564",
+    "template": "401k_withdrawal_template.html",
+    "output_folder": "withdrawals"
+  },
+  {
+    "plan_name": "ACME CORP 401(K) SAVINGS PLAN",
+    "participant_name": "Lisa Adkins",
+    "account_id": "***-**-5097",
+    "investments": [
+      {
+        "name": "Vanguard 500 Index Fund",
+        "beg_bal": "11,753.73",
+        "deposits": "916.87",
+        "gains": "97.56",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "12,768.16",
+        "units": "102.443"
+      },
+      {
+        "name": "Fidelity Contrafund",
+        "beg_bal": "8,815.29",
+        "deposits": "687.65",
+        "gains": "86.17",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "9,589.12",
+        "units": "183.601"
+      },
+      {
+        "name": "T. Rowe Price Blue Chip",
+        "beg_bal": "5,876.86",
+        "deposits": "458.44",
+        "gains": "51.41",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "6,386.71",
+        "units": "58.553"
+      },
+      {
+        "name": "Vanguard Total Bond Mkt",
+        "beg_bal": "2,938.43",
+        "deposits": "229.22",
+        "gains": "22.03",
+        "transfers": "0.00",
+        "withdrawals": "0.00",
+        "end_bal": "3,189.67",
+        "units": "62.017"
+      }
+    ],
+    "inv_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "transfers": "0.00",
+      "withdrawals": "0.00",
+      "end_bal": "31,933.65",
+      "units": "---"
+    },
+    "sources": [
+      {
+        "name": "Employee Deferral",
+        "beg_bal": "19,160.19",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "19,798.87",
+        "pct_vested": "100%",
+        "vested_bal": "19,798.87"
+      },
+      {
+        "name": "Employer Match",
+        "beg_bal": "11,176.78",
+        "deposits": "---",
+        "gains": "---",
+        "withdrawals": "0.00",
+        "end_bal": "12,134.79",
+        "pct_vested": "80%",
+        "vested_bal": "9,707.83"
+      }
+    ],
+    "src_total": {
+      "beg_bal": "---",
+      "deposits": "---",
+      "gains": "---",
+      "withdrawals": "0.00",
+      "end_bal": "31,933.65",
+      "vested_bal": "29,378.96"
+    },
+    "contribution_rate": "7%",
+    "history": {
+      "ytd_withdrawals": {
+        "employee": "0.00",
+        "employer": "0.00",
+        "total": "0.00"
+      },
+      "prev_year_bal": {
+        "employee": "---",
+        "employer": "---",
+        "total": "---"
+      }
+    },
+    "activity": [
+      {
+        "desc": "Admin Fee",
+        "date": "01/15/2025",
+        "amount": "-12.50"
+      }
+    ],
+    "activity_total": "-12.50",
+    "template": "401k_statement_template.html",
+    "output_folder": "active_statements",
+    "document_id": "STMT-EMP-731059"
+  }
+]

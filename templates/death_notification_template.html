@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Estate Notification Letter</title>
+    <style>
+      @page {
+        size: letter;
+        margin: 1in;
+      }
+      body {
+        font-family: "Helvetica", "Arial", sans-serif;
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+      }
+      .header-block {
+        margin-bottom: 30px;
+      }
+      .recipient-block {
+        margin-bottom: 30px;
+      }
+      .date {
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 15px;
+        text-align: justify;
+      }
+      .closing {
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-block">
+      <strong>Human Resources Department</strong><br />
+      {{ data.company_name }}<br />
+      {{ data.company_address }}
+    </div>
+
+    <div class="date">{{ data.date }}</div>
+
+    <div class="recipient-block">
+      The Estate of {{ data.employee_name }}<br />
+      {{ data.emp_address }}<br />
+      {{ data.emp_city_state_zip }}
+    </div>
+
+    <p>Dear Representative of the Estate of {{ data.employee_name }},</p>
+
+    <p>
+      We were deeply saddened to learn of the passing of {{ data.employee_name
+      }}. On behalf of everyone at {{ data.company_name }}, please accept our
+      sincere condolences. {{ data.employee_name }} was a valued member of our
+      team, and we share in your loss during this difficult time.
+    </p>
+
+    <p>
+      We are writing to confirm that, for administrative purposes, {{
+      data.employee_name }}'s separation date from {{ data.company_name }} is
+      recorded as {{ data.sep_date }}.
+    </p>
+
+    <p>
+      Enclosed with this letter, please find information regarding final
+      compensation, including any unpaid salary and accrued vacation time, as
+      well as details concerning benefits continuation and 401(k) distribution
+      options. We are committed to making this process as smooth as possible for
+      you.
+    </p>
+
+    <p>
+      If you have any questions or require assistance with the enclosed
+      documents, please do not hesitate to contact me directly.
+    </p>
+
+    <p>With deepest sympathy,</p>
+
+    <div class="closing">
+      Sincerely,<br /><br /><br />
+      <strong>{{ data.hr_rep }}</strong><br />
+      Director of Human Resources<br />
+      {{ data.company_name }}
+    </div>
+  </body>
+</html>

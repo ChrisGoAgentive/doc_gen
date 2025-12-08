@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Separation Agreement</title>
+    <style>
+      @page {
+        size: letter;
+        margin: 1in;
+      }
+      body {
+        font-family: "Times New Roman", serif;
+        font-size: 11pt;
+        line-height: 1.4;
+      }
+      .title {
+        text-align: center;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      .intro {
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+      .recitals {
+        font-weight: bold;
+        text-align: center;
+        margin: 15px 0;
+      }
+      .section-title {
+        font-weight: bold;
+        margin-top: 15px;
+        text-transform: uppercase;
+      }
+      p {
+        margin-bottom: 10px;
+        text-align: justify;
+      }
+      .signature-block {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .sign-line {
+        border-top: 1px solid black;
+        width: 250px;
+        margin-top: 40px;
+        padding-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">SEPARATION AGREEMENT<br />AND GENERAL RELEASE</div>
+
+    <div class="intro">
+      This Separation Agreement and General Release ("Agreement") is entered
+      into as of {{ data.date }} ("Effective Date") by and between:
+      <strong>{{ data.employee_name }}</strong> ("Employee"), and
+      <strong>{{ data.company_name }}</strong>, a corporation organized under
+      the laws of {{ data.state }} ("Company").
+    </div>
+
+    <div class="recitals">RECITALS</div>
+    <p>WHEREAS, Employee has been employed by the Company; and</p>
+    <p>
+      WHEREAS, the parties have mutually agreed to separate Employee's
+      employment with the Company effective {{ data.sep_date }}; and
+    </p>
+    <p>
+      WHEREAS, the parties desire to resolve all matters between them and to
+      settle fully and finally all claims that Employee may have against the
+      Company.
+    </p>
+
+    <p>
+      NOW, THEREFORE, in consideration of the mutual covenants and promises
+      contained herein, and for other good and valuable consideration, the
+      receipt and sufficiency of which are hereby acknowledged, the parties
+      agree as follows:
+    </p>
+
+    <div class="section-title">1. SEPARATION DATE</div>
+    <p>
+      Employee's last day of employment with the Company shall be {{
+      data.sep_date }} ("Separation Date"). Employee's employment relationship
+      with the Company will terminate on the Separation Date.
+    </p>
+
+    <div class="section-title">2. SEVERANCE BENEFITS</div>
+    <p>
+      In consideration for Employee's execution of this Agreement and the
+      general release provided herein, the Company agrees to provide Employee
+      with the following severance benefits:
+    </p>
+    <p>
+      a) A lump sum payment of eight (8) weeks of base salary, less applicable
+      withholdings and deductions, payable within thirty (30) days of the
+      Separation Date.
+    </p>
+    <p>
+      b) Payment for any accrued but unused vacation time as of the Separation
+      Date, in accordance with Company policy.
+    </p>
+
+    <div class="section-title">3. GENERAL RELEASE</div>
+    <p>
+      Employee, on behalf of Employee and Employee's heirs, executors,
+      administrators, successors, and assigns, hereby irrevocably and
+      unconditionally releases, acquits, and forever discharges the Company, its
+      parent companies, subsidiaries, affiliates, and related entities... from
+      any and all claims... arising out of or relating to Employee's employment
+      with the Company or the termination thereof.
+    </p>
+
+    <div class="section-title">4. CONFIDENTIALITY</div>
+    <p>
+      Employee agrees to keep the terms of this Agreement strictly
+      confidential...
+    </p>
+
+    <div class="section-title">5. RETURN OF COMPANY PROPERTY</div>
+    <p>
+      Employee agrees to return all Company property... on or before the
+      Separation Date.
+    </p>
+
+    <div class="section-title">6. NON-DISPARAGEMENT</div>
+    <p>
+      Employee agrees not to make any negative, disparaging, or derogatory
+      statements regarding the Company...
+    </p>
+
+    <div class="section-title">7. GOVERNING LAW</div>
+    <p>
+      This Agreement shall be governed by and construed in accordance with the
+      laws of the State of {{ data.state }}...
+    </p>
+
+    <div class="section-title">8. ENTIRE AGREEMENT</div>
+    <p>
+      This Agreement constitutes the entire agreement between the parties
+      concerning the subject matter hereof...
+    </p>
+
+    <br />
+    <p>
+      IN WITNESS WHEREOF, the parties have executed this Agreement as of the
+      date first written above.
+    </p>
+
+    <table style="width: 100%; margin-top: 40px">
+      <tr>
+        <td style="width: 50%; vertical-align: top">
+          <strong>EMPLOYEE:</strong><br /><br /><br />
+          <div class="sign-line">{{ data.employee_name }}</div>
+          <div>Date: __________________</div>
+        </td>
+        <td style="width: 50%; vertical-align: top">
+          <strong>{{ data.company_name }}:</strong><br /><br /><br />
+          <div class="sign-line">{{ data.hr_rep }}, Director of HR</div>
+          <div>Date: __________________</div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

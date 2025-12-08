@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdrawal Form</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        body {
+            font-family: "Helvetica", "Arial", sans-serif;
+            font-size: 10pt;
+            color: #000;
+            line-height: 1.3;
+        }
+
+        /* HEADER SECTION */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 0;
+        }
+        .plan-info {
+            font-size: 10pt;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+        .form-title {
+            font-size: 24pt; /* Large title matching image */
+            font-weight: normal;
+            color: #000;
+        }
+
+        /* FORM GRID SYSTEM */
+        .form-container {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        /* INPUT STYLING - BOXED */
+        .field-box {
+            margin-bottom: 10px;
+        }
+        .label {
+            font-size: 10pt;
+            color: #000;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .sub-label {
+            font-size: 9pt;
+            color: #000;
+            margin-top: 2px;
+        }
+        .small-note {
+            font-size: 8pt;
+            color: #000;
+        }
+        
+        input[type="text"], input[type="email"], input[type="tel"] {
+            font-family: "Courier New", Courier, monospace; /* Monospace matches filled forms often */
+            font-size: 11pt;
+            color: #000;
+            display: block;
+            width: 100%;
+            border: 2px solid #999; /* Thick gray border */
+            padding: 4px 5px;
+            background: transparent;
+            box-sizing: border-box; /* Ensures padding doesn't widen element */
+            height: 30px;
+        }
+
+        /* ROW LAYOUTS */
+        .row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 5px;
+        }
+        .col-100 { width: 100%; }
+        .col-60 { width: 60%; }
+        .col-50 { width: 50%; }
+        .col-40 { width: 40%; }
+        .col-33 { width: 33.33%; }
+        .col-25 { width: 25%; }
+        .col-20 { width: 20%; }
+        .col-15 { width: 15%; }
+
+        /* CONTACT SECTION SPECIFIC */
+        .contact-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-top: 5px;
+        }
+        .checkbox-container {
+            margin-top: 14px; /* Align with input box */
+            display: flex;
+            align-items: center;
+        }
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background-color: #000;
+        }
+        
+        /* NARRATIVE SECTION */
+        .narrative-header {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+        .narrative-text {
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+        .narrative-sub-header {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        /* TABLE SECTION */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+            margin-top: 20px;
+        }
+        th {
+            text-align: left;
+            padding: 5px 8px;
+            background-color: #bfbfbf; /* Gray header */
+            font-weight: bold;
+            color: #000;
+        }
+        td {
+            padding: 5px 8px;
+            vertical-align: top;
+        }
+        .row-gray {
+            background-color: #e6e6e6; /* Light gray rows */
+        }
+        .row-white {
+            background-color: #fff;
+        }
+        .align-right {
+            text-align: right;
+        }
+
+        /* FOOTER */
+        .footer-note {
+            margin-top: 25px;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header-container">
+        <div class="plan-info">
+            <div>Plan name: CASCADE MFG, 401K 401(K) PLAN</div>
+            <div>Plan number: 6857341-06</div>
+        </div>
+        <div class="form-title">
+            Withdrawal Details
+        </div>
+    </div>
+
+    <!-- FORM FIELDS -->
+    <div class="form-container">
+        
+        <!-- Row 1: Name & Location -->
+        <div class="row">
+            <div class="col-50">
+                <label class="label">Name</label>
+                <input type="text" value="{{ data.participant_name }}">
+            </div>
+            <div class="col-50">
+                <label class="label">Location/Parish</label>
+                <input type="text" value="{{ data.location_code }}">
+            </div>
+        </div>
+
+        <!-- Row 2: Address -->
+        <div class="row">
+            <div class="col-100">
+                <label class="label">Address</label>
+                <input type="text" value="{{ data.address }}">
+            </div>
+        </div>
+
+        <!-- Row 3: City, State, Zip -->
+        <div class="row">
+            <div class="col-50">
+                <label class="label">City</label>
+                <input type="text" value="{{ data.city }}">
+            </div>
+            <div class="col-20">
+                <label class="label">State</label>
+                <input type="text" value="{{ data.state }}">
+            </div>
+            <div class="col-30" style="width: 30%;">
+                <label class="label">ZIP code</label>
+                <input type="text" value="{{ data.zip }}">
+            </div>
+        </div>
+
+        <!-- Row 4: SSN, DOB, ID -->
+        <div class="row">
+            <div class="col-40">
+                <label class="label">Social Security number or<br>Taxpayer Identidication number</label>
+                <input type="text" value="{{ data.ssn }}">
+            </div>
+            <div class="col-20">
+                <label class="label"><br>Date of Birth</label> <!-- BR used for alignment -->
+                <input type="text" value="{{ data.dob }}">
+            </div>
+            <div class="col-40">
+                <label class="label"><br>Participant ID</label>
+                <input type="text" value="{{ data.participant_id }}">
+            </div>
+        </div>
+
+        <!-- Row 5: Phone & Citizen Status -->
+        <div class="contact-row">
+            <div class="col-60">
+                <label class="label">Updated for this withdrawal request will be sent to:</label>
+                <input type="tel" value="{{ data.phone }}">
+                <div style="display: flex; justify-content: space-between;">
+                    <span class="sub-label">Text message</span>
+                    <span class="small-note" style="margin-top: 2px;">Standard text messaging rates from your mobile carrier may apply.</span>
+                </div>
+            </div>
+            <div class="col-40">
+                <label class="label">Citizen status:</label>
+                <div class="checkbox-container">
+                    <input type="checkbox" {% if data.get('is_us_citizen', True) %}checked{% endif %}>
+                    <span style="font-size: 10pt;">U.S. citizen or U.S. resident alien</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 6: Email -->
+        <div class="row">
+            <div class="col-100">
+                <input type="email" value="{{ data.email }}">
+                <div class="sub-label">Email address</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NARRATIVE SECTION -->
+    <div class="narrative-header">What you need to know</div>
+    <div class="narrative-text">
+        Authorization obtained from {{ data.participant_name }} per confirmation number {{ data.confirmation_num }} on {{ data.auth_date }}.
+    </div>
+
+    <div class="narrative-text">The withdrawal request is detailed below:</div>
+
+    <div class="narrative-sub-header">Separation from employment withdrawal</div>
+    <div class="narrative-text">The separation from employment date is {{ data.sep_date }}.</div>
+    <div class="narrative-text">The amounts below are estimated. The actual withdrawal amount may be different due to market fluctuation.</div>
+
+    <!-- TABLE SECTION -->
+    <table>
+        <thead>
+            <tr>
+                <th>Rollover</th>
+                <th class="align-right">Percent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row-gray">
+                <td>Withdrawal percent:</td>
+                <td class="align-right">100%</td>
+            </tr>
+            <tr class="row-white">
+                <td colspan="2">Payable to PRIVATE TRUST COMPANY *FBO {{ data.participant_name }}</td>
+            </tr>
+            <tr class="row-white">
+                <td colspan="2">For deposit into a traditional IRA.</td>
+            </tr>
+            <tr class="row-gray">
+                <td colspan="2">Delivered to address of record by regular mail. Once received, you must forward to the new provider.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- FOOTER SECTION -->
+    <div class="narrative-sub-header">Additional withdrawal information</div>
+    <div class="narrative-text">
+        There will be a <strong>$50</strong> withdrawal fee deducted from the withdrawal amount.
+    </div>
+
+</body>
+</html>

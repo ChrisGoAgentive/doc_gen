@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>401(k) Statement</title>
+    <style>
+      @page {
+        size: letter;
+        margin: 0.5in;
+      }
+      body {
+        font-family: "Helvetica", "Arial", sans-serif;
+        font-size: 9pt;
+        color: #333;
+        line-height: 1.3;
+      }
+      /* Header Styling */
+      .header {
+        margin-bottom: 25px;
+        border-bottom: 1px solid #000;
+        padding-bottom: 10px;
+      }
+      .plan-name {
+        font-weight: bold;
+        font-size: 11pt;
+        text-transform: uppercase;
+      }
+      .participant-block {
+        margin-top: 5px;
+        font-weight: bold;
+      }
+
+      /* Section Headings */
+      h2 {
+        font-size: 11pt;
+        color: #005580; /* Corporate Blue matches source */
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 2px;
+        margin-top: 20px;
+        margin-bottom: 8px;
+      }
+
+      /* Table Styling */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+      }
+      th {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 4px;
+        font-size: 8pt;
+        text-align: center;
+        vertical-align: bottom;
+        font-weight: bold;
+      }
+      td {
+        border: 1px solid #ccc;
+        padding: 4px;
+        text-align: right; /* Financials align right */
+        font-size: 8.5pt;
+      }
+      td.text-left {
+        text-align: left;
+      }
+
+      /* Totals Rows */
+      tr.total-row td {
+        background-color: #e6e6e6;
+        font-weight: bold;
+      }
+
+      /* Specific tweaks for "Change Over Time" table */
+      .history-table th {
+        text-align: right;
+      }
+      .history-table th:first-child {
+        text-align: left;
+      }
+
+      /* Paycheck Info Box */
+      .contribution-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 50%;
+        margin-bottom: 20px;
+      }
+      .contribution-label {
+        font-weight: bold;
+      }
+      .page-break {
+        page-break-before: always;
+        height: 0;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="plan-name">{{ data.plan_name }}</div>
+      <div class="participant-block">
+        {{ data.participant_name }}<br />
+        {{ data.account_id }}
+      </div>
+    </div>
+
+    <h2>How is my account invested?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left">Asset Allocation</th>
+          <th>Beginning<br />Balance</th>
+          <th>Deposits</th>
+          <th>Dividends /<br />Change in Value</th>
+          <th>Transfers</th>
+          <th>Withdrawals<br />/Expenses</th>
+          <th>Ending<br />Balance</th>
+          <th>Ending<br />Units/Shares</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for fund in data.investments %}
+        <tr>
+          <td class="text-left">{{ fund.name }}</td>
+          <td>{{ fund.beg_bal }}</td>
+          <td>{{ fund.deposits }}</td>
+          <td>{{ fund.gains }}</td>
+          <td>{{ fund.transfers }}</td>
+          <td>{{ fund.withdrawals }}</td>
+          <td>{{ fund.end_bal }}</td>
+          <td>{{ fund.units }}</td>
+        </tr>
+        {% endfor %}
+        <tr class="total-row">
+          <td class="text-left">Totals</td>
+          <td>{{ data.inv_total.beg_bal }}</td>
+          <td>{{ data.inv_total.deposits }}</td>
+          <td>{{ data.inv_total.gains }}</td>
+          <td>{{ data.inv_total.transfers }}</td>
+          <td>{{ data.inv_total.withdrawals }}</td>
+          <td>{{ data.inv_total.end_bal }}</td>
+          <td>{{ data.inv_total.units }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>How is my account being funded?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left">Source</th>
+          <th>Beginning<br />Balance</th>
+          <th>Deposits</th>
+          <th>Dividends /<br />Change in Value</th>
+          <th>Withdrawals<br />/Expenses/Transfers</th>
+          <th>Ending<br />Balance</th>
+          <th>Percent<br />Vested</th>
+          <th>Vested<br />Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for source in data.sources %}
+        <tr>
+          <td class="text-left">{{ source.name }}</td>
+          <td>{{ source.beg_bal }}</td>
+          <td>{{ source.deposits }}</td>
+          <td>{{ source.gains }}</td>
+          <td>{{ source.withdrawals }}</td>
+          <td>{{ source.end_bal }}</td>
+          <td>{{ source.pct_vested }}</td>
+          <td>{{ source.vested_bal }}</td>
+        </tr>
+        {% endfor %}
+        <tr class="total-row">
+          <td class="text-left">Totals</td>
+          <td>{{ data.src_total.beg_bal }}</td>
+          <td>{{ data.src_total.deposits }}</td>
+          <td>{{ data.src_total.gains }}</td>
+          <td>{{ data.src_total.withdrawals }}</td>
+          <td>{{ data.src_total.end_bal }}</td>
+          <td>&nbsp;</td>
+          <td>{{ data.src_total.vested_bal }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>What is my paycheck contribution information?</h2>
+    <div class="contribution-box">
+      <span class="contribution-label">Before Tax:</span> {{
+      data.contribution_rate }}
+    </div>
+    
+    <div class="page-break"></div>
+
+    <h2>How has my account changed over time?</h2>
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>Employee</th>
+          <th>Employer</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-left">Year-To-Date Total Withdrawals:</td>
+          <td>{{ data.history.ytd_withdrawals.employee }}</td>
+          <td>{{ data.history.ytd_withdrawals.employer }}</td>
+          <td>{{ data.history.ytd_withdrawals.total }}</td>
+        </tr>
+        <tr>
+          <td class="text-left">Previous Year-End Balance:</td>
+          <td>{{ data.history.prev_year_bal.employee }}</td>
+          <td>{{ data.history.prev_year_bal.employer }}</td>
+          <td>{{ data.history.prev_year_bal.total }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>What activity took place this period?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Effective Date</th>
+          <th>Dollar Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for act in data.activity %}
+        <tr>
+          <td class="text-left">{{ act.desc }}</td>
+          <td class="text-left">{{ act.date }}</td>
+          <td>{{ act.amount }}</td>
+        </tr>
+        {% endfor %}
+        <tr class="total-row">
+          <td colspan="2" class="text-left">Total Withdrawal Charges</td>
+          <td>{{ data.activity_total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,1278 @@
+[
+    {
+        "Employee_ID":"EMP-291704",
+        "Status":"Active",
+        "Hire_Date":"2023-03-08",
+        "Termination_Date":null,
+        "Department":"Engineering",
+        "Job_Title":"Accounting technician",
+        "Identity":{
+            "uuid":"2628592c-8684-41ff-80aa-64e9351cd316",
+            "first_name":"Mark",
+            "last_name":"Johnson",
+            "full_name":"Mark Johnson",
+            "gender":"M",
+            "ssn":"229-18-1680",
+            "dob":"1973-02-18",
+            "work_email":"mark.johnson@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"600 Jeffery Parkways",
+                "city":"New Jamesside",
+                "state":"MT",
+                "zip":"29394"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":131011.83,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":9
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2023-03-06",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"U.S. Passport",
+                        "issuing_authority":"U.S. Department of State",
+                        "document_number":"265423511",
+                        "expiration_date":"2024-04-06"
+                    }
+                ],
+                "employer_review_date":"2023-03-09"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-398591",
+        "Status":"Active",
+        "Hire_Date":"2025-04-08",
+        "Termination_Date":null,
+        "Department":"Legal",
+        "Job_Title":"Health physicist",
+        "Identity":{
+            "uuid":"afedb195-6e22-4b94-b3bc-8fee3cd1689b",
+            "first_name":"James",
+            "last_name":"Howard",
+            "full_name":"James Howard",
+            "gender":"M",
+            "ssn":"271-06-7528",
+            "dob":"1976-06-11",
+            "work_email":"james.howard@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"1849 Ray Squares",
+                "city":"North Donnaport",
+                "state":"CO",
+                "zip":"31013"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":121487.29,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":6
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2025-03-31",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"B",
+                        "document_title":"Driver's License",
+                        "issuing_authority":"State of CO",
+                        "document_number":"S7525534",
+                        "expiration_date":"2027-12-02"
+                    },
+                    {
+                        "list":"C",
+                        "document_title":"Social Security Account Number Card",
+                        "issuing_authority":"SSA",
+                        "document_number":"271-06-7528",
+                        "expiration_date":"N\/A"
+                    }
+                ],
+                "employer_review_date":"2025-04-08"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-957492",
+        "Status":"Active",
+        "Hire_Date":"2021-04-07",
+        "Termination_Date":null,
+        "Department":"Engineering",
+        "Job_Title":"Tax adviser",
+        "Identity":{
+            "uuid":"1e1c1324-2b54-4308-83f9-776f928cb2fb",
+            "first_name":"Timothy",
+            "last_name":"Wong",
+            "full_name":"Timothy Wong",
+            "gender":"M",
+            "ssn":"176-69-4011",
+            "dob":"1989-03-04",
+            "work_email":"timothy.wong@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"6483 Cameron Trail",
+                "city":"East Lydiamouth",
+                "state":"MO",
+                "zip":"35594"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":155293.44,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":4
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2021-04-04",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"U.S. Passport",
+                        "issuing_authority":"U.S. Department of State",
+                        "document_number":"537672423",
+                        "expiration_date":"2023-05-01"
+                    }
+                ],
+                "employer_review_date":"2021-04-09"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-902592",
+        "Status":"Active",
+        "Hire_Date":"2025-10-16",
+        "Termination_Date":null,
+        "Department":"Finance",
+        "Job_Title":"Administrator, arts",
+        "Identity":{
+            "uuid":"306daee6-ed97-43b8-b3ea-ab606abfa85c",
+            "first_name":"Natasha",
+            "last_name":"Ryan",
+            "full_name":"Natasha Ryan",
+            "gender":"F",
+            "ssn":"439-75-6544",
+            "dob":"1995-10-16",
+            "work_email":"natasha.ryan@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"28710 Eric Estate Suite 916",
+                "city":"Carlsonmouth",
+                "state":"NC",
+                "zip":"33454"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":63730.88,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"BlueCross PPO",
+            "Medical_EE_Cost":170.0,
+            "401k_Pct":4
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2025-10-05",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"B",
+                        "document_title":"Driver's License",
+                        "issuing_authority":"State of NC",
+                        "document_number":"k1845146",
+                        "expiration_date":"2028-07-10"
+                    },
+                    {
+                        "list":"C",
+                        "document_title":"Social Security Account Number Card",
+                        "issuing_authority":"SSA",
+                        "document_number":"439-75-6544",
+                        "expiration_date":"N\/A"
+                    }
+                ],
+                "employer_review_date":"2025-10-17"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-512340",
+        "Status":"Active",
+        "Hire_Date":"2023-12-06",
+        "Termination_Date":null,
+        "Department":"Sales",
+        "Job_Title":"Advertising account executive",
+        "Identity":{
+            "uuid":"338c6e37-a4e1-4375-b17a-41524c55017a",
+            "first_name":"Jesse",
+            "last_name":"Mckay",
+            "full_name":"Jesse Mckay",
+            "gender":"M",
+            "ssn":"270-65-2928",
+            "dob":"2001-12-22",
+            "work_email":"jesse.mckay@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"489 Eric Track",
+                "city":"New Stephanie",
+                "state":"NC",
+                "zip":"00575"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":144084.95,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"BlueCross PPO",
+            "Medical_EE_Cost":170.0,
+            "401k_Pct":9
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2023-11-16",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"B",
+                        "document_title":"Driver's License",
+                        "issuing_authority":"State of NC",
+                        "document_number":"f1543039",
+                        "expiration_date":"2026-03-14"
+                    },
+                    {
+                        "list":"C",
+                        "document_title":"Social Security Account Number Card",
+                        "issuing_authority":"SSA",
+                        "document_number":"270-65-2928",
+                        "expiration_date":"N\/A"
+                    }
+                ],
+                "employer_review_date":"2023-12-08"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-747581",
+        "Status":"Active",
+        "Hire_Date":"2024-05-20",
+        "Termination_Date":null,
+        "Department":"Legal",
+        "Job_Title":"Insurance underwriter",
+        "Identity":{
+            "uuid":"80d9e8d4-2523-4b8f-b727-0f1b80cca9f6",
+            "first_name":"Bradley",
+            "last_name":"Tucker",
+            "full_name":"Bradley Tucker",
+            "gender":"M",
+            "ssn":"779-69-2061",
+            "dob":"1963-04-04",
+            "work_email":"bradley.tucker@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"782 Rose Rest",
+                "city":"Brandtside",
+                "state":"WV",
+                "zip":"96174"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":153032.0,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"BlueCross PPO",
+            "Medical_EE_Cost":170.0,
+            "401k_Pct":5
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2024-05-06",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"U.S. Passport",
+                        "issuing_authority":"U.S. Department of State",
+                        "document_number":"657871331",
+                        "expiration_date":"2025-11-03"
+                    }
+                ],
+                "employer_review_date":"2024-05-23"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-489710",
+        "Status":"Active",
+        "Hire_Date":"2023-01-20",
+        "Termination_Date":null,
+        "Department":"Legal",
+        "Job_Title":"Audiological scientist",
+        "Identity":{
+            "uuid":"15c89e02-180a-46a1-a9c5-67f16aa4196b",
+            "first_name":"Gina",
+            "last_name":"Chapman",
+            "full_name":"Gina Chapman",
+            "gender":"F",
+            "ssn":"073-66-3900",
+            "dob":"2001-03-13",
+            "work_email":"gina.chapman@acmecorp.com",
+            "citizenship_status":{
+                "code":4,
+                "label":"Alien authorized to work",
+                "uscis_a_number":"A393010310",
+                "work_auth_expiry":"2027-12-23"
+            },
+            "home_address":{
+                "street":"738 Jennifer Ports Suite 376",
+                "city":"North Collin",
+                "state":"NE",
+                "zip":"46939"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":85671.1,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":6
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Alien authorized to work",
+                "uscis_a_number":"A393010310",
+                "work_auth_expiry":"2027-12-23",
+                "employee_signature_date":"2023-01-10",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"Employment Authorization Document (Form I-766)",
+                        "issuing_authority":"USCIS",
+                        "document_number":"WAC1065133",
+                        "expiration_date":"2024-02-21"
+                    }
+                ],
+                "employer_review_date":"2023-01-23"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-946279",
+        "Status":"Active",
+        "Hire_Date":"2025-04-04",
+        "Termination_Date":null,
+        "Department":"Engineering",
+        "Job_Title":"Barrister's clerk",
+        "Identity":{
+            "uuid":"e5455a8e-a828-45fb-95b7-ed5ce92a0caa",
+            "first_name":"Cheryl",
+            "last_name":"West",
+            "full_name":"Cheryl West",
+            "gender":"F",
+            "ssn":"286-60-4093",
+            "dob":"1980-03-08",
+            "work_email":"cheryl.west@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"8108 Tanya Terrace",
+                "city":"East Richard",
+                "state":"NJ",
+                "zip":"28517"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":122098.25,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"BlueCross PPO",
+            "Medical_EE_Cost":170.0,
+            "401k_Pct":10
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2025-03-31",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"U.S. Passport",
+                        "issuing_authority":"U.S. Department of State",
+                        "document_number":"260647468",
+                        "expiration_date":"2026-12-31"
+                    }
+                ],
+                "employer_review_date":"2025-04-05"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-71262",
+        "Status":"Active",
+        "Hire_Date":"2021-04-12",
+        "Termination_Date":null,
+        "Department":"Product",
+        "Job_Title":"Farm manager",
+        "Identity":{
+            "uuid":"3f2fae94-e229-4fd3-8dba-1607afba5138",
+            "first_name":"Mary",
+            "last_name":"Tucker",
+            "full_name":"Mary Tucker",
+            "gender":"F",
+            "ssn":"223-08-9490",
+            "dob":"1969-01-18",
+            "work_email":"mary.tucker@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"500 Shaw Walk",
+                "city":"North Susan",
+                "state":"CO",
+                "zip":"24857"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":74125.28,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"BlueCross PPO",
+            "Medical_EE_Cost":170.0,
+            "401k_Pct":10
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2021-04-09",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"U.S. Passport",
+                        "issuing_authority":"U.S. Department of State",
+                        "document_number":"619399091",
+                        "expiration_date":"2022-05-30"
+                    }
+                ],
+                "employer_review_date":"2021-04-13"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-530458",
+        "Status":"Active",
+        "Hire_Date":"2023-08-16",
+        "Termination_Date":null,
+        "Department":"HR",
+        "Job_Title":"Geochemist",
+        "Identity":{
+            "uuid":"fc653228-0cf0-4955-b294-50cbbfc35cfc",
+            "first_name":"Jason",
+            "last_name":"Silva",
+            "full_name":"Jason Silva",
+            "gender":"M",
+            "ssn":"268-27-5148",
+            "dob":"1985-01-10",
+            "work_email":"jason.silva@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"6247 Hickman Cliffs",
+                "city":"South Christineshire",
+                "state":"CT",
+                "zip":"10103"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":91978.12,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":7
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2023-07-30",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"U.S. Passport",
+                        "issuing_authority":"U.S. Department of State",
+                        "document_number":"251354278",
+                        "expiration_date":"2024-12-10"
+                    }
+                ],
+                "employer_review_date":"2023-08-18"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-529959",
+        "Status":"Active",
+        "Hire_Date":"2025-11-05",
+        "Termination_Date":null,
+        "Department":"Sales",
+        "Job_Title":"Records manager",
+        "Identity":{
+            "uuid":"18cf5652-f800-41ab-bc6b-4d14995717ce",
+            "first_name":"Michele",
+            "last_name":"Carr",
+            "full_name":"Michele Carr",
+            "gender":"F",
+            "ssn":"670-68-0129",
+            "dob":"2007-04-28",
+            "work_email":"michele.carr@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"124 Pamela Summit Apt. 449",
+                "city":"Lake Matthew",
+                "state":"TX",
+                "zip":"83631"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":154919.75,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"BlueCross PPO",
+            "Medical_EE_Cost":170.0,
+            "401k_Pct":5
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2025-10-16",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"U.S. Passport",
+                        "issuing_authority":"U.S. Department of State",
+                        "document_number":"401640052",
+                        "expiration_date":"2027-09-06"
+                    }
+                ],
+                "employer_review_date":"2025-11-06"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-261650",
+        "Status":"Active",
+        "Hire_Date":"2021-12-26",
+        "Termination_Date":null,
+        "Department":"Finance",
+        "Job_Title":"Civil engineer, contracting",
+        "Identity":{
+            "uuid":"96375b39-0251-4d75-b273-ab88ef182c46",
+            "first_name":"Mark",
+            "last_name":"Green",
+            "full_name":"Mark Green",
+            "gender":"M",
+            "ssn":"565-91-7008",
+            "dob":"1995-07-07",
+            "work_email":"mark.green@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"12805 Russell Canyon",
+                "city":"Michaelton",
+                "state":"MH",
+                "zip":"47399"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":85657.17,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":4
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2021-12-19",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"B",
+                        "document_title":"Driver's License",
+                        "issuing_authority":"State of MH",
+                        "document_number":"Z5869232",
+                        "expiration_date":"2023-11-05"
+                    },
+                    {
+                        "list":"C",
+                        "document_title":"Social Security Account Number Card",
+                        "issuing_authority":"SSA",
+                        "document_number":"565-91-7008",
+                        "expiration_date":"N\/A"
+                    }
+                ],
+                "employer_review_date":"2021-12-26"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-534150",
+        "Status":"Active",
+        "Hire_Date":"2022-09-10",
+        "Termination_Date":null,
+        "Department":"Legal",
+        "Job_Title":"Office manager",
+        "Identity":{
+            "uuid":"37f96147-30fb-44da-bd8d-c4baa1c00f9c",
+            "first_name":"Robert",
+            "last_name":"Keith",
+            "full_name":"Robert Keith",
+            "gender":"M",
+            "ssn":"880-61-3645",
+            "dob":"2001-10-18",
+            "work_email":"robert.keith@acmecorp.com",
+            "citizenship_status":{
+                "code":3,
+                "label":"Lawful Permanent Resident",
+                "uscis_a_number":"A025634216",
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"5433 Donna Locks",
+                "city":"Joshualand",
+                "state":"WI",
+                "zip":"37086"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":103458.95,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":5
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Lawful Permanent Resident",
+                "uscis_a_number":"A025634216",
+                "work_auth_expiry":null,
+                "employee_signature_date":"2022-08-26",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"Permanent Resident Card (Form I-551)",
+                        "issuing_authority":"USCIS",
+                        "document_number":"SRC8501429",
+                        "expiration_date":"2024-01-19"
+                    }
+                ],
+                "employer_review_date":"2022-09-11"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-695612",
+        "Status":"Active",
+        "Hire_Date":"2024-01-19",
+        "Termination_Date":null,
+        "Department":"Finance",
+        "Job_Title":"Company secretary",
+        "Identity":{
+            "uuid":"cc3d487b-28db-4a80-aeea-57e3b492eb00",
+            "first_name":"Tonya",
+            "last_name":"Baker",
+            "full_name":"Tonya Baker",
+            "gender":"F",
+            "ssn":"445-45-5140",
+            "dob":"1965-02-19",
+            "work_email":"tonya.baker@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"816 Jonathan Station Suite 088",
+                "city":"West Ryan",
+                "state":"TN",
+                "zip":"43780"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":133079.17,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":7
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2024-01-05",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"B",
+                        "document_title":"Driver's License",
+                        "issuing_authority":"State of TN",
+                        "document_number":"J4846564",
+                        "expiration_date":"2026-02-04"
+                    },
+                    {
+                        "list":"C",
+                        "document_title":"Social Security Account Number Card",
+                        "issuing_authority":"SSA",
+                        "document_number":"445-45-5140",
+                        "expiration_date":"N\/A"
+                    }
+                ],
+                "employer_review_date":"2024-01-22"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-88914",
+        "Status":"Active",
+        "Hire_Date":"2023-07-22",
+        "Termination_Date":null,
+        "Department":"Finance",
+        "Job_Title":"Herpetologist",
+        "Identity":{
+            "uuid":"369285c1-ad65-47a2-8fdc-90b5ddf909d7",
+            "first_name":"Cameron",
+            "last_name":"Fisher",
+            "full_name":"Cameron Fisher",
+            "gender":"M",
+            "ssn":"694-96-2852",
+            "dob":"2005-01-26",
+            "work_email":"cameron.fisher@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"8044 Russell Prairie Suite 777",
+                "city":"New Thomas",
+                "state":"MH",
+                "zip":"96964"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":110931.37,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":3
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2023-07-15",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"U.S. Passport",
+                        "issuing_authority":"U.S. Department of State",
+                        "document_number":"895134332",
+                        "expiration_date":"2024-09-19"
+                    }
+                ],
+                "employer_review_date":"2023-07-22"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-624377",
+        "Status":"Active",
+        "Hire_Date":"2025-11-15",
+        "Termination_Date":null,
+        "Department":"Product",
+        "Job_Title":"Investment analyst",
+        "Identity":{
+            "uuid":"7c4140cb-9338-4f9d-b470-6fe535a44fed",
+            "first_name":"Alexander",
+            "last_name":"Sanchez",
+            "full_name":"Alexander Sanchez",
+            "gender":"M",
+            "ssn":"152-84-0091",
+            "dob":"1979-02-12",
+            "work_email":"alexander.sanchez@acmecorp.com",
+            "citizenship_status":{
+                "code":3,
+                "label":"Lawful Permanent Resident",
+                "uscis_a_number":"A791769367",
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"3287 Angela Vista",
+                "city":"South Dennismouth",
+                "state":"TN",
+                "zip":"70117"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":123587.56,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":5
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Lawful Permanent Resident",
+                "uscis_a_number":"A791769367",
+                "work_auth_expiry":null,
+                "employee_signature_date":"2025-10-28",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"Permanent Resident Card (Form I-551)",
+                        "issuing_authority":"USCIS",
+                        "document_number":"SRC7986872",
+                        "expiration_date":"2028-06-21"
+                    }
+                ],
+                "employer_review_date":"2025-11-18"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-67348",
+        "Status":"Active",
+        "Hire_Date":"2024-06-19",
+        "Termination_Date":null,
+        "Department":"Sales",
+        "Job_Title":"Patent examiner",
+        "Identity":{
+            "uuid":"ce1e1db3-11d0-41e0-bd41-ecf0fa602927",
+            "first_name":"Patrick",
+            "last_name":"Wells",
+            "full_name":"Patrick Wells",
+            "gender":"M",
+            "ssn":"254-82-4544",
+            "dob":"1972-05-17",
+            "work_email":"patrick.wells@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"347 Jennifer Freeway Suite 558",
+                "city":"East Edwardfurt",
+                "state":"UT",
+                "zip":"20529"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":60662.39,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":8
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2024-06-05",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"B",
+                        "document_title":"Driver's License",
+                        "issuing_authority":"State of UT",
+                        "document_number":"A6587603",
+                        "expiration_date":"2026-08-13"
+                    },
+                    {
+                        "list":"C",
+                        "document_title":"Social Security Account Number Card",
+                        "issuing_authority":"SSA",
+                        "document_number":"254-82-4544",
+                        "expiration_date":"N\/A"
+                    }
+                ],
+                "employer_review_date":"2024-06-19"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-423956",
+        "Status":"Active",
+        "Hire_Date":"2025-02-07",
+        "Termination_Date":null,
+        "Department":"Engineering",
+        "Job_Title":"Diagnostic radiographer",
+        "Identity":{
+            "uuid":"7571fb69-739c-451d-a8af-034ca138f95d",
+            "first_name":"James",
+            "last_name":"Carrillo",
+            "full_name":"James Carrillo",
+            "gender":"M",
+            "ssn":"021-98-9433",
+            "dob":"2005-05-06",
+            "work_email":"james.carrillo@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"0546 Medina Street Apt. 734",
+                "city":"Tuckerfurt",
+                "state":"MA",
+                "zip":"88171"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":71074.91,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":5
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2025-01-30",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"B",
+                        "document_title":"Driver's License",
+                        "issuing_authority":"State of MA",
+                        "document_number":"K7298069",
+                        "expiration_date":"2026-08-13"
+                    },
+                    {
+                        "list":"C",
+                        "document_title":"Social Security Account Number Card",
+                        "issuing_authority":"SSA",
+                        "document_number":"021-98-9433",
+                        "expiration_date":"N\/A"
+                    }
+                ],
+                "employer_review_date":"2025-02-10"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-496564",
+        "Status":"Active",
+        "Hire_Date":"2022-02-16",
+        "Termination_Date":null,
+        "Department":"Sales",
+        "Job_Title":"Colour technologist",
+        "Identity":{
+            "uuid":"1c8ab79b-b9a6-477c-9bac-9ece76b75e1d",
+            "first_name":"Matthew",
+            "last_name":"Miller",
+            "full_name":"Matthew Miller",
+            "gender":"M",
+            "ssn":"346-98-6212",
+            "dob":"1981-10-04",
+            "work_email":"matthew.miller@acmecorp.com",
+            "citizenship_status":{
+                "code":3,
+                "label":"Lawful Permanent Resident",
+                "uscis_a_number":"A627204653",
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"4170 Zoe Keys Apt. 100",
+                "city":"East Mary",
+                "state":"RI",
+                "zip":"20474"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":121735.94,
+            "Currency":"USD",
+            "FLSA_Status":"Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":4
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Lawful Permanent Resident",
+                "uscis_a_number":"A627204653",
+                "work_auth_expiry":null,
+                "employee_signature_date":"2022-02-11",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"A",
+                        "document_title":"Permanent Resident Card (Form I-551)",
+                        "issuing_authority":"USCIS",
+                        "document_number":"SRC9374529",
+                        "expiration_date":"2023-10-16"
+                    }
+                ],
+                "employer_review_date":"2022-02-19"
+            }
+        }
+    },
+    {
+        "Employee_ID":"EMP-731059",
+        "Status":"Active",
+        "Hire_Date":"2022-02-24",
+        "Termination_Date":null,
+        "Department":"Engineering",
+        "Job_Title":"Illustrator",
+        "Identity":{
+            "uuid":"413c15d0-59fd-47a8-a18b-46195a9a2b40",
+            "first_name":"Lisa",
+            "last_name":"Adkins",
+            "full_name":"Lisa Adkins",
+            "gender":"F",
+            "ssn":"839-21-5097",
+            "dob":"1965-06-06",
+            "work_email":"lisa.adkins@acmecorp.com",
+            "citizenship_status":{
+                "code":1,
+                "label":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null
+            },
+            "home_address":{
+                "street":"049 Sanders Stravenue",
+                "city":"North Brittany",
+                "state":"MP",
+                "zip":"82714"
+            }
+        },
+        "Compensation":{
+            "Annual_Salary":91687.04,
+            "Currency":"USD",
+            "FLSA_Status":"Non-Exempt"
+        },
+        "Benefits_Elections":{
+            "Medical_Plan":"Aetna HMO",
+            "Medical_EE_Cost":120.0,
+            "401k_Pct":7
+        },
+        "Compliance_I9":{
+            "section_1":{
+                "attestation":"Citizen of the United States",
+                "uscis_a_number":null,
+                "work_auth_expiry":null,
+                "employee_signature_date":"2022-02-11",
+                "preparer_used":false
+            },
+            "section_2":{
+                "documents":[
+                    {
+                        "list":"B",
+                        "document_title":"Driver's License",
+                        "issuing_authority":"State of MP",
+                        "document_number":"Q9190586",
+                        "expiration_date":"2023-12-13"
+                    },
+                    {
+                        "list":"C",
+                        "document_title":"Social Security Account Number Card",
+                        "issuing_authority":"SSA",
+                        "document_number":"839-21-5097",
+                        "expiration_date":"N\/A"
+                    }
+                ],
+                "employer_review_date":"2022-02-27"
+            }
+        }
+    }
+]

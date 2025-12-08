@@ -1,41 +1,21 @@
-import json
-from jinja2 import Environment, FileSystemLoader
-
-# --- ReportLab Imports ---
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 from reportlab.lib.units import inch
+import os
 
-class DocumentGenerator:
+class ExpensePDFGenerator:
     """
-    The Printer. 
-    Responsibility: Take valid data and format it into HTML or PDF.
-    Does NOT contain business logic or data creation logic.
+    Specific renderer for Financial Documents (PO, Invoice, RR).
+    Contains business logic for layout, columns, and colors.
     """
-    def __init__(self, template_dir='templates'):
-        self.env = Environment(
-            loader=FileSystemLoader(template_dir),
-            autoescape=True
-        )
-
-    def render_html_template(self, template_name, data):
-        """
-        Renders a Jinja2 HTML template.
-        """
+    
+    def render(self, data, filepath):
         try:
-            template = self.env.get_template(template_name)
-            return template.render(**data)
-        except Exception as e:
-            print(f"Error rendering HTML template {template_name}: {e}")
-            return None
+            # Ensure output directory exists
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
-    def render_pdf(self, data, filepath):
-        """
-        Generates a PDF using ReportLab.
-        """
-        try:
             doc = SimpleDocTemplate(filepath, pagesize=letter)
             styles = getSampleStyleSheet()
             story = []
@@ -84,27 +64,28 @@ class DocumentGenerator:
             story.append(Spacer(1, 0.5 * inch))
 
             # 4. Line Items
-            table_data = [["Description", "Qty", "Unit Price", "Total"]]
-            for item in data.get('items', []):
-                table_data.append([
-                    item.get('description', 'N/A'),
-                    str(item.get('quantity', 0)),
-                    f"${item.get('unit_price', 0.00):.2f}",
-                    f"${item.get('total', 0.00):.2f}"
-                ])
+            if 'items' in data:
+                table_data = [["Description", "Qty", "Unit Price", "Total"]]
+                for item in data.get('items', []):
+                    table_data.append([
+                        item.get('description', 'N/A'),
+                        str(item.get('quantity', 0)),
+                        f"${item.get('unit_price', 0.00):.2f}",
+                        f"${item.get('total', 0.00):.2f}"
+                    ])
 
-            item_table = Table(table_data, colWidths=[4*inch, 0.5*inch, 1*inch, 1*inch])
-            item_table.setStyle(TableStyle([
-                ('BACKGROUND', (0, 0), (-1, 0), theme_color),
-                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-                ('ALIGN', (1, 1), (-1, -1), 'RIGHT'),
-                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 10),
-            ]))
-            story.append(item_table)
-            story.append(Spacer(1, 0.5 * inch))
+                item_table = Table(table_data, colWidths=[4*inch, 0.5*inch, 1*inch, 1*inch])
+                item_table.setStyle(TableStyle([
+                    ('BACKGROUND', (0, 0), (-1, 0), theme_color),
+                    ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                    ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+                    ('ALIGN', (1, 1), (-1, -1), 'RIGHT'),
+                    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                    ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
+                    ('BOTTOMPADDING', (0, 0), (-1, 0), 10),
+                ]))
+                story.append(item_table)
+                story.append(Spacer(1, 0.5 * inch))
 
             # 5. Totals
             if data.get('grand_total'):

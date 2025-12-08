@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Invoice {{ document_id }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .invoice-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+    .invoice-box {
+        width: 45%;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+    th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+    }
+    .totals {
+        width: 300px;
+        margin-left: auto;
+    }
+    .totals .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+    .grand-total {
+        font-size: 1.2em;
+        font-weight: bold;
+        border-top: 2px solid #333;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block header_meta %}
+    <div class="text-right">
+        <h1 style="margin:0;">{{ title }}</h1>
+        <p>ID: {{ document_id }}<br>Date: {{ date }}</p>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="invoice-details">
+        <div class="invoice-box">
+            <strong>From:</strong><br>
+            {{ sender.company }}<br>
+            {{ sender.address }}<br>
+            {{ sender.email }}
+        </div>
+        <div class="invoice-box text-right">
+            <strong>Bill To:</strong><br>
+            {{ recipient.name }}<br>
+            {{ recipient.company }}<br>
+            {{ recipient.address }}
+        </div>
+    </div>
+
+    <!-- Line Items Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th class="text-right">Qty</th>
+                <th class="text-right">Unit Price</th>
+                <th class="text-right">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.description }}</td>
+                <td class="text-right">{{ item.quantity }}</td>
+                <td class="text-right">${{ item.unit_price }}</td>
+                <td class="text-right">${{ item.total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Totals Section -->
+    <div class="totals">
+        <div class="row">
+            <span>Subtotal:</span>
+            <span>${{ subtotal }}</span>
+        </div>
+        <div class="row">
+            <span>Tax (8%):</span>
+            <span>${{ tax }}</span>
+        </div>
+        <div class="row grand-total">
+            <span>Total:</span>
+            <span>${{ grand_total }}</span>
+        </div>
+    </div>
+
+    {% if notes %}
+    <div style="margin-top: 40px; border-left: 4px solid #eee; padding-left: 10px; color: #666;">
+        <strong>Notes:</strong> <br>
+        {{ notes }}
+    </div>
+    {% endif %}
+
+{% endblock %}

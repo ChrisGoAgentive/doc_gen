@@ -78,6 +78,18 @@ def main():
     ]
     run_command(cmd_1099)
 
+    print("\n--- Step 4: Generating I-9 Employment Forms (PDF Fill) ---")
+    
+    # Define output directory nested within the withdrawals folder
+    i9_output_dir = os.path.join(base_output_dir, "i9_forms")
+    
+    # Execute the I-9 generator script
+    cmd_i9 = [
+        sys.executable, "withdrawals/generate_i9.py",
+        "--out", i9_output_dir
+    ]
+    run_command(cmd_i9)
+
     print("\n--- Pipeline Complete ---")
     print(f"All 401(k) documents (including 1099-Rs) have been output to: {base_output_dir}")
 

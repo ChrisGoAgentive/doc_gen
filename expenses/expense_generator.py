@@ -1,10 +1,12 @@
 import os
 from jinja2 import Environment, FileSystemLoader
+# Import the new utility
+from utils.data_utils import DataFormatter
 
 class HTMLGenerator:
     """
     A generic class to render HTML from Jinja2 templates.
-    This class is agnostic to the data structure (Invoice, Report, Letter, etc.).
+    Now equipped with QOL filters for data formatting.
     """
     def __init__(self, template_dir='templates'):
         """
@@ -15,6 +17,12 @@ class HTMLGenerator:
             loader=FileSystemLoader(template_dir),
             autoescape=True
         )
+        
+        # --- REGISTER QOL FILTERS ---
+        # This allows templates to use pipes, e.g., {{ amount | currency }}
+        self.env.filters['currency'] = DataFormatter.format_currency
+        self.env.filters['fmt_date'] = DataFormatter.format_date
+        self.env.filters['phone'] = DataFormatter.format_phone
 
     def render(self, template_name, context):
         """

@@ -1,21 +1,11 @@
 import argparse
-import json
 import os
 import sys
 import shutil
 from expenses.expense_generator import HTMLGenerator
 from pdf_engine import PDFGenerator
-
-def load_data(filepath):
-    if not os.path.exists(filepath):
-        print(f"Error: Data file '{filepath}' not found.")
-        return None
-    with open(filepath, 'r') as f:
-        try:
-            return json.load(f)
-        except json.JSONDecodeError as e:
-            print(f"Error decoding JSON: {e}")
-            return None
+# Import the new robust loader
+from utils.data_utils import DataLoader
 
 def main():
     parser = argparse.ArgumentParser(description="Financial PDF Generator")
@@ -31,13 +21,16 @@ def main():
     args = parser.parse_args()
 
     # 1. Setup Generators
-    # HTMLGenerator handles the design (Jinja2)
+    # HTMLGenerator handles the design (Jinja2) and now includes QOL filters
     html_gen = HTMLGenerator(template_dir='templates')
     # PDFGenerator handles the format conversion (HTML String -> PDF)
     pdf_gen = PDFGenerator()
     
-    data_source = load_data(args.data)
-    if not data_source:
+    # 2. Load Data using QOL Utility
+    documents = DataLoader.load(args.data)
+    
+    if not documents:
+        print("No documents found to process. Exiting.")
         sys.exit(1)
 
     # Ensure output directory exists
@@ -50,25 +43,24 @@ def main():
     except Exception as e:
         print(f"Warning: Failed to copy reference file: {e}")
 
-    # Ensure we treat single objects as a list for consistent processing
-    documents = data_source if isinstance(data_source, list) else [data_source]
-    
     print(f"--- Processing {len(documents)} documents ---")
     print(f"Template: {args.template}")
     print(f"Output:   {args.out}")
 
     success_count = 0
 
-    # 2. Processing Loop
+    # 3. Processing Loop
     for doc in documents:
         # Determine Filename
         doc_id = doc.get(args.id_key, 'unknown_id')
+        # Sanitize filename
         safe_id = "".join([c for c in doc_id if c.isalnum() or c in ('-','_')])
         
         # Define Output Path
         pdf_out_path = os.path.join(args.out, f"{safe_id}.pdf")
         
         # Step A: Render Template to HTML String (In-Memory)
+        # Filters like | currency and | fmt_date are now available inside the template
         html_content = html_gen.render(args.template, doc)
         
         if html_content:

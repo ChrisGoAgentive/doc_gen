@@ -51,14 +51,35 @@ I9_COORD_MAP = {
     # For coordinates, point to where the center of the 'X' should go.
     "citizen_check":    [0, 182, 269, 12, 10], 
 
-    "signature_employee": [0, 25, 353, 150, 20, "SIGNATURE"],
+    "signature_employee": [0, 25, 353, 150, 25, "SIGNATURE"],
     "employee_sig_date": [0, 370, 368, 10, 100],
     
     # --- (Section 2) ---
 
+    "list_a_doc_title": [0, 130, 448, 10, 100],
+    "list_a_issuing_auth": [0, 130, 465, 10, 100],
+    "list_a_doc_number": [0, 130, 483, 10, 100],
+    "list_a_doc_exp": [0, 130, 500, 10, 100],
 
-}
+    "list_b_doc_title": [0, 280, 448, 10, 100],
+    "list_b_issuing_auth": [0, 280, 465, 10, 100],
+    "list_b_doc_number": [0, 280, 483, 10, 100],
+    "list_b_doc_exp": [0, 280, 500, 10, 100],
 
+    "list_c_doc_title": [0, 425, 448, 10, 100],
+    "list_c_issuing_auth": [0, 425, 465, 10, 100],
+    "list_c_doc_number": [0, 425, 483, 10, 100],
+    "list_c_doc_exp": [0, 425, 500, 10, 100],
+
+    "first_day_employment": [0, 460, 677, 10, 100],
+
+    "employer_name": [0, 45, 705, 10, 100],
+    "signature_employer": [0, 280, 688, 150, 25, "SIGNATURE"],
+    "employer_sig_date": [0, 488, 705, 10, 100],
+    "business_name": [0, 45, 735, 10, 100],
+    "business_address": [0, 255, 735, 10, 100],
+
+    }
 def fill_i9_pdf(record, template_path, output_path, font_path):
     """
     Fills a single I-9 PDF for an employee record using PyMuPDF (fitz) coordinates.
@@ -66,6 +87,9 @@ def fill_i9_pdf(record, template_path, output_path, font_path):
     try:
         # 1. Prepare Data
         identity = record.get("Identity", {})
+        compliance = record.get("Compliance_I9", {})
+        section_2 = compliance.get("section_2", {})
+        documents = section_2.get("documents", [])
         
         ssn_raw = identity.get("ssn", "")
         ssn_clean = DataFormatter.format_digits_only(ssn_raw)
@@ -79,7 +103,7 @@ def fill_i9_pdf(record, template_path, output_path, font_path):
         # Use full name as seed for signature
         full_name = f"{identity.get('first_name')} {identity.get('last_name')}"
 
-        # Map Logical Keys -> Actual Values
+        # Initialize Data Map
         data_to_fill = {
             "last_name": identity.get("last_name"),
             "first_name": identity.get("first_name"),
@@ -90,7 +114,6 @@ def fill_i9_pdf(record, template_path, output_path, font_path):
             "zip": identity.get("home_address", {}).get("zip"),
             "ssn": ssn_clean,
             "dob": dob_formatted,
-            "employee_sig_date": hire_date_fmt,
             "email": identity.get("work_email"),
             "phone": DataFormatter.format_phone("5551234567"), 
             "citizen_check": "X" if identity.get("citizenship_status", {}).get("code") == 1 else None,
@@ -98,8 +121,36 @@ def fill_i9_pdf(record, template_path, output_path, font_path):
             
             # Pass the name as the 'value' for the signature fields
             "signature_employee": full_name,
-            "signature_employer": "Sarah Connor" # Static HR Rep
+            "signature_employer": "Sarah Connor", # Static HR Rep
+            "employer_sig_date": hire_date_fmt,
+            "employer_name": "Sarah Connor",
+            "business_name": "Acme Corp.",
+            "business_address": "1234 State St. San Francisco, CA 94107",
+
         }
+        
+        # Process Documents (List A, B, C)
+        for doc in documents:
+            list_type = doc.get("list", "").upper() # 'A', 'B', or 'C'
+            
+            # Helper to format date
+            exp_date = DataFormatter.format_date(doc.get("expiration_date"), output_fmt="%m/%d/%Y")
+            
+            if list_type == "A":
+                data_to_fill["list_a_doc_title"] = doc.get("document_title")
+                data_to_fill["list_a_issuing_auth"] = doc.get("issuing_authority")
+                data_to_fill["list_a_doc_number"] = doc.get("document_number")
+                data_to_fill["list_a_doc_exp"] = exp_date
+            elif list_type == "B":
+                data_to_fill["list_b_doc_title"] = doc.get("document_title")
+                data_to_fill["list_b_issuing_auth"] = doc.get("issuing_authority")
+                data_to_fill["list_b_doc_number"] = doc.get("document_number")
+                data_to_fill["list_b_doc_exp"] = exp_date
+            elif list_type == "C":
+                data_to_fill["list_c_doc_title"] = doc.get("document_title")
+                data_to_fill["list_c_issuing_auth"] = doc.get("issuing_authority")
+                data_to_fill["list_c_doc_number"] = doc.get("document_number")
+                data_to_fill["list_c_doc_exp"] = exp_date
 
         # 2. PyMuPDF Processing
         doc = fitz.open(template_path)

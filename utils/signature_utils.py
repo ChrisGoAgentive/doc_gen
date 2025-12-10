@@ -50,10 +50,11 @@ class SignatureGenerator:
             return
 
         # "Copy-fitting": Shrink font until text fits within the box
-        # We leave a 10% margin
+        # We leave a 10% margin horizontally, but a larger margin vertically 
+        # to account for long descenders (g, y, j) in handwriting fonts.
         min_font_size = 10
         margin_w = img_w * 0.9
-        margin_h = img_h * 0.9
+        margin_h = img_h * 0.7  # Increased safety margin (30% buffer vertical)
         
         while font_size > min_font_size:
             # Measure text size
@@ -76,6 +77,10 @@ class SignatureGenerator:
         # Center position
         text_x = (img_w - text_w) // 2
         text_y = (img_h - text_h) // 2
+        
+        # Vertical Adjustment: Shift text up slightly to protect descenders
+        # Handwriting fonts often have deeper bottoms than tops.
+        text_y -= int(img_h * 0.1) 
         
         # Ensure color is RGBA
         fill_color = color + (255,) # Add full opacity alpha channel

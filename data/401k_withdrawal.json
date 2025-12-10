@@ -16,8 +16,8 @@
       "location_code": "LOC-120",
       "is_us_citizen": true,
       "confirmation_num": "96801077",
-      "auth_date": "2025-11-30",
-      "sep_date": "2025-12-02",
+      "auth_date": "2025-12-02",
+      "sep_date": "2025-12-04",
       "withdrawal_fee": "50.00",
       "est_net_payout": "215,264.87",
       "gross_withdrawal_amount": "215,314.87",
@@ -109,7 +109,7 @@
       "activity": [
         {
           "desc": "Withdrawal Fee",
-          "date": "2025-12-02",
+          "date": "2025-12-04",
           "amount": "-50.00"
         }
       ],

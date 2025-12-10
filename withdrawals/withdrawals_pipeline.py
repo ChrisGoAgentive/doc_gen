@@ -73,7 +73,7 @@ def main():
     
     # Execute the 1099 generator script
     cmd_1099 = [
-        sys.executable, "withdrawals/generate_1099r.py",
+        sys.executable, "i9/generate_1099r.py",
         "--out", f1099_output_dir
     ]
     run_command(cmd_1099)

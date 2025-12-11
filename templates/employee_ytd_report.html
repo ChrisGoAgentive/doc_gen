@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Earnings Record</title>
+    <style>
+        @page {
+            size: letter landscape;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 10px;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            border-bottom: 2px solid #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .company-name {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .report-title {
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #eee;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .employee-card {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+        .emp-detail {
+            margin-bottom: 4px;
+        }
+
+        /* Data Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th {
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #999;
+            border-top: 1px solid #999;
+            text-align: right;
+            padding: 6px 4px;
+            font-weight: bold;
+            font-size: 9px;
+        }
+        /* Align text columns left */
+        th:nth-child(1), th:nth-child(2) { text-align: left; }
+        td:nth-child(1), td:nth-child(2) { text-align: left; }
+
+        td {
+            padding: 4px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* YTD Columns Base Style */
+        .ytd-col {
+            background-color: #fafafa;
+            color: #555;
+            font-style: italic;
+        }
+        th.ytd-col {
+            background-color: #e0e0e0;
+            color: #000;
+            font-style: normal;
+        }
+
+        /* Accrual Row Styling */
+        .accrual-row td {
+            background-color: #fff3cd !important; /* Light yellow */
+            color: #856404;
+            font-weight: bold;
+            font-style: italic;
+            border-top: 3px double #999; /* Visual separation from actuals */
+            border-bottom: 2px solid #333;
+        }
+
+        /* Summary Section */
+        .summary-box {
+            page-break-inside: avoid;
+            border: 2px solid #333;
+            padding: 10px;
+            width: 40%;
+            margin-left: auto; /* Align right */
+            background-color: #fff;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            font-size: 11px;
+        }
+        .summary-total {
+            border-top: 1px solid #000;
+            padding-top: 4px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 8px;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-top">
+            <div class="company-name">{{ company_name }}</div>
+            <div class="report-title">{{ doc_type }}</div>
+        </div>
+        <div class="employee-card">
+            <div>
+                <div class="emp-detail"><strong>Employee:</strong> {{ employee_name }}</div>
+                <div class="emp-detail"><strong>ID:</strong> {{ employee_id }}</div>
+                <div class="emp-detail"><strong>Department:</strong> {{ department }}</div>
+            </div>
+            <div style="text-align: right;">
+                <div class="emp-detail"><strong>Report Date:</strong> {{ run_date }}</div>
+                <div class="emp-detail"><strong>Fiscal Year:</strong> {{ fiscal_year }}</div>
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="12%">Period</th>
+                <th width="8%">Pay Date</th>
+                <th width="8%">Gross Pay</th>
+                <th width="8%">Fed Tax</th>
+                <th width="8%">State Tax</th>
+                <th width="8%">FICA</th>
+                <th width="8%">Net Pay</th>
+                <!-- YTD Columns -->
+                <th width="10%" class="ytd-col">YTD Gross</th>
+                <th width="10%" class="ytd-col">YTD Tax</th>
+                <th width="10%" class="ytd-col">YTD Net</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr class="{{ 'accrual-row' if row.is_accrual else '' }}">
+                <td>
+                    {{ row.Pay_Period }}
+                    {% if row.is_accrual %}
+                    <br><span style="font-size:8px; font-weight:normal;">(Audit Accrual)</span>
+                    {% endif %}
+                </td>
+                <td>{{ row.Pay_Date | fmt_date }}</td>
+                <td>{{ row.Gross_Pay | currency }}</td>
+                <td>{{ row.Tax_Fed | currency }}</td>
+                <td>{{ row.Tax_State | currency }}</td>
+                <td>{{ row.Tax_FICA | currency }}</td>
+                <td><strong>{{ row.Net_Pay | currency }}</strong></td>
+                <!-- YTD Data -->
+                <td class="ytd-col">{{ row.YTD_Gross_Pay | currency }}</td>
+                <td class="ytd-col">{{ (row.YTD_Tax_Fed + row.YTD_Tax_State + row.YTD_Tax_FICA) | currency }}</td>
+                <td class="ytd-col"><strong>{{ row.YTD_Net_Pay | currency }}</strong></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="summary-box">
+        <div style="font-weight: bold; margin-bottom: 8px; border-bottom: 1px solid #ccc; text-align: center;">
+            PROJECTED YEAR-END TOTALS<br>
+            <span style="font-size:9px; font-weight:normal;">(Includes Actuals + Accruals)</span>
+        </div>
+        <div class="summary-row">
+            <span>Total Gross Pay:</span>
+            <span>{{ final_totals.Gross_Pay | currency }}</span>
+        </div>
+        <div class="summary-row">
+            <span>Total Regular Hours:</span>
+            <span>{{ final_totals.Hours_Reg }}</span>
+        </div>
+        <div class="summary-row">
+            <span>Total OT Hours:</span>
+            <span>{{ final_totals.Hours_OT }}</span>
+        </div>
+        <div class="summary-row">
+            <span>Total Taxes Withheld:</span>
+            <span>{{ (final_totals.Tax_Fed + final_totals.Tax_State + final_totals.Tax_FICA) | currency }}</span>
+        </div>
+        <div class="summary-row">
+            <span>Total Deductions:</span>
+            <span>{{ final_totals.Benefit_Deduction | currency }}</span>
+        </div>
+        <div class="summary-row summary-total">
+            <span>TOTAL NET PAY:</span>
+            <span>{{ final_totals.Net_Pay | currency }}</span>
+        </div>
+    </div>
+    
+    <div class="disclaimer">
+        * "ACCRUED (Est.)" represents projected employer liabilities for the remainder of the fiscal year. This is an audit estimate based on the daily run rate from the final pay period.
+    </div>
+
+</body>
+</html>

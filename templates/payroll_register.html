@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payroll Register</title>
+    <style>
+        /* PDF Layout Settings */
+        @page {
+            size: letter landscape; /* Forces Landscape mode for wide tables */
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 10px;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            border-bottom: 2px solid #000;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .company-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .report-title {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: right;
+        }
+        .meta-info {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Data Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px; /* Space before totals */
+        }
+        
+        thead th {
+            border-bottom: 1px solid #000;
+            border-top: 1px solid #000;
+            text-align: right;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+        thead th:first-child, 
+        thead th:nth-child(2) {
+            text-align: left;
+        }
+
+        tbody td {
+            padding: 4px 5px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+        tbody td:first-child, 
+        tbody td:nth-child(2) {
+            text-align: left;
+        }
+
+        /* Totals Section - Designed to appear once at the end */
+        .totals-section {
+            page-break-inside: avoid; /* Try to keep totals together */
+            margin-top: 10px;
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
+            background-color: #e8e8e8;
+        }
+
+        .totals-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .totals-table td {
+            font-weight: bold;
+            text-align: right;
+            padding: 5px;
+        }
+        
+        .footer-note {
+            margin-top: 20px;
+            font-size: 9px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-top">
+            <div class="company-name">{{ company_name }} ({{ company_id }})</div>
+            <div class="report-title">{{ doc_type }}</div>
+        </div>
+        <div class="meta-info">
+            <div><strong>Period ID:</strong> {{ pay_period }}</div>
+            <div><strong>Pay Date:</strong> {{ pay_date | fmt_date }}</div>
+            <div><strong>Run Date:</strong> {{ run_date }}</div>
+        </div>
+    </div>
+
+    <!-- Main Data Table -->
+    <table>
+        <thead>
+            <tr>
+                <th width="15%">Employee Name</th>
+                <th width="10%">ID / Dept</th>
+                <th width="6%">Reg Hrs</th>
+                <th width="6%">OT Hrs</th>
+                <th width="10%">Gross Pay</th>
+                <th width="9%">Fed Tax</th>
+                <th width="9%">State Tax</th>
+                <th width="9%">FICA</th>
+                <th width="9%">Benefits</th>
+                <th width="10%">Net Pay</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+            <tr>
+                <td>{{ entry.Employee_Name }}</td>
+                <td>{{ entry.Employee_ID }}<br><span style="font-size:8px; color:#666;">{{ entry.Department }}</span></td>
+                <td>{{ entry.Hours_Reg }}</td>
+                <td>{{ entry.Hours_OT }}</td>
+                <td>{{ entry.Gross_Pay | currency }}</td>
+                <td>{{ entry.Tax_Fed | currency }}</td>
+                <td>{{ entry.Tax_State | currency }}</td>
+                <td>{{ entry.Tax_FICA | currency }}</td>
+                <td>{{ entry.Benefit_Deduction | currency }}</td>
+                <td><strong>{{ entry.Net_Pay | currency }}</strong></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Totals Section (Separate div/table to ensure it prints only once at the end) -->
+    <div class="totals-section">
+        <table class="totals-table">
+            <tr>
+                <td width="25%" style="text-align: left;">REPORT TOTALS ({{ count }} Employees)</td>
+                <td width="6%">{{ totals.Hours_Reg }}</td>
+                <td width="6%">{{ totals.Hours_OT }}</td>
+                <td width="10%">{{ totals.Gross_Pay | currency }}</td>
+                <td width="9%">{{ totals.Tax_Fed | currency }}</td>
+                <td width="9%">{{ totals.Tax_State | currency }}</td>
+                <td width="9%">{{ totals.Tax_FICA | currency }}</td>
+                <td width="9%">{{ totals.Benefit_Deduction | currency }}</td>
+                <td width="10%">{{ totals.Net_Pay | currency }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer-note">
+        CONFIDENTIAL: This report contains sensitive payroll data. Unauthorized distribution is prohibited.
+    </div>
+
+</body>
+</html>

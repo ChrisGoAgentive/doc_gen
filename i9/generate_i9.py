@@ -50,7 +50,6 @@ I9_COORD_MAP = {
     # Citizenship Checkboxes
     # For coordinates, point to where the center of the 'X' should go.
     "citizen_check":    [0, 182, 269, 12, 10], 
-
     "signature_employee": [0, 25, 353, 150, 25, "SIGNATURE"],
     "employee_sig_date": [0, 370, 368, 10, 100],
     
@@ -121,6 +120,7 @@ def fill_i9_pdf(record, template_path, output_path, font_path):
             
             # Pass the name as the 'value' for the signature fields
             "signature_employee": full_name,
+            "employee_sig_date": hire_date_fmt,
             "signature_employer": "Sarah Connor", # Static HR Rep
             "employer_sig_date": hire_date_fmt,
             "employer_name": "Sarah Connor",

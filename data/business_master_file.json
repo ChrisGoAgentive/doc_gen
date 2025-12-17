@@ -1,0 +1,699 @@
+{
+  "company_id": "BMA-2021-652",
+  "company_name": "Apex Orbital Dynamics",
+  "legal_name": "Apex Orbital Dynamics, Inc.",
+  "headquarters": {
+    "street": "0839 Samantha Oval Apt. 571",
+    "city": "Jamesland",
+    "state": "NV",
+    "zip_code": "70929",
+    "country": "USA"
+  },
+  "incorporation_date": "2019-04-18",
+  "industry": "Aerospace & Defense",
+  "fiscal_year_end": "December 31",
+  "tax_id": "55-8837286",
+  "primary_contact": {
+    "name": "John Nguyen",
+    "title": "Controller",
+    "email": "ehenderson@mcdonald-lewis.org",
+    "phone": "+1-354-766-3616x60738"
+  },
+  "financials": null,
+  "hr_data": {
+    "hr_manager": "Christopher Alvarado",
+    "policies": [
+      {
+        "policy_id": "POL-001",
+        "policy_name": "Employee Handbook",
+        "effective_date": "2024-01-01",
+        "revision_version": "v2.1",
+        "description": "General conduct."
+      },
+      {
+        "policy_id": "POL-002",
+        "policy_name": "Anti-Harassment",
+        "effective_date": "2024-01-01",
+        "revision_version": "v1.0",
+        "description": "Zero tolerance policy."
+      },
+      {
+        "policy_id": "POL-003",
+        "policy_name": "PTO & Leave",
+        "effective_date": "2024-01-01",
+        "revision_version": "v3.2",
+        "description": "Accrual and usage rules."
+      }
+    ],
+    "employees": [
+      {
+        "employee_id": "EMP-1001",
+        "first_name": "Adam",
+        "last_name": "Elliott",
+        "ssn": "158-05-7075",
+        "birth_date": "1962-11-06",
+        "hire_date": "2017-10-06",
+        "job_title": "Dentist",
+        "department": "Sales",
+        "employment_status": "Active",
+        "salary": 126275.78,
+        "is_exempt": false,
+        "emp_st_address": "10958 Roberson Crest",
+        "emp_apt_num": "A01",
+        "emp_city": "Sparksberg",
+        "emp_state": "TX",
+        "emp_zip": "96752",
+        "emp_phone": "001-787-921-2456x1088",
+        "emp_email": "leeerika@example.com",
+        "termination_date": null,
+        "w4_data": {
+          "filing_status": "Married filing jointly",
+          "multiple_jobs": true,
+          "dependent_credit_amount": 2000.0,
+          "other_income": 1000.0,
+          "deductions": 0.0,
+          "extra_withholding": 25.52,
+          "signature_date": "2022-12-24"
+        },
+        "i9_data": {
+          "citizenship_status": "Lawful Permanent Resident",
+          "documents_presented": [
+            {
+              "document_list": "B",
+              "document_type": "Driver's License",
+              "issuing_authority": "Washington DMV",
+              "document_number": "DL5972784",
+              "expiration_date": "2029-06-05"
+            },
+            {
+              "document_list": "C",
+              "document_type": "Social Security Card",
+              "issuing_authority": "Social Security Administration",
+              "document_number": "158-05-7075",
+              "expiration_date": "N/A"
+            }
+          ],
+          "signature_date": "2021-11-10",
+          "verified_by": "HR Manager"
+        }
+      },
+      {
+        "employee_id": "EMP-1002",
+        "first_name": "Ann",
+        "last_name": "Pineda",
+        "ssn": "257-60-3350",
+        "birth_date": "1983-01-11",
+        "hire_date": "2020-03-16",
+        "job_title": "Investment banker, operational",
+        "department": "HR",
+        "employment_status": "Active",
+        "salary": 77240.74,
+        "is_exempt": false,
+        "emp_st_address": "3898 Cook Dale Suite 556",
+        "emp_apt_num": "A01",
+        "emp_city": "Littlebury",
+        "emp_state": "NC",
+        "emp_zip": "91771",
+        "emp_phone": "(712)551-5073",
+        "emp_email": "stephenhawkins@example.com",
+        "termination_date": null,
+        "w4_data": {
+          "filing_status": "Married filing jointly",
+          "multiple_jobs": true,
+          "dependent_credit_amount": 0.0,
+          "other_income": 1000.0,
+          "deductions": 0.0,
+          "extra_withholding": 30.43,
+          "signature_date": "2022-03-06"
+        },
+        "i9_data": {
+          "citizenship_status": "Lawful Permanent Resident",
+          "documents_presented": [
+            {
+              "document_list": "B",
+              "document_type": "Driver's License",
+              "issuing_authority": "Louisiana DMV",
+              "document_number": "DL2006979",
+              "expiration_date": "2026-02-18"
+            },
+            {
+              "document_list": "C",
+              "document_type": "Social Security Card",
+              "issuing_authority": "Social Security Administration",
+              "document_number": "257-60-3350",
+              "expiration_date": "N/A"
+            }
+          ],
+          "signature_date": "2022-08-21",
+          "verified_by": "HR Manager"
+        }
+      },
+      {
+        "employee_id": "EMP-1003",
+        "first_name": "Megan",
+        "last_name": "Navarro",
+        "ssn": "247-56-3336",
+        "birth_date": "1973-01-07",
+        "hire_date": "2020-07-03",
+        "job_title": "Architect",
+        "department": "Finance",
+        "employment_status": "Active",
+        "salary": 75930.86,
+        "is_exempt": true,
+        "emp_st_address": "006 Contreras Trail Apt. 700",
+        "emp_apt_num": "A01",
+        "emp_city": "Cassandraville",
+        "emp_state": "UT",
+        "emp_zip": "81280",
+        "emp_phone": "558.312.7614x035",
+        "emp_email": "jessicacurtis@example.org",
+        "termination_date": null,
+        "w4_data": {
+          "filing_status": "Married filing jointly",
+          "multiple_jobs": false,
+          "dependent_credit_amount": 0.0,
+          "other_income": 1000.0,
+          "deductions": 0.0,
+          "extra_withholding": 53.51,
+          "signature_date": "2022-03-09"
+        },
+        "i9_data": {
+          "citizenship_status": "U.S. Citizen",
+          "documents_presented": [
+            {
+              "document_list": "A",
+              "document_type": "U.S. Passport",
+              "issuing_authority": "U.S. Department of State",
+              "document_number": "Tn9577048",
+              "expiration_date": "2035-06-19"
+            }
+          ],
+          "signature_date": "2024-10-27",
+          "verified_by": "HR Manager"
+        }
+      },
+      {
+        "employee_id": "EMP-1004",
+        "first_name": "Monica",
+        "last_name": "Matthews",
+        "ssn": "681-95-3145",
+        "birth_date": "1961-08-14",
+        "hire_date": "2020-06-11",
+        "job_title": "Energy engineer",
+        "department": "Engineering",
+        "employment_status": "Active",
+        "salary": 80378.82,
+        "is_exempt": true,
+        "emp_st_address": "10799 Victoria Lodge",
+        "emp_apt_num": "A01",
+        "emp_city": "Lake Brian",
+        "emp_state": "LA",
+        "emp_zip": "79850",
+        "emp_phone": "4147432686",
+        "emp_email": "allenpaul@example.org",
+        "termination_date": null,
+        "w4_data": {
+          "filing_status": "Single",
+          "multiple_jobs": false,
+          "dependent_credit_amount": 500.0,
+          "other_income": 1000.0,
+          "deductions": 0.0,
+          "extra_withholding": 76.36,
+          "signature_date": "2025-06-09"
+        },
+        "i9_data": {
+          "citizenship_status": "Lawful Permanent Resident",
+          "documents_presented": [
+            {
+              "document_list": "A",
+              "document_type": "U.S. Passport",
+              "issuing_authority": "U.S. Department of State",
+              "document_number": "Gi8319805",
+              "expiration_date": "2031-09-22"
+            }
+          ],
+          "signature_date": "2023-05-12",
+          "verified_by": "HR Manager"
+        }
+      },
+      {
+        "employee_id": "EMP-1005",
+        "first_name": "Julie",
+        "last_name": "Gonzalez",
+        "ssn": "155-77-2691",
+        "birth_date": "1981-05-19",
+        "hire_date": "2020-11-29",
+        "job_title": "Engineer, biomedical",
+        "department": "Marketing",
+        "employment_status": "Active",
+        "salary": 87024.71,
+        "is_exempt": true,
+        "emp_st_address": "957 Horn Centers Suite 412",
+        "emp_apt_num": "A01",
+        "emp_city": "West Timothyton",
+        "emp_state": "PR",
+        "emp_zip": "38690",
+        "emp_phone": "(603)706-2761x267",
+        "emp_email": "gabriellemitchell@example.com",
+        "termination_date": null,
+        "w4_data": {
+          "filing_status": "Head of Household",
+          "multiple_jobs": true,
+          "dependent_credit_amount": 0.0,
+          "other_income": 0.0,
+          "deductions": 0.0,
+          "extra_withholding": 57.57,
+          "signature_date": "2025-05-17"
+        },
+        "i9_data": {
+          "citizenship_status": "Lawful Permanent Resident",
+          "documents_presented": [
+            {
+              "document_list": "A",
+              "document_type": "U.S. Passport",
+              "issuing_authority": "U.S. Department of State",
+              "document_number": "qc0350348",
+              "expiration_date": "2033-07-08"
+            }
+          ],
+          "signature_date": "2022-10-31",
+          "verified_by": "HR Manager"
+        }
+      }
+    ]
+  },
+  "audit_data_401k": {
+    "plan_document": {
+      "plan_name": "Apex Orbital 401(k) Savings Plan",
+      "plan_number": "001",
+      "ein": "25-8727941",
+      "trustee": "Vanguard Fiduciary Trust Company",
+      "record_keeper": "Vanguard",
+      "plan_year_begin": "01-01",
+      "plan_year_end": "12-31",
+      "fidelity_bond_coverage": 500000.0,
+      "erisa_status": "Large Plan (Over 100 Participants)",
+      "contribution_sources": {
+        "employee_pretax_allowed": true,
+        "employee_roth_allowed": true,
+        "employer_match_formula": "50% on the first 6% of compensation",
+        "profit_sharing_discretionary": true,
+        "safe_harbor_provision": false
+      },
+      "vesting_schedule": {
+        "schedule_type": "Graded 6-Year",
+        "years_for_full_vesting": 6,
+        "schedule_map": {
+          "1": 0.0,
+          "2": 0.2,
+          "3": 0.4,
+          "4": 0.6,
+          "5": 0.8,
+          "6": 1.0
+        }
+      },
+      "loan_policy": {
+        "loans_allowed": true,
+        "max_loans_per_participant": 2,
+        "interest_rate_basis": "Prime + 1%",
+        "max_repayment_years_general": 5,
+        "max_repayment_years_primary_residence": 20,
+        "spousal_consent_required": true
+      }
+    },
+    "compliance_testing": {
+      "testing_year": 2024,
+      "adp_test_ratio_hce": 6.5,
+      "adp_test_ratio_nhce": 4.0,
+      "acp_test_result": "Pass",
+      "top_heavy_ratio": 45.0,
+      "top_heavy_status": false,
+      "corrective_distributions_required": false
+    },
+    "remittance_history": [
+      {
+        "pay_period_end_date": "2024-01-15",
+        "check_date": "2024-01-15",
+        "deposit_date": "2024-01-18",
+        "employee_deferral_total": 21857.68,
+        "employer_match_total": 7773.23,
+        "days_lag": 3,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-01-30",
+        "check_date": "2024-01-30",
+        "deposit_date": "2024-02-03",
+        "employee_deferral_total": 22382.17,
+        "employer_match_total": 7677.35,
+        "days_lag": 4,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-02-14",
+        "check_date": "2024-02-14",
+        "deposit_date": "2024-02-18",
+        "employee_deferral_total": 24751.03,
+        "employer_match_total": 7906.13,
+        "days_lag": 4,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-02-29",
+        "check_date": "2024-02-29",
+        "deposit_date": "2024-03-03",
+        "employee_deferral_total": 24571.23,
+        "employer_match_total": 7653.42,
+        "days_lag": 3,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-03-15",
+        "check_date": "2024-03-15",
+        "deposit_date": "2024-03-17",
+        "employee_deferral_total": 18750.18,
+        "employer_match_total": 5178.74,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-03-30",
+        "check_date": "2024-03-30",
+        "deposit_date": "2024-04-14",
+        "employee_deferral_total": 21892.05,
+        "employer_match_total": 6051.12,
+        "days_lag": 15,
+        "is_late_deposit": true
+      },
+      {
+        "pay_period_end_date": "2024-04-14",
+        "check_date": "2024-04-14",
+        "deposit_date": "2024-04-16",
+        "employee_deferral_total": 16925.15,
+        "employer_match_total": 7037.19,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-04-29",
+        "check_date": "2024-04-29",
+        "deposit_date": "2024-05-01",
+        "employee_deferral_total": 15906.29,
+        "employer_match_total": 7811.78,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-05-14",
+        "check_date": "2024-05-14",
+        "deposit_date": "2024-05-15",
+        "employee_deferral_total": 19661.2,
+        "employer_match_total": 6274.94,
+        "days_lag": 1,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-05-29",
+        "check_date": "2024-05-29",
+        "deposit_date": "2024-06-13",
+        "employee_deferral_total": 24810.31,
+        "employer_match_total": 7703.15,
+        "days_lag": 15,
+        "is_late_deposit": true
+      },
+      {
+        "pay_period_end_date": "2024-06-13",
+        "check_date": "2024-06-13",
+        "deposit_date": "2024-06-15",
+        "employee_deferral_total": 17443.48,
+        "employer_match_total": 5841.79,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-06-28",
+        "check_date": "2024-06-28",
+        "deposit_date": "2024-07-01",
+        "employee_deferral_total": 15121.11,
+        "employer_match_total": 6899.14,
+        "days_lag": 3,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-07-13",
+        "check_date": "2024-07-13",
+        "deposit_date": "2024-07-17",
+        "employee_deferral_total": 21559.4,
+        "employer_match_total": 5133.37,
+        "days_lag": 4,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-07-28",
+        "check_date": "2024-07-28",
+        "deposit_date": "2024-07-30",
+        "employee_deferral_total": 17385.23,
+        "employer_match_total": 5819.74,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-08-12",
+        "check_date": "2024-08-12",
+        "deposit_date": "2024-08-16",
+        "employee_deferral_total": 20523.37,
+        "employer_match_total": 6606.04,
+        "days_lag": 4,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-08-27",
+        "check_date": "2024-08-27",
+        "deposit_date": "2024-08-29",
+        "employee_deferral_total": 15185.22,
+        "employer_match_total": 5401.25,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-09-11",
+        "check_date": "2024-09-11",
+        "deposit_date": "2024-09-13",
+        "employee_deferral_total": 21788.85,
+        "employer_match_total": 7682.48,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-09-26",
+        "check_date": "2024-09-26",
+        "deposit_date": "2024-09-29",
+        "employee_deferral_total": 21383.62,
+        "employer_match_total": 7235.08,
+        "days_lag": 3,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-10-11",
+        "check_date": "2024-10-11",
+        "deposit_date": "2024-10-26",
+        "employee_deferral_total": 15662.92,
+        "employer_match_total": 5444.38,
+        "days_lag": 15,
+        "is_late_deposit": true
+      },
+      {
+        "pay_period_end_date": "2024-10-26",
+        "check_date": "2024-10-26",
+        "deposit_date": "2024-10-29",
+        "employee_deferral_total": 16458.54,
+        "employer_match_total": 5364.27,
+        "days_lag": 3,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-11-10",
+        "check_date": "2024-11-10",
+        "deposit_date": "2024-11-12",
+        "employee_deferral_total": 19473.83,
+        "employer_match_total": 6995.28,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-11-25",
+        "check_date": "2024-11-25",
+        "deposit_date": "2024-11-27",
+        "employee_deferral_total": 20131.59,
+        "employer_match_total": 6879.23,
+        "days_lag": 2,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-12-10",
+        "check_date": "2024-12-10",
+        "deposit_date": "2024-12-14",
+        "employee_deferral_total": 16275.21,
+        "employer_match_total": 6637.53,
+        "days_lag": 4,
+        "is_late_deposit": false
+      },
+      {
+        "pay_period_end_date": "2024-12-25",
+        "check_date": "2024-12-25",
+        "deposit_date": "2024-12-27",
+        "employee_deferral_total": 18002.07,
+        "employer_match_total": 5903.37,
+        "days_lag": 2,
+        "is_late_deposit": false
+      }
+    ],
+    "participants": [
+      {
+        "census": {
+          "employee_id": "EMP-1001",
+          "ssn_last_4": "7075",
+          "birth_date": "1962-11-06",
+          "hire_date": "2017-10-06",
+          "termination_date": null,
+          "rehire_date": null,
+          "employment_status": "Active",
+          "years_of_service": 8,
+          "hours_worked_ytd": 2080,
+          "gross_compensation": 126275.78,
+          "eligible_compensation_401k": 119961.99,
+          "is_hce": false,
+          "is_key_employee": false
+        },
+        "balances": {
+          "source_employee_pretax": 72989.06,
+          "source_employee_roth": 0.0,
+          "source_employer_match": 31281.03,
+          "source_profit_sharing": 0.0,
+          "source_rollover": 0.0,
+          "total_balance": 104270.09,
+          "total_vested_balance": 104270.09
+        },
+        "loans": [],
+        "distributions": [],
+        "deferral_election_percent": 9.2
+      },
+      {
+        "census": {
+          "employee_id": "EMP-1002",
+          "ssn_last_4": "3350",
+          "birth_date": "1983-01-11",
+          "hire_date": "2020-03-16",
+          "termination_date": null,
+          "rehire_date": null,
+          "employment_status": "Active",
+          "years_of_service": 5,
+          "hours_worked_ytd": 2080,
+          "gross_compensation": 77240.74,
+          "eligible_compensation_401k": 73378.7,
+          "is_hce": false,
+          "is_key_employee": false
+        },
+        "balances": {
+          "source_employee_pretax": 26794.64,
+          "source_employee_roth": 0.0,
+          "source_employer_match": 11483.42,
+          "source_profit_sharing": 0.0,
+          "source_rollover": 0.0,
+          "total_balance": 38278.06,
+          "total_vested_balance": 35981.38
+        },
+        "loans": [],
+        "distributions": [],
+        "deferral_election_percent": 8.3
+      },
+      {
+        "census": {
+          "employee_id": "EMP-1003",
+          "ssn_last_4": "3336",
+          "birth_date": "1973-01-07",
+          "hire_date": "2020-07-03",
+          "termination_date": null,
+          "rehire_date": null,
+          "employment_status": "Active",
+          "years_of_service": 5,
+          "hours_worked_ytd": 2080,
+          "gross_compensation": 75930.86,
+          "eligible_compensation_401k": 72134.32,
+          "is_hce": false,
+          "is_key_employee": false
+        },
+        "balances": {
+          "source_employee_pretax": 17215.74,
+          "source_employee_roth": 0.0,
+          "source_employer_match": 7378.17,
+          "source_profit_sharing": 0.0,
+          "source_rollover": 0.0,
+          "total_balance": 24593.91,
+          "total_vested_balance": 23118.28
+        },
+        "loans": [],
+        "distributions": [],
+        "deferral_election_percent": 5.4
+      },
+      {
+        "census": {
+          "employee_id": "EMP-1004",
+          "ssn_last_4": "3145",
+          "birth_date": "1961-08-14",
+          "hire_date": "2020-06-11",
+          "termination_date": null,
+          "rehire_date": null,
+          "employment_status": "Active",
+          "years_of_service": 5,
+          "hours_worked_ytd": 2080,
+          "gross_compensation": 80378.82,
+          "eligible_compensation_401k": 76359.88,
+          "is_hce": false,
+          "is_key_employee": false
+        },
+        "balances": {
+          "source_employee_pretax": 11347.69,
+          "source_employee_roth": 0.0,
+          "source_employer_match": 4863.3,
+          "source_profit_sharing": 0.0,
+          "source_rollover": 0.0,
+          "total_balance": 16210.99,
+          "total_vested_balance": 15238.33
+        },
+        "loans": [],
+        "distributions": [],
+        "deferral_election_percent": 3.4
+      },
+      {
+        "census": {
+          "employee_id": "EMP-1005",
+          "ssn_last_4": "2691",
+          "birth_date": "1981-05-19",
+          "hire_date": "2020-11-29",
+          "termination_date": null,
+          "rehire_date": null,
+          "employment_status": "Active",
+          "years_of_service": 5,
+          "hours_worked_ytd": 2080,
+          "gross_compensation": 87024.71,
+          "eligible_compensation_401k": 82673.47,
+          "is_hce": false,
+          "is_key_employee": false
+        },
+        "balances": {
+          "source_employee_pretax": 11827.09,
+          "source_employee_roth": 0.0,
+          "source_employer_match": 5068.75,
+          "source_profit_sharing": 0.0,
+          "source_rollover": 0.0,
+          "total_balance": 16895.84,
+          "total_vested_balance": 15882.09
+        },
+        "loans": [],
+        "distributions": [],
+        "deferral_election_percent": 3.2
+      }
+    ]
+  }
+}

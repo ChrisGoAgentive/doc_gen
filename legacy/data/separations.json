@@ -1,0 +1,16 @@
+[
+  {
+    "document_id": "SEP-EMP-291704",
+    "data": {
+      "employee_name": "Mark Johnson",
+      "emp_address": "600 Jeffery Parkways",
+      "emp_city_state_zip": "New Jamesside, MT 29394",
+      "date": "December 10, 2025",
+      "company_name": "ACME Corp",
+      "company_address": "123 Business Rd, Tech City, CA 90210",
+      "sep_date": "2025-12-04",
+      "hr_rep": "Sarah Connor",
+      "state": "MT"
+    }
+  }
+]

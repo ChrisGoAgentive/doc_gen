@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Payment</title>
+    <style>
+        @page {
+            size: 8.5in 3.5in; /* Standard Check Size */
+            margin: 0;
+        }
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0.25in;
+            position: relative;
+            height: 3.5in;
+            width: 8.5in;
+            color: #222;
+        }
+        
+        /* Layout Elements */
+        .check-number {
+            position: absolute;
+            top: 0.25in;
+            right: 0.5in;
+            font-weight: bold;
+            font-size: 14pt;
+        }
+        
+        .payer-info {
+            position: absolute;
+            top: 0.25in;
+            left: 0.5in;
+            font-size: 10pt;
+            line-height: 1.3;
+        }
+        
+        .date-box {
+            position: absolute;
+            top: 0.6in;
+            right: 0.5in;
+            width: 1.5in;
+            border-bottom: 1px solid #000;
+        }
+        .date-label {
+            font-size: 8pt;
+            color: #555;
+            position: absolute;
+            top: -15px;
+            left: 0;
+        }
+        .date-value {
+            font-family: 'Courier New', monospace;
+            font-size: 11pt;
+            padding-left: 5px;
+        }
+
+        .pay-to-order {
+            position: absolute;
+            top: 1.2in;
+            left: 0.5in;
+            width: 5.5in;
+            border-bottom: 1px solid #000;
+            height: 0.3in;
+        }
+        .pay-label {
+            position: absolute;
+            top: 5px;
+            left: -60px; /* "Pay to the Order of" hangs left */
+            font-size: 9pt;
+            font-weight: bold;
+            width: 60px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        .payee-name {
+            font-size: 12pt;
+            font-weight: bold;
+            position: relative;
+            top: 2px;
+            left: 10px;
+        }
+
+        .amount-numeric-box {
+            position: absolute;
+            top: 1.2in;
+            right: 0.5in;
+            width: 1.2in;
+            border: 1px solid #ccc;
+            background: #fdfdfd;
+            height: 0.3in;
+            display: flex;
+            align-items: center;
+            padding-left: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .dollar-sign {
+            font-size: 10pt;
+            margin-right: 5px;
+        }
+
+        .amount-text {
+            position: absolute;
+            top: 1.6in;
+            left: 0.5in;
+            width: 7.5in;
+            border-bottom: 1px solid #000;
+            height: 0.25in;
+        }
+        .dollars-label {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            font-size: 10pt;
+            font-weight: bold;
+        }
+        .text-value {
+            font-size: 10pt;
+            position: relative;
+            top: 2px;
+            left: 10px;
+            text-transform: uppercase;
+        }
+
+        .bank-info {
+            position: absolute;
+            top: 0.25in;
+            left: 3.5in; /* Center-ish */
+            font-size: 9pt;
+            text-align: center;
+            color: #555;
+        }
+
+        .memo-line {
+            position: absolute;
+            bottom: 0.6in;
+            left: 0.5in;
+            width: 3in;
+            border-bottom: 1px solid #000;
+        }
+        .memo-label {
+            font-size: 8pt;
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+        }
+        .memo-text {
+            font-size: 10pt;
+            padding-left: 5px;
+        }
+
+        .signature-line {
+            position: absolute;
+            bottom: 0.6in;
+            right: 0.5in;
+            width: 2.5in;
+            border-bottom: 1px solid #000;
+        }
+        .signature-label {
+            font-size: 8pt;
+            position: absolute;
+            right: 0;
+            bottom: -15px;
+        }
+
+        /* MICR Line simulation */
+        .micr-line {
+            position: absolute;
+            bottom: 0.15in;
+            left: 0.5in;
+            right: 0.5in;
+            text-align: center;
+            font-family: 'Courier New', monospace; /* Use a MICR font if available */
+            font-size: 12pt;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="check-number">{{ check_number }}</div>
+
+    <div class="payer-info">
+        <strong>{{ payer_name }}</strong><br>
+        {{ payer_address }}<br>
+        {{ payer_city_state_zip }}
+    </div>
+
+    <div class="bank-info">
+        <strong>{{ bank_name }}</strong><br>
+        {{ bank_location }}
+    </div>
+
+    <div class="date-box">
+        <span class="date-label">DATE</span>
+        <span class="date-value">{{ date | fmt_date("%Y-%m-%d", "%m/%d/%Y") }}</span>
+    </div>
+
+    <div class="pay-to-order">
+        <span class="pay-label">PAY TO THE<br>ORDER OF</span>
+        <span class="payee-name">{{ payee_name }}</span>
+    </div>
+
+    <div class="amount-numeric-box">
+        <span class="dollar-sign">$</span>
+        {{ amount | currency(symbol="") }}
+    </div>
+
+    <div class="amount-text">
+        <span class="text-value">{{ amount_text }}</span>
+        <span class="dollars-label">DOLLARS</span>
+    </div>
+
+    <div class="memo-line">
+        <span class="memo-text">{{ memo }}</span>
+        <span class="memo-label">MEMO</span>
+    </div>
+
+    <div class="signature-line">
+        <span class="signature-label">AUTHORIZED SIGNATURE</span>
+        </div>
+
+    <div class="micr-line">
+        C{{ bank_routing }}C A{{ account_number }}A {{ check_number }}
+    </div>
+
+</body>
+</html>

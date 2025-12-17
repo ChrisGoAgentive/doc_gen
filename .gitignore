@@ -53,3 +53,4 @@ Logs and databases
 *.sqlite3
 
 output/
+legacy/

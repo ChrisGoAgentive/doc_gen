@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investment Allocation Form</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        body { font-family: "Helvetica", "Arial", sans-serif; font-size: 10pt; color: #333; }
+        .header { border-bottom: 2px solid #005580; margin-bottom: 20px; padding-bottom: 10px; }
+        .title { font-size: 18pt; font-weight: bold; color: #005580; }
+        .section { margin-bottom: 20px; }
+        .section-title { font-size: 11pt; font-weight: bold; background-color: #eee; padding: 5px; border-bottom: 1px solid #ccc; margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+        th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+        th { background-color: #f9f9f9; }
+        .row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .label { font-weight: bold; width: 150px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">Investment Allocation Change Request</div>
+        <div>{{ data.plan_name }}</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Participant Information</div>
+        <div class="row"><span class="label">Name:</span> {{ data.participant_name }}</div>
+        <div class="row"><span class="label">Employee ID:</span> {{ data.participant_id }}</div>
+        <div class="row"><span class="label">Request Date:</span> {{ data.request_date }}</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Investment Elections</div>
+        <p>Please allocate my future contributions as follows (Must equal 100%):</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th width="60%">Investment Fund</th>
+                    <th width="20%">Current %</th>
+                    <th width="20%">New %</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data.new_allocation %}
+                <tr>
+                    <td>{{ item.fund }}</td>
+                    <td>
+                        {% set current = data.current_allocation | selectattr("fund", "equalto", item.fund) | first %}
+                        {{ current.percent if current else "0%" }}
+                    </td>
+                    <td>{{ item.percent }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Authorization</div>
+        <p>I authorize the Plan Administrator to update my investment elections as indicated above, effective {{ data.effective_date }}.</p>
+        <br><br>
+        <div style="border-top: 1px solid #000; width: 300px; padding-top: 5px;">Participant Signature</div>
+    </div>
+</body>
+</html>

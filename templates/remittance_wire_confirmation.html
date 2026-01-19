@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wire Transfer Confirmation</title>
+    <style>
+        @page { size: letter; margin: 0.75in; }
+        body { font-family: Arial, sans-serif; color: #333; }
+        .bank-logo { font-size: 18pt; font-weight: bold; color: #0044cc; border-bottom: 2px solid #0044cc; padding-bottom: 10px; margin-bottom: 30px; }
+        
+        .confirm-box { background-color: #f9f9f9; border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+        
+        .row { display: flex; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .label { width: 150px; font-weight: bold; color: #666; text-transform: uppercase; font-size: 8pt; padding-top: 3px; }
+        .value { font-size: 11pt; color: #000; flex-grow: 1; }
+        
+        .amount-row { background-color: #eef; padding: 10px; display: flex; align-items: center; margin-top: 20px; }
+        .amount-val { font-size: 16pt; font-weight: bold; }
+        
+        .status { color: green; font-weight: bold; border: 2px solid green; display: inline-block; padding: 5px 10px; transform: rotate(-5deg); margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="bank-logo">
+        {{ data.bank_name }} | Corporate Banking
+    </div>
+
+    <h2>Payment Confirmation</h2>
+    <p>Your wire transfer request has been successfully processed.</p>
+
+    <div class="confirm-box">
+        <div class="row">
+            <div class="label">Transaction Date</div>
+            <div class="value">{{ data.transaction_date }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Fed Reference #</div>
+            <div class="value">{{ data.fed_ref }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Originator</div>
+            <div class="value">{{ data.sender }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Beneficiary</div>
+            <div class="value">{{ data.receiver }}<br><span style="font-size: 9pt; color: #666;">Account: {{ data.account_credit }}</span></div>
+        </div>
+        <div class="row">
+            <div class="label">Memo / OBI</div>
+            <div class="value">{{ data.memo }}</div>
+        </div>
+
+        <div class="amount-row">
+            <div class="label">Transfer Amount</div>
+            <div class="amount-val">${{ data.amount }}</div>
+            <div class="status">COMPLETED</div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 50px; font-size: 8pt; color: #999; text-align: center;">
+        This is an electronically generated receipt. No signature is required.
+    </div>
+</body>
+</html>

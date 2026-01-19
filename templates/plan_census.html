@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan Census</title>
+    <style>
+        @page { size: legal landscape; margin: 0.5in; }
+        body { font-family: "Arial Narrow", Arial, sans-serif; font-size: 8pt; }
+        .header { border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 15px; }
+        .title { font-size: 16pt; font-weight: bold; }
+        .meta { color: #555; font-size: 10pt; }
+        
+        table { width: 100%; border-collapse: collapse; }
+        th { background-color: #ddd; border: 1px solid #999; padding: 4px; text-align: left; font-size: 8pt; font-weight: bold; white-space: nowrap; }
+        td { border: 1px solid #ccc; padding: 4px; white-space: nowrap; }
+        
+        .num { text-align: right; }
+        .center { text-align: center; }
+        
+        .status-term { color: red; font-style: italic; }
+        .status-elig { color: green; }
+        .status-not { color: #666; }
+        
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">{{ data.company_name }}</div>
+        <div class="meta">Annual Plan Census Data | Year Ended: {{ data.plan_year_end }}</div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>ID</th>
+                <th>SSN</th>
+                <th>DOB</th>
+                <th>Hire Date</th>
+                <th>Term Date</th>
+                <th>Status</th>
+                <th class="num">Hours</th>
+                <th class="num">Gross Comp</th>
+                <th class="center">Entry Date</th>
+                <th class="center">Decision</th>
+                <th class="center">Decision Date</th>
+                <th class="center">1st Contrib</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in data.employees %}
+            <tr>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.ssn }}</td>
+                <td>{{ emp.dob }}</td>
+                <td>{{ emp.hire_date }}</td>
+                <td>{{ emp.term_date }}</td>
+                <td>
+                    {% if 'Terminated' in emp.status %}
+                        <span class="status-term">{{ emp.status }}</span>
+                    {% elif 'Not Met' in emp.status %}
+                        <span class="status-not">{{ emp.status }}</span>
+                    {% else %}
+                        <span class="status-elig">{{ emp.status }}</span>
+                    {% endif %}
+                </td>
+                <td class="num">{{ emp.hours }}</td>
+                <td class="num">{{ emp.compensation }}</td>
+                <td class="center" style="font-weight: bold;">{{ emp.entry_date }}</td>
+                <td class="center">{{ emp.enrollment_decision }}</td>
+                <td class="center">{{ emp.enrollment_date }}</td>
+                <td class="center">{{ emp.first_contribution_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <div style="margin-top: 20px; font-size: 10pt; border: 1px solid #000; padding: 10px; width: 300px;">
+        <strong>Census Summary:</strong><br>
+        Total Employees: {{ data.summary.total_employees }}<br>
+        Total Eligible: {{ data.summary.total_eligible }}
+    </div>
+</body>
+</html>

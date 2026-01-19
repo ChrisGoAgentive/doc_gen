@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payroll Summary Journal</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        body { font-family: "Courier New", Courier, monospace; font-size: 10pt; }
+        .header { text-align: center; border-bottom: 2px dashed #000; margin-bottom: 20px; padding-bottom: 10px; }
+        .meta-grid { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 20px; }
+        .section { margin-bottom: 20px; border: 1px solid #000; padding: 10px; }
+        .section-title { font-weight: bold; border-bottom: 1px solid #000; margin-bottom: 5px; }
+        
+        .row { display: flex; justify-content: space-between; margin-bottom: 3px; }
+        .key { text-transform: uppercase; }
+        .val { font-weight: bold; }
+        
+        .audit-box { border: 2px solid #000; padding: 10px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <strong>{{ data.company_name }}</strong><br>
+        PAYROLL SUMMARY JOURNAL<br>
+        <span style="font-size: 9pt;">Confidential - Accounting Use Only</span>
+    </div>
+
+    <div class="meta-grid">
+        <div>
+            Run ID: {{ data.document_id }}<br>
+            Pay Date: {{ data.pay_date }}
+        </div>
+        <div style="text-align: right;">
+            Period: {{ data.period }}<br>
+            Status: POSTED
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">EARNINGS</div>
+        <div class="row"><span class="key">Total Gross Pay</span> <span class="val">{{ data.totals.gross_pay }}</span></div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">DEDUCTIONS & LIABILITIES</div>
+        <div class="row">
+            <span class="key">Federal Tax Withholding</span> 
+            <span class="val"> [Calculated] </span>
+        </div>
+        <div class="row">
+            <span class="key">FICA / Medicare</span> 
+            <span class="val"> [Calculated] </span>
+        </div>
+        <br>
+        <div style="font-style: italic; border-bottom: 1px dotted #000; margin-bottom: 5px;">Retirement Plan (401k)</div>
+        <!-- FIXED: Use bracket notation for keys starting with numbers -->
+        <div class="row"><span class="key">401k Pre-Tax Deferrals</span> <span class="val">{{ data.totals['401k_pre_tax'] }}</span></div>
+        <div class="row"><span class="key">401k Roth Deferrals</span> <span class="val">{{ data.totals['401k_roth'] }}</span></div>
+        <div class="row"><span class="key">401k Loan Repayments</span> <span class="val">{{ data.totals['401k_loans'] }}</span></div>
+        <div class="row"><span class="key">Employer Match Exp</span> <span class="val">{{ data.totals.employer_match }}</span></div>
+    </div>
+
+    <div class="audit-box">
+        <div class="section-title">TREASURY REQUIREMENTS</div>
+        <div style="margin-top: 10px; font-size: 9pt;">
+            The following amount must be remitted to the Plan Trust per DOL Regulations:<br><br>
+            <strong>TOTAL 401(k) DEPOSIT: ${{ data.totals.total_remittance_liability }}</strong>
+        </div>
+    </div>
+</body>
+</html>

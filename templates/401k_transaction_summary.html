@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction Summary</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        body { font-family: "Helvetica", "Arial", sans-serif; font-size: 9pt; color: #333; }
+        .header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        h1 { margin: 0; font-size: 16pt; text-transform: uppercase; }
+        .meta { margin-top: 5px; font-size: 10pt; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th { background-color: #eee; text-align: left; padding: 5px; border-bottom: 1px solid #999; font-size: 8pt; }
+        td { padding: 5px; border-bottom: 1px solid #ddd; font-size: 8pt; }
+        .num { text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Transaction Summary</h1>
+        <div class="meta">{{ data.plan_name }}</div>
+        <div class="meta"><strong>Participant:</strong> {{ data.participant_name }} | <strong>Account:</strong> {{ data.account_number }}</div>
+        <div class="meta"><strong>Period:</strong> {{ data.period_start }} to {{ data.period_end }}</div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Investment Fund</th>
+                <th class="num">Share Price</th>
+                <th class="num">Units</th>
+                <th class="num">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in data.transactions %}
+            <tr>
+                <td>{{ t.date }}</td>
+                <td>{{ t.desc }}</td>
+                <td>{{ t.fund }}</td>
+                <td class="num">{{ t.price }}</td>
+                <td class="num">{{ t.units }}</td>
+                <td class="num">{{ t.amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

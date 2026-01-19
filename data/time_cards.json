@@ -1,0 +1,412 @@
+[
+  {
+    "document_id": "TC-EMP-18284-20260109",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Elizabeth Bentley",
+    "employee_id": "EMP-18284",
+    "period": "12/27/2025 - 01/09/2026",
+    "department": "Biochemist, clinical",
+    "entries": [
+      {
+        "date": "12/27/2025",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/28/2025",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/29/2025",
+        "day": "Monday",
+        "hours": 7.82
+      },
+      {
+        "date": "12/30/2025",
+        "day": "Tuesday",
+        "hours": 8.01
+      },
+      {
+        "date": "12/31/2025",
+        "day": "Wednesday",
+        "hours": 7.85
+      },
+      {
+        "date": "01/01/2026",
+        "day": "Thursday",
+        "hours": 7.64
+      },
+      {
+        "date": "01/02/2026",
+        "day": "Friday",
+        "hours": 7.23
+      },
+      {
+        "date": "01/03/2026",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "01/04/2026",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "01/05/2026",
+        "day": "Monday",
+        "hours": 7.21
+      },
+      {
+        "date": "01/06/2026",
+        "day": "Tuesday",
+        "hours": 7.69
+      },
+      {
+        "date": "01/07/2026",
+        "day": "Wednesday",
+        "hours": 7.03
+      },
+      {
+        "date": "01/08/2026",
+        "day": "Thursday",
+        "hours": 7.09
+      },
+      {
+        "date": "01/09/2026",
+        "day": "Friday",
+        "hours": 7.67
+      }
+    ],
+    "total_hours": "75.24",
+    "supervisor_sign": "Antonio Schroeder"
+  },
+  {
+    "document_id": "TC-EMP-582455-20260109",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Mary Terry",
+    "employee_id": "EMP-582455",
+    "period": "12/27/2025 - 01/09/2026",
+    "department": "Chartered loss adjuster",
+    "entries": [
+      {
+        "date": "12/27/2025",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/28/2025",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/29/2025",
+        "day": "Monday",
+        "hours": 7.98
+      },
+      {
+        "date": "12/30/2025",
+        "day": "Tuesday",
+        "hours": 8.08
+      },
+      {
+        "date": "12/31/2025",
+        "day": "Wednesday",
+        "hours": 8.34
+      },
+      {
+        "date": "01/01/2026",
+        "day": "Thursday",
+        "hours": 7.86
+      },
+      {
+        "date": "01/02/2026",
+        "day": "Friday",
+        "hours": 7.78
+      },
+      {
+        "date": "01/03/2026",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "01/04/2026",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "01/05/2026",
+        "day": "Monday",
+        "hours": 8.26
+      },
+      {
+        "date": "01/06/2026",
+        "day": "Tuesday",
+        "hours": 8.46
+      },
+      {
+        "date": "01/07/2026",
+        "day": "Wednesday",
+        "hours": 8.21
+      },
+      {
+        "date": "01/08/2026",
+        "day": "Thursday",
+        "hours": 7.99
+      },
+      {
+        "date": "01/09/2026",
+        "day": "Friday",
+        "hours": 7.58
+      }
+    ],
+    "total_hours": "80.54",
+    "supervisor_sign": "George Schmidt"
+  },
+  {
+    "document_id": "TC-EMP-18655-20260102",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Ryan Munoz",
+    "employee_id": "EMP-18655",
+    "period": "12/20/2025 - 01/02/2026",
+    "department": "Network engineer",
+    "entries": [
+      {
+        "date": "12/20/2025",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/21/2025",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/22/2025",
+        "day": "Monday",
+        "hours": 7.94
+      },
+      {
+        "date": "12/23/2025",
+        "day": "Tuesday",
+        "hours": 7.99
+      },
+      {
+        "date": "12/24/2025",
+        "day": "Wednesday",
+        "hours": 8.25
+      },
+      {
+        "date": "12/25/2025",
+        "day": "Thursday",
+        "hours": 7.67
+      },
+      {
+        "date": "12/26/2025",
+        "day": "Friday",
+        "hours": 8.34
+      },
+      {
+        "date": "12/27/2025",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/28/2025",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/29/2025",
+        "day": "Monday",
+        "hours": 7.82
+      },
+      {
+        "date": "12/30/2025",
+        "day": "Tuesday",
+        "hours": 7.53
+      },
+      {
+        "date": "12/31/2025",
+        "day": "Wednesday",
+        "hours": 8.01
+      },
+      {
+        "date": "01/01/2026",
+        "day": "Thursday",
+        "hours": 8.08
+      },
+      {
+        "date": "01/02/2026",
+        "day": "Friday",
+        "hours": 6.88
+      }
+    ],
+    "total_hours": "78.51",
+    "supervisor_sign": "Erica Watson"
+  },
+  {
+    "document_id": "TC-EMP-403831-20251212",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Deanna Robinson",
+    "employee_id": "EMP-403831",
+    "period": "11/29/2025 - 12/12/2025",
+    "department": "Editor, film/video",
+    "entries": [
+      {
+        "date": "11/29/2025",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "11/30/2025",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/01/2025",
+        "day": "Monday",
+        "hours": 8.26
+      },
+      {
+        "date": "12/02/2025",
+        "day": "Tuesday",
+        "hours": 8.17
+      },
+      {
+        "date": "12/03/2025",
+        "day": "Wednesday",
+        "hours": 7.43
+      },
+      {
+        "date": "12/04/2025",
+        "day": "Thursday",
+        "hours": 7.52
+      },
+      {
+        "date": "12/05/2025",
+        "day": "Friday",
+        "hours": 7.66
+      },
+      {
+        "date": "12/06/2025",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/07/2025",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/08/2025",
+        "day": "Monday",
+        "hours": 7.45
+      },
+      {
+        "date": "12/09/2025",
+        "day": "Tuesday",
+        "hours": 8.24
+      },
+      {
+        "date": "12/10/2025",
+        "day": "Wednesday",
+        "hours": 7.95
+      },
+      {
+        "date": "12/11/2025",
+        "day": "Thursday",
+        "hours": 7.92
+      },
+      {
+        "date": "12/12/2025",
+        "day": "Friday",
+        "hours": 7.29
+      }
+    ],
+    "total_hours": "77.89",
+    "supervisor_sign": "Darius Nguyen"
+  },
+  {
+    "document_id": "TC-EMP-379662-20260102",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Elizabeth Yu",
+    "employee_id": "EMP-379662",
+    "period": "12/20/2025 - 01/02/2026",
+    "department": "Nurse, children's",
+    "entries": [
+      {
+        "date": "12/20/2025",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/21/2025",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/22/2025",
+        "day": "Monday",
+        "hours": 7.98
+      },
+      {
+        "date": "12/23/2025",
+        "day": "Tuesday",
+        "hours": 8.61
+      },
+      {
+        "date": "12/24/2025",
+        "day": "Wednesday",
+        "hours": 8.17
+      },
+      {
+        "date": "12/25/2025",
+        "day": "Thursday",
+        "hours": 8.19
+      },
+      {
+        "date": "12/26/2025",
+        "day": "Friday",
+        "hours": 8.72
+      },
+      {
+        "date": "12/27/2025",
+        "day": "Saturday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/28/2025",
+        "day": "Sunday",
+        "hours": "OFF"
+      },
+      {
+        "date": "12/29/2025",
+        "day": "Monday",
+        "hours": 8.56
+      },
+      {
+        "date": "12/30/2025",
+        "day": "Tuesday",
+        "hours": 8.75
+      },
+      {
+        "date": "12/31/2025",
+        "day": "Wednesday",
+        "hours": 7.91
+      },
+      {
+        "date": "01/01/2026",
+        "day": "Thursday",
+        "hours": 7.85
+      },
+      {
+        "date": "01/02/2026",
+        "day": "Friday",
+        "hours": 8.48
+      }
+    ],
+    "total_hours": "83.22",
+    "supervisor_sign": "John Dawson"
+  }
+]

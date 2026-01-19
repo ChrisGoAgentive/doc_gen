@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Participant Statement</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        body { font-family: Arial, sans-serif; font-size: 9pt; color: #333; }
+        .top-bar { background-color: #004488; color: white; padding: 15px; font-size: 14pt; font-weight: bold; margin: -0.5in -0.5in 20px -0.5in; }
+        
+        .columns { display: flex; justify-content: space-between; margin-bottom: 30px; }
+        .box { background-color: #f4f4f4; padding: 10px; width: 45%; border-radius: 5px; }
+        
+        h3 { color: #004488; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th { background-color: #eee; text-align: left; padding: 8px; font-size: 8pt; border-bottom: 2px solid #004488; }
+        td { padding: 8px; border-bottom: 1px solid #eee; }
+        .num { text-align: right; }
+        .total { font-weight: bold; background-color: #eef; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        RETIREMENT ACCOUNT STATEMENT
+    </div>
+
+    <div class="columns">
+        <div>
+            <strong>{{ data.participant_name }}</strong><br>
+            {{ data.participant_id }}<br><br>
+            <strong>Plan:</strong> {{ data.plan_name }}
+        </div>
+        <div style="text-align: right;">
+            <strong>Statement Period:</strong><br>
+            {{ data.period }}
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="box">
+            <div style="font-size: 10pt;">Your Account Balance</div>
+            <div style="font-size: 24pt; font-weight: bold; color: #004488;">${{ data.summary.closing_balance }}</div>
+        </div>
+        <div class="box">
+            <div style="font-size: 10pt;">Change in Value</div>
+            <div style="font-size: 18pt; font-weight: bold; color: green;">+${{ data.summary.change_in_value }}</div>
+        </div>
+    </div>
+
+    <h3>Investment Activity Detail</h3>
+    <table>
+        <thead>
+            <tr>
+                <th width="40%">Investment Option</th>
+                <th class="num">Beginning Balance</th>
+                <th class="num">Earnings / Gain</th>
+                <th class="num">Ending Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fund in data.funds %}
+            <tr>
+                <td>{{ fund.fund_name }}</td>
+                <td class="num">{{ fund.opening_balance }}</td>
+                <td class="num">{{ fund.earnings }}</td>
+                <td class="num">{{ fund.closing_balance }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="total">
+                <td>TOTAL</td>
+                <td class="num">{{ data.summary.opening_balance }}</td>
+                <td class="num">{{ data.summary.change_in_value }}</td>
+                <td class="num">{{ data.summary.closing_balance }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="font-size: 8pt; color: #777; margin-top: 50px;">
+        Past performance is not a guarantee of future results. Your earnings may fluctuate based on market conditions.
+    </div>
+</body>
+</html>

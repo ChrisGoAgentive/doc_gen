@@ -1,0 +1,282 @@
+[
+  {
+    "document_id": "ALLOC-EMP-736622",
+    "participant_name": "Cindy Becker",
+    "participant_id": "EMP-736622",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-12-10",
+    "effective_date": "2025-12-20",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2060",
+        "percent": "55%"
+      },
+      {
+        "fund": "Company Stock Fund",
+        "percent": "45%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-625667",
+    "participant_name": "Kathleen Deleon",
+    "participant_id": "EMP-625667",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-12-08",
+    "effective_date": "2025-12-21",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "Bond Market Index",
+        "percent": "1%"
+      },
+      {
+        "fund": "International Growth Fund",
+        "percent": "99%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-69878",
+    "participant_name": "Jamie Johnson",
+    "participant_id": "EMP-69878",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-11-11",
+    "effective_date": "2025-12-15",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "Bond Market Index",
+        "percent": "33%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2060",
+        "percent": "19%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "48%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-510849",
+    "participant_name": "Mrs. Jasmine Davis",
+    "participant_id": "EMP-510849",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-11-13",
+    "effective_date": "2025-12-21",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "Bond Market Index",
+        "percent": "24%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2060",
+        "percent": "18%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "51%"
+      },
+      {
+        "fund": "Company Stock Fund",
+        "percent": "7%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-584371",
+    "participant_name": "Amy Garrett",
+    "participant_id": "EMP-584371",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-11-03",
+    "effective_date": "2025-12-14",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "S&P 500 Index Fund",
+        "percent": "60%"
+      },
+      {
+        "fund": "International Growth Fund",
+        "percent": "40%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-466197",
+    "participant_name": "Lorraine Brown",
+    "participant_id": "EMP-466197",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-11-13",
+    "effective_date": "2025-12-14",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "Company Stock Fund",
+        "percent": "18%"
+      },
+      {
+        "fund": "International Growth Fund",
+        "percent": "20%"
+      },
+      {
+        "fund": "Bond Market Index",
+        "percent": "8%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "54%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-397056",
+    "participant_name": "Derek Lopez",
+    "participant_id": "EMP-397056",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-11-14",
+    "effective_date": "2025-12-22",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "International Growth Fund",
+        "percent": "18%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2060",
+        "percent": "66%"
+      },
+      {
+        "fund": "S&P 500 Index Fund",
+        "percent": "6%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "10%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-680567",
+    "participant_name": "Theresa Gomez",
+    "participant_id": "EMP-680567",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-11-19",
+    "effective_date": "2025-12-21",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "S&P 500 Index Fund",
+        "percent": "9%"
+      },
+      {
+        "fund": "Company Stock Fund",
+        "percent": "29%"
+      },
+      {
+        "fund": "Bond Market Index",
+        "percent": "62%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-910351",
+    "participant_name": "Michael Owen",
+    "participant_id": "EMP-910351",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-11-24",
+    "effective_date": "2025-12-18",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "Bond Market Index",
+        "percent": "15%"
+      },
+      {
+        "fund": "International Growth Fund",
+        "percent": "22%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2060",
+        "percent": "63%"
+      }
+    ]
+  },
+  {
+    "document_id": "ALLOC-EMP-812490",
+    "participant_name": "Jessica Dixon",
+    "participant_id": "EMP-812490",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "request_date": "2025-11-08",
+    "effective_date": "2025-12-18",
+    "current_allocation": [
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "100%"
+      }
+    ],
+    "new_allocation": [
+      {
+        "fund": "S&P 500 Index Fund",
+        "percent": "16%"
+      },
+      {
+        "fund": "Vanguard Target Retirement 2050",
+        "percent": "75%"
+      },
+      {
+        "fund": "Bond Market Index",
+        "percent": "9%"
+      }
+    ]
+  }
+]

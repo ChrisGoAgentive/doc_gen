@@ -1,0 +1,82 @@
+[
+  {
+    "document_id": "HR-EMP-18284",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Elizabeth Bentley",
+    "employee_id": "EMP-18284",
+    "dob": "2000-07-31",
+    "hire_date": "2021-03-18",
+    "department": "Biochemist, clinical",
+    "status": "Active",
+    "compensation": {
+      "type": "Hourly",
+      "rate": "50.65",
+      "effective_date": "2025-05-17",
+      "approved_by": "Steven Williams"
+    }
+  },
+  {
+    "document_id": "HR-EMP-582455",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Mary Terry",
+    "employee_id": "EMP-582455",
+    "dob": "1986-11-23",
+    "hire_date": "2022-01-27",
+    "department": "Chartered loss adjuster",
+    "status": "Active",
+    "compensation": {
+      "type": "Hourly",
+      "rate": "44.15",
+      "effective_date": "2025-10-09",
+      "approved_by": "Justin Collins Jr."
+    }
+  },
+  {
+    "document_id": "HR-EMP-18655",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Ryan Munoz",
+    "employee_id": "EMP-18655",
+    "dob": "1996-11-19",
+    "hire_date": "2021-07-16",
+    "department": "Network engineer",
+    "status": "Active",
+    "compensation": {
+      "type": "Hourly",
+      "rate": "52.79",
+      "effective_date": "2025-05-04",
+      "approved_by": "Jacqueline Solomon"
+    }
+  },
+  {
+    "document_id": "HR-EMP-403831",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Deanna Robinson",
+    "employee_id": "EMP-403831",
+    "dob": "1987-07-07",
+    "hire_date": "2024-02-27",
+    "department": "Editor, film/video",
+    "status": "Active",
+    "compensation": {
+      "type": "Hourly",
+      "rate": "37.07",
+      "effective_date": "2025-10-16",
+      "approved_by": "Tommy Reyes"
+    }
+  },
+  {
+    "document_id": "HR-EMP-379662",
+    "company_name": "ACME CORPORATION",
+    "employee_name": "Elizabeth Yu",
+    "employee_id": "EMP-379662",
+    "dob": "1966-11-08",
+    "hire_date": "2025-11-30",
+    "department": "Nurse, children's",
+    "status": "Active",
+    "compensation": {
+      "type": "Hourly",
+      "rate": "23.00",
+      "effective_date": "2025-10-29",
+      "approved_by": "Mary Salazar"
+    }
+  }
+]

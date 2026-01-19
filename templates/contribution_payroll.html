@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payroll Register - Contributions</title>
+    <style>
+        @page { size: letter landscape; margin: 0.5in; }
+        body { font-family: "Helvetica", sans-serif; font-size: 9pt; }
+        .header { border-bottom: 3px solid #333; margin-bottom: 20px; padding-bottom: 10px; display: flex; justify-content: space-between; }
+        .title { font-size: 14pt; font-weight: bold; }
+        
+        .emp-box { background: #f0f0f0; padding: 10px; margin-bottom: 15px; border-left: 4px solid #333; }
+        
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th { background-color: #333; color: #fff; text-align: left; padding: 8px; font-weight: normal; font-size: 8pt; text-transform: uppercase; }
+        td { border-bottom: 1px solid #ccc; padding: 8px; }
+        .num { text-align: right; }
+        .subtotal { font-weight: bold; background-color: #eef; }
+        
+        .highlight { background-color: #ffffcc; font-weight: bold; } /* Highlights the 401k columns */
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <div class="title">PAYROLL REGISTER</div>
+            <div>{{ data.company_name }}</div>
+        </div>
+        <div style="text-align: right;">
+            <div><strong>Run Date:</strong> {{ data.run_date }}</div>
+            <div><strong>Pay Period:</strong> {{ data.period }}</div>
+        </div>
+    </div>
+
+    <div class="emp-box">
+        <strong>Employee:</strong> {{ data.employee_name }} ({{ data.employee_id }})<br>
+        <span style="font-size: 8pt; color: #666;">Scenario: {{ data.scenario }}</span>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="30%">Description</th>
+                <th width="15%" class="num">Rate / Details</th>
+                <th width="15%" class="num">Hours</th>
+                <th width="20%" class="num">Amount</th>
+                <th width="20%" class="num">YTD (Est)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- EARNINGS -->
+            <tr>
+                <td>Regular Earnings</td>
+                <td class="num">{{ data.earnings.rate }}</td>
+                <td class="num">{{ data.earnings.hours }}</td>
+                <td class="num">{{ data.earnings.gross }}</td>
+                <td class="num">-</td>
+            </tr>
+            <tr class="subtotal">
+                <td colspan="3">TOTAL GROSS PAY</td>
+                <td class="num">{{ data.earnings.gross }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="margin-top: 20px; font-weight: bold; font-size: 10pt;">Deductions & Taxes</div>
+    <table>
+        <thead>
+            <tr>
+                <th width="40%">Deduction Type</th>
+                <th width="30%" class="num">Current Amount</th>
+                <th width="30%">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 401k SECTION (Highlighted for Audit) -->
+            <tr class="highlight">
+                <td>401(k) Pre-Tax Deferral</td>
+                <td class="num">{{ data.deductions.pre_tax_401k }}</td>
+                <td style="font-size: 8pt; padding-left: 15px;">Plan Code: 401K-PRE</td>
+            </tr>
+            <tr class="highlight">
+                <td>Roth 401(k) Deferral</td>
+                <td class="num">{{ data.deductions.roth_401k }}</td>
+                <td style="font-size: 8pt; padding-left: 15px;">Plan Code: 401K-ROTH</td>
+            </tr>
+            
+            <!-- TAXES -->
+            <tr>
+                <td>Federal Withholding</td>
+                <td class="num">{{ data.deductions.fed_tax }}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Social Security & Medicare</td>
+                <td class="num">{{ data.deductions.fica }}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>State Withholding</td>
+                <td class="num">{{ data.deductions.state }}</td>
+                <td></td>
+            </tr>
+            
+            <tr class="subtotal" style="border-top: 2px solid #000;">
+                <td>NET PAY</td>
+                <td class="num">{{ data.net_pay }}</td>
+                <td>Check # GENERATED</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,87 @@
+[
+  {
+    "document_id": "REG-EMP-18284-20260116",
+    "company_name": "ACME CORPORATION",
+    "run_date": "01/16/2026",
+    "period": "12/27/2025 - 01/09/2026",
+    "employee_name": "Elizabeth Bentley",
+    "employee_id": "EMP-18284",
+    "line_items": [
+      {
+        "type": "Regular Earnings",
+        "rate": "50.65",
+        "hours": "75.24",
+        "amount": "3,810.91"
+      }
+    ],
+    "total_gross": "3,810.91"
+  },
+  {
+    "document_id": "REG-EMP-582455-20260116",
+    "company_name": "ACME CORPORATION",
+    "run_date": "01/16/2026",
+    "period": "12/27/2025 - 01/09/2026",
+    "employee_name": "Mary Terry",
+    "employee_id": "EMP-582455",
+    "line_items": [
+      {
+        "type": "Regular Earnings",
+        "rate": "44.15",
+        "hours": "80.54",
+        "amount": "3,555.84"
+      }
+    ],
+    "total_gross": "3,555.84"
+  },
+  {
+    "document_id": "REG-EMP-18655-20260109",
+    "company_name": "ACME CORPORATION",
+    "run_date": "01/09/2026",
+    "period": "12/20/2025 - 01/02/2026",
+    "employee_name": "Ryan Munoz",
+    "employee_id": "EMP-18655",
+    "line_items": [
+      {
+        "type": "Regular Earnings",
+        "rate": "52.79",
+        "hours": "78.51",
+        "amount": "4,144.54"
+      }
+    ],
+    "total_gross": "4,144.54"
+  },
+  {
+    "document_id": "REG-EMP-403831-20251219",
+    "company_name": "ACME CORPORATION",
+    "run_date": "12/19/2025",
+    "period": "11/29/2025 - 12/12/2025",
+    "employee_name": "Deanna Robinson",
+    "employee_id": "EMP-403831",
+    "line_items": [
+      {
+        "type": "Regular Earnings",
+        "rate": "37.07",
+        "hours": "77.89",
+        "amount": "2,887.38"
+      }
+    ],
+    "total_gross": "2,887.38"
+  },
+  {
+    "document_id": "REG-EMP-379662-20260109",
+    "company_name": "ACME CORPORATION",
+    "run_date": "01/09/2026",
+    "period": "12/20/2025 - 01/02/2026",
+    "employee_name": "Elizabeth Yu",
+    "employee_id": "EMP-379662",
+    "line_items": [
+      {
+        "type": "Regular Earnings",
+        "rate": "23.00",
+        "hours": "83.22",
+        "amount": "1,914.06"
+      }
+    ],
+    "total_gross": "1,914.06"
+  }
+]

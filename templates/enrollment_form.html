@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan Enrollment Form</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        body { font-family: "Helvetica", "Arial", sans-serif; font-size: 10pt; color: #333; }
+        .header { border-bottom: 3px solid #004488; margin-bottom: 20px; padding-bottom: 10px; }
+        .title { font-size: 18pt; font-weight: bold; color: #004488; text-transform: uppercase; }
+        .subtitle { font-size: 10pt; color: #666; margin-top: 5px; font-weight: bold; }
+        
+        .section { margin-bottom: 25px; border: 1px solid #ccc; padding: 15px; background: #fafafa; }
+        .section-title { font-weight: bold; font-size: 11pt; margin-bottom: 10px; color: #004488; text-transform: uppercase; border-bottom: 1px dotted #999; padding-bottom: 5px; }
+        
+        .row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .field-group { width: 48%; }
+        .label { font-weight: bold; font-size: 8pt; color: #666; text-transform: uppercase; }
+        .value { border-bottom: 1px solid #999; padding: 2px 0; min-height: 18px; }
+        
+        .checkbox-group { margin: 15px 0; border: 1px solid #ddd; padding: 10px; background: white; }
+        .checkbox-row { display: flex; align-items: center; margin-bottom: 8px; }
+        .box { width: 16px; height: 16px; border: 1px solid #000; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: sans-serif; }
+        
+        .signature-section { margin-top: 40px; }
+        .sig-line { border-top: 1px solid #000; width: 45%; padding-top: 5px; font-size: 9pt; }
+        
+        .waiver-text { font-style: italic; color: #555; font-size: 9pt; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">Benefit Plan Enrollment / Waiver</div>
+        <div class="subtitle">{{ data.plan_name }}</div>
+    </div>
+
+    <!-- PARTICIPANT INFORMATION -->
+    <div class="section">
+        <div class="section-title">1. Participant Information</div>
+        <div class="row">
+            <div class="field-group">
+                <div class="label">Name (Last, First, MI)</div>
+                <div class="value">{{ data.participant_name }}</div>
+            </div>
+            <div class="field-group">
+                <div class="label">Social Security Number</div>
+                <div class="value">{{ data.ssn_masked }}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group">
+                <div class="label">Date of Birth</div>
+                <div class="value">{{ data.dob }}</div>
+            </div>
+            <div class="field-group">
+                <div class="label">Date of Hire</div>
+                <div class="value">{{ data.hire_date }}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group">
+                <div class="label">Plan Entry Date</div>
+                <div class="value">{{ data.entry_date }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENROLLMENT ELECTION -->
+    <div class="section">
+        <div class="section-title">2. Enrollment Election</div>
+        
+        <div class="checkbox-group">
+            <div class="checkbox-row">
+                <div class="box">{% if data.decision == 'Participating' %}X{% endif %}</div>
+                <div><strong>I ELECT TO PARTICIPATE</strong> in the plan.</div>
+            </div>
+            {% if data.decision == 'Participating' %}
+            <div style="margin-left: 35px; margin-top: 5px; padding: 5px; background: #eef;">
+                I authorize my employer to deduct <strong>{{ data.contribution_rate }}%</strong> of my eligible compensation per pay period.<br>
+                <em>Contribution Type: {{ data.contribution_type }}</em>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="checkbox-group">
+            <div class="checkbox-row">
+                <div class="box">{% if data.decision == 'Waived' %}X{% endif %}</div>
+                <div><strong>I ELECT TO WAIVE PARTICIPATION</strong> at this time.</div>
+            </div>
+            {% if data.decision == 'Waived' %}
+            <div style="margin-left: 35px; margin-top: 5px;" class="waiver-text">
+                I understand that by waiving participation, I will not contribute to the plan and may lose the right to receive any employer matching contributions. I understand I may enroll at a later date subject to plan rules.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- BENEFICIARY DESIGNATION -->
+    {% if data.decision == 'Participating' %}
+    <div class="section">
+        <div class="section-title">3. Beneficiary Designation</div>
+        <div class="row">
+            <div class="field-group" style="width: 40%;">
+                <div class="label">Primary Beneficiary Name</div>
+                <div class="value">{{ data.beneficiary.name }}</div>
+            </div>
+            <div class="field-group" style="width: 25%;">
+                <div class="label">Relationship</div>
+                <div class="value">{{ data.beneficiary.relationship }}</div>
+            </div>
+            <div class="field-group" style="width: 25%;">
+                <div class="label">Share %</div>
+                <div class="value">{{ data.beneficiary.share }}</div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="section" style="opacity: 0.5;">
+        <div class="section-title">3. Beneficiary Designation</div>
+        <div style="padding: 10px;"><em>(Section not applicable for Waivers)</em></div>
+    </div>
+    {% endif %}
+
+    <!-- SIGNATURE -->
+    <div class="section">
+        <div class="section-title">4. Authorization & Signature</div>
+        <p style="font-size: 9pt; margin-bottom: 30px;">
+            By signing below, I certify that I have read the plan documents and understand the terms of my election.
+        </p>
+        
+        <div class="row signature-section">
+            <div class="sig-line">
+                <span style="font-family: 'Brush Script MT', cursive; font-size: 16pt;">{{ data.participant_name }}</span><br>
+                Participant Signature
+            </div>
+            <div class="sig-line">
+                {{ data.sign_date }}<br>
+                Date
+            </div>
+        </div>
+    </div>
+</body>
+</html>

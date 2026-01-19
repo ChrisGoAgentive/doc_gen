@@ -1,0 +1,56 @@
+[
+  {
+    "document_id": "TRUST-STMT-2024-Q4",
+    "trustee": "FIDELITY INSTITUTIONAL SERVICES",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "period": "October 1, 2024 - December 31, 2024",
+    "account_number": "TRUST-431820066",
+    "funds": [
+      {
+        "fund_name": "Vanguard Target Retirement 2050",
+        "ticker": "VFIFX",
+        "opening_balance": "3,613,170.13",
+        "earnings": "153,559.73",
+        "closing_balance": "3,766,729.86",
+        "rate_display": "4.25%"
+      },
+      {
+        "fund_name": "Vanguard Target Retirement 2060",
+        "ticker": "VTTSX",
+        "opening_balance": "5,734,789.91",
+        "earnings": "235,126.39",
+        "closing_balance": "5,969,916.30",
+        "rate_display": "4.10%"
+      },
+      {
+        "fund_name": "Fidelity 500 Index Fund",
+        "ticker": "FXAIX",
+        "opening_balance": "13,104,292.31",
+        "earnings": "805,913.98",
+        "closing_balance": "13,910,206.29",
+        "rate_display": "6.15%"
+      },
+      {
+        "fund_name": "Metropolitan West Total Return",
+        "ticker": "MWTRX",
+        "opening_balance": "11,426,830.34",
+        "earnings": "137,121.96",
+        "closing_balance": "11,563,952.30",
+        "rate_display": "1.20%"
+      },
+      {
+        "fund_name": "Company Stock Fund",
+        "ticker": "ACME",
+        "opening_balance": "10,912,770.18",
+        "earnings": "-272,819.25",
+        "closing_balance": "10,639,950.93",
+        "rate_display": "-2.50%"
+      }
+    ],
+    "summary": {
+      "opening_balance": "44,791,852.87",
+      "total_earnings": "1,058,902.81",
+      "closing_balance": "45,850,755.68"
+    }
+  }
+]

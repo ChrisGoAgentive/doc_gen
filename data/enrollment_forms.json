@@ -1,0 +1,287 @@
+[
+  {
+    "document_id": "ENROLL-EMP-982031",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Cameron Johnson",
+    "participant_id": "EMP-982031",
+    "ssn_masked": "***-**-4767",
+    "dob": "1967-06-29",
+    "hire_date": "2023-05-01",
+    "entry_date": "2024-07-01",
+    "decision": "Participating",
+    "sign_date": "2024-06-02",
+    "contribution_rate": 8,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-204200",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Paige White",
+    "participant_id": "EMP-204200",
+    "ssn_masked": "***-**-4374",
+    "dob": "1981-05-08",
+    "hire_date": "2020-06-29",
+    "entry_date": "2021-07-01",
+    "decision": "Participating",
+    "sign_date": "2021-06-03",
+    "contribution_rate": 4,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-792462",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Patricia Cobb",
+    "participant_id": "EMP-792462",
+    "ssn_masked": "***-**-8508",
+    "dob": "1967-08-07",
+    "hire_date": "2023-04-20",
+    "entry_date": "2024-07-01",
+    "decision": "Waived",
+    "sign_date": "2024-06-05",
+    "contribution_rate": 0,
+    "contribution_type": "N/A",
+    "beneficiary": {
+      "name": "N/A",
+      "relationship": "N/A",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-412670",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Antonio Schwartz",
+    "participant_id": "EMP-412670",
+    "ssn_masked": "***-**-4030",
+    "dob": "1984-10-24",
+    "hire_date": "2023-06-22",
+    "entry_date": "2024-07-01",
+    "decision": "Participating",
+    "sign_date": "2024-05-23",
+    "contribution_rate": 6,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-476697",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Riley Padilla",
+    "participant_id": "EMP-476697",
+    "ssn_masked": "***-**-3695",
+    "dob": "1966-04-02",
+    "hire_date": "2021-12-09",
+    "entry_date": "2023-01-01",
+    "decision": "Participating",
+    "sign_date": "2022-12-01",
+    "contribution_rate": 6,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-473780",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Sharon Hill DDS",
+    "participant_id": "EMP-473780",
+    "ssn_masked": "***-**-9253",
+    "dob": "1976-10-16",
+    "hire_date": "2022-06-02",
+    "entry_date": "2023-07-01",
+    "decision": "Waived",
+    "sign_date": "2023-05-20",
+    "contribution_rate": 0,
+    "contribution_type": "N/A",
+    "beneficiary": {
+      "name": "N/A",
+      "relationship": "N/A",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-469312",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Nicholas Garcia",
+    "participant_id": "EMP-469312",
+    "ssn_masked": "***-**-5255",
+    "dob": "1983-01-31",
+    "hire_date": "2020-05-02",
+    "entry_date": "2021-07-01",
+    "decision": "Participating",
+    "sign_date": "2021-05-22",
+    "contribution_rate": 5,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-142152",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Kristina Reyes",
+    "participant_id": "EMP-142152",
+    "ssn_masked": "***-**-7067",
+    "dob": "1988-10-20",
+    "hire_date": "2020-11-02",
+    "entry_date": "2022-01-01",
+    "decision": "Participating",
+    "sign_date": "2021-12-13",
+    "contribution_rate": 7,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-162792",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "William Austin",
+    "participant_id": "EMP-162792",
+    "ssn_masked": "***-**-5558",
+    "dob": "1980-06-24",
+    "hire_date": "2022-03-06",
+    "entry_date": "2023-07-01",
+    "decision": "Participating",
+    "sign_date": "2023-06-08",
+    "contribution_rate": 6,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-197276",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Jimmy Sanchez",
+    "participant_id": "EMP-197276",
+    "ssn_masked": "***-**-8596",
+    "dob": "1985-08-10",
+    "hire_date": "2023-06-19",
+    "entry_date": "2024-07-01",
+    "decision": "Participating",
+    "sign_date": "2024-05-25",
+    "contribution_rate": 7,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-292883",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Jeremiah Maldonado",
+    "participant_id": "EMP-292883",
+    "ssn_masked": "***-**-0509",
+    "dob": "1986-12-20",
+    "hire_date": "2022-04-29",
+    "entry_date": "2023-07-01",
+    "decision": "Waived",
+    "sign_date": "2023-05-19",
+    "contribution_rate": 0,
+    "contribution_type": "N/A",
+    "beneficiary": {
+      "name": "N/A",
+      "relationship": "N/A",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-607426",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Amanda Ross",
+    "participant_id": "EMP-607426",
+    "ssn_masked": "***-**-5793",
+    "dob": "1991-03-11",
+    "hire_date": "2021-11-30",
+    "entry_date": "2023-01-01",
+    "decision": "Participating",
+    "sign_date": "2022-11-21",
+    "contribution_rate": 8,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-357464",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Susan Miller",
+    "participant_id": "EMP-357464",
+    "ssn_masked": "***-**-1899",
+    "dob": "2000-01-07",
+    "hire_date": "2023-02-09",
+    "entry_date": "2024-07-01",
+    "decision": "Participating",
+    "sign_date": "2024-06-15",
+    "contribution_rate": 3,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-15658",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Meghan Hawkins",
+    "participant_id": "EMP-15658",
+    "ssn_masked": "***-**-0390",
+    "dob": "1973-11-09",
+    "hire_date": "2020-07-15",
+    "entry_date": "2022-01-01",
+    "decision": "Participating",
+    "sign_date": "2021-12-03",
+    "contribution_rate": 7,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  },
+  {
+    "document_id": "ENROLL-EMP-632325",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "participant_name": "Jaime Bell",
+    "participant_id": "EMP-632325",
+    "ssn_masked": "***-**-5470",
+    "dob": "1991-07-22",
+    "hire_date": "2020-05-07",
+    "entry_date": "2021-07-01",
+    "decision": "Participating",
+    "sign_date": "2021-05-30",
+    "contribution_rate": 4,
+    "contribution_type": "Pre-Tax",
+    "beneficiary": {
+      "name": "Generic Beneficiary (Spouse/Trust)",
+      "relationship": "Spouse",
+      "share": "100%"
+    }
+  }
+]

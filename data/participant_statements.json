@@ -1,0 +1,150 @@
+[
+  {
+    "document_id": "STMT-EMP-427292-2024Q4",
+    "participant_name": "Megan Cohen",
+    "participant_id": "EMP-427292",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "period": "October 1, 2024 - December 31, 2024",
+    "funds": [
+      {
+        "fund_name": "Metropolitan West Total Return",
+        "opening_balance": "45,901.77",
+        "earnings": "550.82",
+        "closing_balance": "46,452.59"
+      },
+      {
+        "fund_name": "Vanguard Target Retirement 2050",
+        "opening_balance": "83,096.00",
+        "earnings": "3,531.58",
+        "closing_balance": "86,627.58"
+      },
+      {
+        "fund_name": "Fidelity 500 Index Fund",
+        "opening_balance": "11,644.72",
+        "earnings": "716.15",
+        "closing_balance": "12,360.87"
+      }
+    ],
+    "summary": {
+      "opening_balance": "140,642.49",
+      "change_in_value": "4,798.55",
+      "closing_balance": "145,441.04"
+    }
+  },
+  {
+    "document_id": "STMT-EMP-103107-2024Q4",
+    "participant_name": "Isabella Wilson",
+    "participant_id": "EMP-103107",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "period": "October 1, 2024 - December 31, 2024",
+    "funds": [
+      {
+        "fund_name": "Fidelity 500 Index Fund",
+        "opening_balance": "47,724.65",
+        "earnings": "2,935.07",
+        "closing_balance": "50,659.72"
+      },
+      {
+        "fund_name": "Vanguard Target Retirement 2050",
+        "opening_balance": "78,479.34",
+        "earnings": "3,335.37",
+        "closing_balance": "81,814.71"
+      }
+    ],
+    "summary": {
+      "opening_balance": "126,203.99",
+      "change_in_value": "6,270.44",
+      "closing_balance": "132,474.43"
+    }
+  },
+  {
+    "document_id": "STMT-EMP-357967-2024Q4",
+    "participant_name": "James Holmes",
+    "participant_id": "EMP-357967",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "period": "October 1, 2024 - December 31, 2024",
+    "funds": [
+      {
+        "fund_name": "Vanguard Target Retirement 2050",
+        "opening_balance": "83,546.75",
+        "earnings": "3,550.74",
+        "closing_balance": "87,097.49"
+      },
+      {
+        "fund_name": "Metropolitan West Total Return",
+        "opening_balance": "114,942.62",
+        "earnings": "1,379.31",
+        "closing_balance": "116,321.93"
+      },
+      {
+        "fund_name": "Vanguard Target Retirement 2060",
+        "opening_balance": "50,755.02",
+        "earnings": "2,080.96",
+        "closing_balance": "52,835.98"
+      }
+    ],
+    "summary": {
+      "opening_balance": "249,244.39",
+      "change_in_value": "7,011.01",
+      "closing_balance": "256,255.40"
+    }
+  },
+  {
+    "document_id": "STMT-EMP-667508-2024Q4",
+    "participant_name": "Rebecca Colon",
+    "participant_id": "EMP-667508",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "period": "October 1, 2024 - December 31, 2024",
+    "funds": [
+      {
+        "fund_name": "Metropolitan West Total Return",
+        "opening_balance": "77,436.50",
+        "earnings": "929.24",
+        "closing_balance": "78,365.74"
+      },
+      {
+        "fund_name": "Vanguard Target Retirement 2060",
+        "opening_balance": "79,534.50",
+        "earnings": "3,260.91",
+        "closing_balance": "82,795.41"
+      }
+    ],
+    "summary": {
+      "opening_balance": "156,971.00",
+      "change_in_value": "4,190.15",
+      "closing_balance": "161,161.15"
+    }
+  },
+  {
+    "document_id": "STMT-EMP-412173-2024Q4",
+    "participant_name": "Dana Rodriguez",
+    "participant_id": "EMP-412173",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "period": "October 1, 2024 - December 31, 2024",
+    "funds": [
+      {
+        "fund_name": "Fidelity 500 Index Fund",
+        "opening_balance": "69,726.71",
+        "earnings": "4,288.19",
+        "closing_balance": "74,014.90"
+      },
+      {
+        "fund_name": "Vanguard Target Retirement 2060",
+        "opening_balance": "130,376.20",
+        "earnings": "5,345.42",
+        "closing_balance": "135,721.62"
+      },
+      {
+        "fund_name": "Metropolitan West Total Return",
+        "opening_balance": "61,031.34",
+        "earnings": "732.38",
+        "closing_balance": "61,763.72"
+      }
+    ],
+    "summary": {
+      "opening_balance": "261,134.25",
+      "change_in_value": "10,365.99",
+      "closing_balance": "271,500.24"
+    }
+  }
+]

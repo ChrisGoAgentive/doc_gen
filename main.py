@@ -61,8 +61,7 @@ def main():
         
         # Step A: Render Template to HTML String (In-Memory)
         # Filters like | currency and | fmt_date are now available inside the template
-        html_content = html_gen.render(args.template, doc)
-        
+        html_content = html_gen.render(args.template, {'data': doc})       
         if html_content:
             # Step B: Convert HTML String to PDF File
             if pdf_gen.render_html_to_pdf(html_content, pdf_out_path):

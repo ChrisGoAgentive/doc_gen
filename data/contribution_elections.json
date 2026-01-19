@@ -1,0 +1,67 @@
+[
+  {
+    "document_id": "ELECTION-EMP-97507",
+    "participant_name": "Amy Sanders",
+    "participant_id": "EMP-97507",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "sign_date": "2025-11-29",
+    "effective_date": "2025-12-26",
+    "data": {
+      "method": "Percent",
+      "pre_tax_value": 10,
+      "roth_value": 0
+    }
+  },
+  {
+    "document_id": "ELECTION-EMP-73277",
+    "participant_name": "Wayne Christensen",
+    "participant_id": "EMP-73277",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "sign_date": "2025-11-21",
+    "effective_date": "2025-12-18",
+    "data": {
+      "method": "Percent",
+      "pre_tax_value": 0,
+      "roth_value": 9
+    }
+  },
+  {
+    "document_id": "ELECTION-EMP-791844",
+    "participant_name": "Dawn Simon",
+    "participant_id": "EMP-791844",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "sign_date": "2025-11-26",
+    "effective_date": "2025-12-23",
+    "data": {
+      "method": "Dollar",
+      "pre_tax_value": 250,
+      "roth_value": 0
+    }
+  },
+  {
+    "document_id": "ELECTION-EMP-450432",
+    "participant_name": "Matthew Burnett",
+    "participant_id": "EMP-450432",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "sign_date": "2025-11-20",
+    "effective_date": "2025-12-17",
+    "data": {
+      "method": "Dollar",
+      "pre_tax_value": 0,
+      "roth_value": 25
+    }
+  },
+  {
+    "document_id": "ELECTION-EMP-456073",
+    "participant_name": "David Hart",
+    "participant_id": "EMP-456073",
+    "plan_name": "ACME CORP 401(K) PROFIT SHARING PLAN",
+    "sign_date": "2025-11-24",
+    "effective_date": "2025-12-21",
+    "data": {
+      "method": "Percent",
+      "pre_tax_value": 6,
+      "roth_value": 4
+    }
+  }
+]

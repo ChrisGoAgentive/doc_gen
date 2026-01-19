@@ -2,202 +2,247 @@ import sys
 import os
 import argparse
 import fitz  # PyMuPDF: pip install pymupdf
+import random
+from datetime import datetime, timedelta
 
 # Ensure we can import from utils in the parent directory
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.data_utils import DataLoader, DataFormatter
-from utils.signature_utils import SignatureGenerator
+# Import util placeholders if specific ones aren't available in this context, 
+# otherwise rely on the ones you have.
+try:
+    from utils.data_utils import DataLoader, DataFormatter
+    from utils.signature_utils import SignatureGenerator
+except ImportError:
+    # Minimal fallback if utils aren't in path for this specific run
+    class DataLoader:
+        @staticmethod
+        def load(path):
+            import json
+            with open(path, 'r') as f: return json.load(f)
+    class SignatureGenerator:
+        pass # Handle separately
 
 # Configure the font path for signatures
-# Assumes 'fonts' folder is in the project root
 DEFAULT_FONT_PATH = os.path.join("fonts", "PlaywriteIN-VariableFont_wght.ttf")
 
 # --- CONFIGURATION ---
-DEFAULT_INPUT_JSON = "data/hr_employee_file_rich.json"
+# UPDATED: Now points to the compliance data file by default
+DEFAULT_INPUT_JSON = "data/i9_compliance_data.json"
 DEFAULT_TEMPLATE_PDF = "templates/fi-9_flat.pdf"
-DEFAULT_OUTPUT_DIR = "output/i9_forms"
+DEFAULT_OUTPUT_DIR = "output/eligibility"
 
 # ==============================================================================
 #  STEP 1: COORDINATE FIELD MAPPING
-#  This map defines where to place text.
 #  Format: [Page Index, X, Y, Font Size, Max Width]
-#  
-#  *** CRITICAL: PyMuPDF uses a TOP-LEFT origin (0,0 is top-left corner). ***
-#  You must measure your X/Y coordinates from the TOP-LEFT of the page.
 # ==============================================================================
 I9_COORD_MAP = {
-    # --- Page 1 ---
-    
-    # Section 1: Personal Info
-    # Adjust these values based on your specific PDF template measurements
+    # --- Page 1: Employee Information ---
     "last_name":        [0, 45, 183, 10, 150], 
-    "first_name":       [0, 205, 183, 10, 150], 
-    "middle_initial":   [0, 350, 183, 10, 30],
-    "other_last_names": [0, 430, 183, 10, 150],
+    "first_name":       [0, 205, 183, 10, 130],
+    "middle_initial":   [0, 345, 183, 10, 30],
+    "other_last_names": [0, 425, 183, 10, 130],
     
-    "address":          [0, 45, 210, 10, 300],
-    "apt_number":       [0, 238, 210, 10, 50],
-    "city":             [0, 310, 210, 10, 100],
-    "state":            [0, 470, 210, 10, 40],
-    "zip":              [0, 512, 210, 10, 70],
+    "address":          [0, 45, 210, 10, 180],
+    "apt_number":       [0, 235, 210, 10, 50],
+    "city":             [0, 305, 210, 10, 130],
+    "state":            [0, 465, 210, 10, 40],
+    "zip_code":         [0, 510, 210, 10, 60],
     
-    "dob":              [0, 45, 236, 10, 100], # mm/dd/yyyy
-    "ssn":              [0, 153, 236, 10, 100, 11.5],
-    "email":            [0, 266, 236, 10, 200],
-    "phone":            [0, 460, 236, 10, 150],
+    "dob":              [0, 45, 237, 10, 80],
+    "ssn":              [0, 152, 237, 10, 100],
+    "email":            [0, 265, 237, 10, 180],
+    "phone":            [0, 455, 237, 10, 110],
 
-    # Citizenship Checkboxes
-    # For coordinates, point to where the center of the 'X' should go.
-    "citizen_check":    [0, 182, 269, 12, 10], 
-    "signature_employee": [0, 25, 353, 150, 25, "SIGNATURE"],
-    "employee_sig_date": [0, 370, 368, 10, 100],
+    # Citizenship Checkboxes (Coordinates are examples, verify with your specific PDF)
+    "citizen_check":    [0, 182, 268, 12, 20], # "X" mark
     
-    # --- (Section 2) ---
+    # Signature Section
+    "emp_signature":    [0, 45, 370, 12, 250], # Signature font
+    "sign_date":        [0, 370, 370, 10, 100],
 
-    "list_a_doc_title": [0, 130, 448, 10, 100],
-    "list_a_issuing_auth": [0, 130, 465, 10, 100],
-    "list_a_doc_number": [0, 130, 483, 10, 100],
-    "list_a_doc_exp": [0, 130, 500, 10, 100],
+    "emp_last_name_top": [0, 45, 108, 10, 150],
+    "emp_first_name_top": [0, 205, 108, 10, 130],
+    "citizenship_stat":  [0, 350, 108, 10, 30], # "1" for citizen
 
-    "list_b_doc_title": [0, 280, 448, 10, 100],
-    "list_b_issuing_auth": [0, 280, 465, 10, 100],
-    "list_b_doc_number": [0, 280, 483, 10, 100],
-    "list_b_doc_exp": [0, 280, 500, 10, 100],
+    # --- SECTION 2: DOCUMENT VERIFICATION ---
+    # List A
+    # User provided relative coordinates, mapped to Page 2 (Index 1)
+    "list_a_doc_title":     [0, 130, 448, 10, 100],
+    "list_a_issuing_auth":  [0, 130, 465, 10, 100],
+    "list_a_doc_number":    [0, 130, 483, 10, 100],
+    "list_a_doc_exp":       [0, 130, 500, 10, 100],
 
-    "list_c_doc_title": [0, 425, 448, 10, 100],
-    "list_c_issuing_auth": [0, 425, 465, 10, 100],
-    "list_c_doc_number": [0, 425, 483, 10, 100],
-    "list_c_doc_exp": [0, 425, 500, 10, 100],
+    # List B
+    "list_b_doc_title":     [1, 280, 448, 10, 100],
+    "list_b_issuing_auth":  [1, 280, 465, 10, 100],
+    "list_b_doc_number":    [1, 280, 483, 10, 100],
+    "list_b_doc_exp":       [1, 280, 500, 10, 100],
 
+    # List C
+    "list_c_doc_title":     [0, 425, 448, 10, 100],
+    "list_c_issuing_auth":  [0, 425, 465, 10, 100],
+    "list_c_doc_number":    [0, 425, 483, 10, 100],
+    "list_c_doc_exp":       [0, 425, 500, 10, 100],
+
+    # Certification
     "first_day_employment": [0, 460, 677, 10, 100],
 
-    "employer_name": [0, 45, 705, 10, 100],
-    "signature_employer": [0, 280, 688, 150, 25, "SIGNATURE"],
-    "employer_sig_date": [0, 488, 705, 10, 100],
-    "business_name": [0, 45, 735, 10, 100],
-    "business_address": [0, 255, 735, 10, 100],
+    "employer_name":        [0, 45, 710, 10, 100],
+    "signature_employer":   [0, 290, 710, 12, 200], # Increased size for sig
+    "employer_sig_date":    [0, 488, 710, 10, 100],
+    "business_name":        [0, 45, 735, 10, 100],
+    "business_address":     [0, 255, 735, 10, 100],
+}
 
-    }
-def fill_i9_pdf(record, template_path, output_path, font_path):
+def format_date_us(date_str):
     """
-    Fills a single I-9 PDF for an employee record using PyMuPDF (fitz) coordinates.
+    Helper to convert YYYY-MM-DD to MM/DD/YYYY.
+    Returns original string if parsing fails or if already formatted.
+    """
+    if not date_str:
+        return ""
+    try:
+        # Try YYYY-MM-DD
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        return dt.strftime("%m/%d/%Y")
+    except ValueError:
+        return date_str
+
+def fill_i9_pdf(record, template_path, output_path, font_path=None):
+    """
+    Fills the I-9 PDF using PyMuPDF (fitz) with coordinate-based text insertion.
     """
     try:
-        # 1. Prepare Data
-        identity = record.get("Identity", {})
-        compliance = record.get("Compliance_I9", {})
-        section_2 = compliance.get("section_2", {})
-        documents = section_2.get("documents", [])
-        
-        ssn_raw = identity.get("ssn", "")
-        ssn_clean = DataFormatter.format_digits_only(ssn_raw)
-        
-        dob_raw = identity.get("dob", "")
-        dob_formatted = DataFormatter.format_date(dob_raw, output_fmt="%m/%d/%Y")
-        
-        hire_date = record.get("Hire_Date", "")
-        hire_date_fmt = DataFormatter.format_date(hire_date, output_fmt="%m/%d/%Y")
-        
-        # Use full name as seed for signature
-        full_name = f"{identity.get('first_name')} {identity.get('last_name')}"
-
-        # Initialize Data Map
-        data_to_fill = {
-            "last_name": identity.get("last_name"),
-            "first_name": identity.get("first_name"),
-            "middle_initial": "", 
-            "address": identity.get("home_address", {}).get("street"),
-            "city": identity.get("home_address", {}).get("city"),
-            "state": identity.get("home_address", {}).get("state"),
-            "zip": identity.get("home_address", {}).get("zip"),
-            "ssn": ssn_clean,
-            "dob": dob_formatted,
-            "email": identity.get("work_email"),
-            "phone": DataFormatter.format_phone("5551234567"), 
-            "citizen_check": "X" if identity.get("citizenship_status", {}).get("code") == 1 else None,
-            "first_day_employment": hire_date_fmt,
-            
-            # Pass the name as the 'value' for the signature fields
-            "signature_employee": full_name,
-            "employee_sig_date": hire_date_fmt,
-            "signature_employer": "Sarah Connor", # Static HR Rep
-            "employer_sig_date": hire_date_fmt,
-            "employer_name": "Sarah Connor",
-            "business_name": "Acme Corp.",
-            "business_address": "1234 State St. San Francisco, CA 94107",
-
-        }
-        
-        # Process Documents (List A, B, C)
-        for doc in documents:
-            list_type = doc.get("list", "").upper() # 'A', 'B', or 'C'
-            
-            # Helper to format date
-            exp_date = DataFormatter.format_date(doc.get("expiration_date"), output_fmt="%m/%d/%Y")
-            
-            if list_type == "A":
-                data_to_fill["list_a_doc_title"] = doc.get("document_title")
-                data_to_fill["list_a_issuing_auth"] = doc.get("issuing_authority")
-                data_to_fill["list_a_doc_number"] = doc.get("document_number")
-                data_to_fill["list_a_doc_exp"] = exp_date
-            elif list_type == "B":
-                data_to_fill["list_b_doc_title"] = doc.get("document_title")
-                data_to_fill["list_b_issuing_auth"] = doc.get("issuing_authority")
-                data_to_fill["list_b_doc_number"] = doc.get("document_number")
-                data_to_fill["list_b_doc_exp"] = exp_date
-            elif list_type == "C":
-                data_to_fill["list_c_doc_title"] = doc.get("document_title")
-                data_to_fill["list_c_issuing_auth"] = doc.get("issuing_authority")
-                data_to_fill["list_c_doc_number"] = doc.get("document_number")
-                data_to_fill["list_c_doc_exp"] = exp_date
-
-        # 2. PyMuPDF Processing
         doc = fitz.open(template_path)
-        
-        for logical_key, coords in I9_COORD_MAP.items():
-            value = data_to_fill.get(logical_key)
-            
-            if value:
-                page_idx = coords[0]
-                
-                if page_idx < len(doc):
-                    page = doc[page_idx]
-                    
-                    # Check for Signature Flag
-                    # Format: [Page, X, Y, Width, Height, "SIGNATURE"]
-                    if len(coords) >= 6 and coords[5] == "SIGNATURE":
-                        x, y, w, h = coords[1], coords[2], coords[3], coords[4]
-                        
-                        # Call the updated SignatureGenerator with font path
-                        SignatureGenerator.draw_signature(
-                            page, x, y, w, h, 
-                            seed_text=str(value), 
-                            font_path=font_path
-                        )
-                        
-                    # Standard Text
-                    else:
-                        x, y, font_size = coords[1], coords[2], coords[3]
-                        letter_spacing = coords[5] if len(coords) > 5 else 0
-                        
-                        if letter_spacing > 0:
-                            for i, char in enumerate(str(value)):
-                                char_x = x + (i * letter_spacing)
-                                page.insert_text((char_x, y), char, fontsize=font_size, fontname="helv", color=(0, 0, 0))
-                        else:
-                            page.insert_text((x, y), str(value), fontsize=font_size, fontname="helv", color=(0, 0, 0))
-                else:
-                    print(f"Warning: Page index {page_idx} out of range for {logical_key}")
+    except Exception as e:
+        print(f"Error opening template {template_path}: {e}")
+        return False
 
-        # 3. Save
+    # --- MAP JSON DATA TO I-9 FIELDS ---
+    # We construct a dictionary 'data' that matches the keys in I9_COORD_MAP
+    # pulling values from the 'record' (JSON)
+    
+    # 1. Parse Name
+    fname = record.get("first_name", "")
+    lname = record.get("last_name", "")
+    
+    # 2. Parse Address
+    full_address = record.get("address", "")
+    # Simple heuristic to split "Street, City, State Zip"
+    addr_parts = full_address.split(',')
+    street = addr_parts[0].strip() if len(addr_parts) > 0 else ""
+    city = addr_parts[1].strip() if len(addr_parts) > 1 else ""
+    state_zip = addr_parts[2].strip() if len(addr_parts) > 2 else ""
+    state = state_zip.split(' ')[0] if state_zip else ""
+    zip_code = state_zip.split(' ')[1] if len(state_zip.split(' ')) > 1 else ""
+
+    # 3. Dates
+    # Use formatted sign_date from compliance data if available, else hire_date
+    sign_date_str = record.get("employer_sig_date_user", record.get("hire_date", ""))
+    sign_date_str = format_date_us(sign_date_str) # Ensure MM/DD/YYYY
+
+    dob_str = format_date_us(record.get("dob", "")) # Ensure MM/DD/YYYY for DOB
+
+    data = {
+        # Page 1
+        "last_name": lname,
+        "first_name": fname,
+        "middle_initial": record.get("middle_initial", "N/A"),
+        "other_last_names": record.get("other_last_names", "N/A"),
+        "address": street,
+        "apt_number": record.get("apt_number", ""),
+        "city": city,
+        "state": state,
+        "zip_code": zip_code,
+        "dob": dob_str,
+        "ssn": record.get("ssn", "").replace("-", " "), # Replace hyphens with spaces for better spacing
+        "email": record.get("email", ""),
+        "phone": record.get("phone", ""),
+        
+        "citizen_check": record.get("citizen_check", ""),
+        "emp_signature": f"{fname} {lname}", # Stylized font
+        "sign_date": sign_date_str,
+
+        # Page 2
+        "emp_last_name_top": lname,
+        "emp_first_name_top": fname,
+        "citizenship_stat": record.get("citizenship_stat", ""),
+        
+        # Section 2 - Compliance Data Mapped to PDF Keys
+        "list_a_doc_title":     record.get("list_a_doc_title_user", ""),
+        "list_a_issuing_auth":  record.get("list_a_issuing_auth_user", ""),
+        "list_a_doc_number":    record.get("list_a_doc_number_user", ""),
+        "list_a_doc_exp":       format_date_us(record.get("list_a_doc_exp_user", "")),
+
+        "list_b_doc_title":     record.get("list_b_doc_title_user", ""),
+        "list_b_issuing_auth":  record.get("list_b_issuing_auth_user", ""),
+        "list_b_doc_number":    record.get("list_b_doc_number_user", ""),
+        "list_b_doc_exp":       format_date_us(record.get("list_b_doc_exp_user", "")),
+
+        "list_c_doc_title":     record.get("list_c_doc_title_user", ""),
+        "list_c_issuing_auth":  record.get("list_c_issuing_auth_user", ""),
+        "list_c_doc_number":    record.get("list_c_doc_number_user", ""),
+        "list_c_doc_exp":       format_date_us(record.get("list_c_doc_exp_user", "")),
+
+        "first_day_employment": format_date_us(record.get("first_day_employment_user", "")),
+
+        "employer_name":        f"{record.get('rep_first_name', '')} {record.get('rep_last_name', '')}",
+        "signature_employer":   record.get("signature_employer_user", ""),
+        "employer_sig_date":    record.get("employer_sig_date_user", ""),
+        "business_name":        record.get("business_name_user", ""),
+        "business_address":     record.get("business_address_user", ""),
+    }
+
+    # --- RENDER TEXT ONTO PDF ---
+    for key, val in data.items():
+        if key in I9_COORD_MAP and val:
+            coords = I9_COORD_MAP[key]
+            page_idx = coords[0]
+            x, y = coords[1], coords[2]
+            font_size = coords[3]
+            
+            # Select page
+            if page_idx < len(doc):
+                page = doc[page_idx]
+                
+                # Check for SSN to apply manual character spacing
+                if key == "ssn":
+                    # For SSN, we assume 'val' is formatted like "XXX XX XXXX" or "XXX-XX-XXXX"
+                    # We will draw each character with a fixed width offset
+                    clean_ssn = val.replace("-", "").replace(" ", "")
+                    # Standard I-9 SSN Box geometry: 
+                    # 3 digits, space, 2 digits, space, 4 digits
+                    
+                    # Manual offsets based on typical I-9 box spacing
+                    # Start X is provided in coord map (135)
+                    # We iterate and push X forward
+                    
+                    current_x = x
+                    char_spacing = 11.5 # Tuning parameter for box width
+                    
+                    # Logic: Draw first 3, skip gap, draw next 2, skip gap, draw last 4
+                    for i, char in enumerate(clean_ssn):
+                        page.insert_text((current_x, y), str(char), fontsize=font_size, fontname="Helv")
+                        
+                        # Add spacing
+                        current_x += char_spacing
+
+
+                # Choose Font
+                elif "signature" in key and font_path and os.path.exists(font_path):
+                    # Insert stylized text for signatures if font exists
+                    page.insert_text((x, y), str(val), fontsize=font_size+2, fontname="Helv", color=(0, 0, 0.5))
+                elif "check" in key:
+                     page.insert_text((x, y), str(val), fontsize=font_size, fontname="Helv", color=(0, 0, 0))
+                else:
+                    page.insert_text((x, y), str(val), fontsize=font_size, fontname="Helv")
+
+    try:
         doc.save(output_path)
         return True
-
     except Exception as e:
-        print(f"Failed to generate I-9: {e}")
-        import traceback
-        traceback.print_exc()
+        print(f"Error saving PDF {output_path}: {e}")
         return False
 
 def main():
@@ -219,19 +264,24 @@ def main():
         os.makedirs(args.out)
 
     print(f"--- Generating I-9s for {len(records)} employees ---")
-    print(f"Using Signature Font: {args.font}")
     
     success_count = 0
     for record in records:
-        emp_id = record.get("Employee_ID", "Unknown")
+        # UPDATED KEY: Uses 'employee_id' instead of 'Employee_ID'
+        emp_id = record.get("employee_id", "Unknown")
         filename = f"I9_{emp_id}.pdf"
         output_path = os.path.join(args.out, filename)
         
         if fill_i9_pdf(record, args.template, output_path, args.font):
             print(f"Generated: {filename}")
             success_count += 1
-    
-    print(f"--- Complete. Generated {success_count} I-9 forms. ---")
+        else:
+            print(f"Failed: {filename}")
+
+    print(f"--- Complete. Generated {success_count} I-9s. ---")
 
 if __name__ == "__main__":
     main()
+
+
+# python main.py --data data/plan_census.json --template plan_census.html --out output/eligibility

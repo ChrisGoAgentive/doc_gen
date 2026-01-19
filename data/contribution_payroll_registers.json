@@ -1,0 +1,112 @@
+[
+  {
+    "document_id": "PAYREG-EMP-97507-20260113",
+    "company_name": "ACME CORPORATION",
+    "run_date": "2026-01-13",
+    "period": "12/26/2025 - 01/08/2026",
+    "employee_name": "Amy Sanders",
+    "employee_id": "EMP-97507",
+    "scenario": "Pre-Tax Only (%)",
+    "earnings": {
+      "rate": "39.00",
+      "hours": "80.0",
+      "gross": "3,120.00"
+    },
+    "deductions": {
+      "pre_tax_401k": "312.00",
+      "roth_401k": "0.00",
+      "fed_tax": "336.96",
+      "fica": "238.68",
+      "state": "140.40"
+    },
+    "net_pay": "2,091.96"
+  },
+  {
+    "document_id": "PAYREG-EMP-73277-20260105",
+    "company_name": "ACME CORPORATION",
+    "run_date": "2026-01-05",
+    "period": "12/18/2025 - 12/31/2025",
+    "employee_name": "Wayne Christensen",
+    "employee_id": "EMP-73277",
+    "scenario": "Roth Only (%)",
+    "earnings": {
+      "rate": "37.86",
+      "hours": "80.0",
+      "gross": "3,028.80"
+    },
+    "deductions": {
+      "pre_tax_401k": "0.00",
+      "roth_401k": "272.59",
+      "fed_tax": "363.46",
+      "fica": "231.70",
+      "state": "151.44"
+    },
+    "net_pay": "2,009.61"
+  },
+  {
+    "document_id": "PAYREG-EMP-791844-20260110",
+    "company_name": "ACME CORPORATION",
+    "run_date": "2026-01-10",
+    "period": "12/23/2025 - 01/05/2026",
+    "employee_name": "Dawn Simon",
+    "employee_id": "EMP-791844",
+    "scenario": "Pre-Tax Only ($)",
+    "earnings": {
+      "rate": "47.60",
+      "hours": "80.0",
+      "gross": "3,808.00"
+    },
+    "deductions": {
+      "pre_tax_401k": "250.00",
+      "roth_401k": "0.00",
+      "fed_tax": "426.96",
+      "fica": "291.31",
+      "state": "177.90"
+    },
+    "net_pay": "2,661.83"
+  },
+  {
+    "document_id": "PAYREG-EMP-450432-20260104",
+    "company_name": "ACME CORPORATION",
+    "run_date": "2026-01-04",
+    "period": "12/17/2025 - 12/30/2025",
+    "employee_name": "Matthew Burnett",
+    "employee_id": "EMP-450432",
+    "scenario": "Roth Only ($)",
+    "earnings": {
+      "rate": "33.08",
+      "hours": "80.0",
+      "gross": "2,646.40"
+    },
+    "deductions": {
+      "pre_tax_401k": "0.00",
+      "roth_401k": "25.00",
+      "fed_tax": "317.57",
+      "fica": "202.45",
+      "state": "132.32"
+    },
+    "net_pay": "1,969.06"
+  },
+  {
+    "document_id": "PAYREG-EMP-456073-20260108",
+    "company_name": "ACME CORPORATION",
+    "run_date": "2026-01-08",
+    "period": "12/21/2025 - 01/03/2026",
+    "employee_name": "David Hart",
+    "employee_id": "EMP-456073",
+    "scenario": "Split (Pre-Tax & Roth)",
+    "earnings": {
+      "rate": "56.73",
+      "hours": "80.0",
+      "gross": "4,538.40"
+    },
+    "deductions": {
+      "pre_tax_401k": "272.30",
+      "roth_401k": "181.54",
+      "fed_tax": "511.93",
+      "fica": "347.19",
+      "state": "213.30"
+    },
+    "net_pay": "3,012.14"
+  }
+]

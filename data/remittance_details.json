@@ -1,0 +1,374 @@
+[
+  {
+    "document_id": "REMIT-20251121",
+    "plan_provider": "FIDELITY TRUST CO",
+    "pay_date": "2025-11-21",
+    "wire_date": "2025-11-24",
+    "wire_id": "WIRE-291792337",
+    "employees": [
+      {
+        "name": "Mr. Christopher Hines",
+        "ssn": "***-**-6859",
+        "pre_tax": "392.61",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "157.04",
+        "total": "549.65"
+      },
+      {
+        "name": "Ryan Henry Jr.",
+        "ssn": "***-**-7203",
+        "pre_tax": "210.87",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "84.35",
+        "total": "295.22"
+      },
+      {
+        "name": "Cynthia Craig",
+        "ssn": "***-**-0795",
+        "pre_tax": "0.00",
+        "roth": "128.51",
+        "loan": "0.00",
+        "match": "102.81",
+        "total": "231.32"
+      },
+      {
+        "name": "Michael Hunter",
+        "ssn": "***-**-8434",
+        "pre_tax": "0.00",
+        "roth": "46.44",
+        "loan": "0.00",
+        "match": "61.93",
+        "total": "108.37"
+      },
+      {
+        "name": "Courtney Montgomery",
+        "ssn": "***-**-0948",
+        "pre_tax": "0.00",
+        "roth": "412.86",
+        "loan": "0.00",
+        "match": "165.14",
+        "total": "578.00"
+      },
+      {
+        "name": "Christopher Hart",
+        "ssn": "***-**-6146",
+        "pre_tax": "126.40",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "101.12",
+        "total": "227.52"
+      },
+      {
+        "name": "Richard Crawford",
+        "ssn": "***-**-0009",
+        "pre_tax": "0.00",
+        "roth": "96.33",
+        "loan": "0.00",
+        "match": "77.06",
+        "total": "173.39"
+      },
+      {
+        "name": "Hannah Flowers",
+        "ssn": "***-**-3359",
+        "pre_tax": "0.00",
+        "roth": "194.61",
+        "loan": "0.00",
+        "match": "155.69",
+        "total": "350.30"
+      },
+      {
+        "name": "Jacqueline Harris",
+        "ssn": "***-**-0352",
+        "pre_tax": "0.00",
+        "roth": "412.28",
+        "loan": "0.00",
+        "match": "164.91",
+        "total": "577.19"
+      },
+      {
+        "name": "Sarah Stone",
+        "ssn": "***-**-4962",
+        "pre_tax": "262.67",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "105.07",
+        "total": "367.74"
+      },
+      {
+        "name": "Jason Bernard",
+        "ssn": "***-**-3052",
+        "pre_tax": "193.98",
+        "roth": "0.00",
+        "loan": "50.00",
+        "match": "77.59",
+        "total": "321.57"
+      }
+    ],
+    "totals": {
+      "pre_tax": "1,186.53",
+      "roth": "1,291.03",
+      "loan": "50.00",
+      "match": "1,252.71",
+      "grand_total": "3,780.27"
+    }
+  },
+  {
+    "document_id": "REMIT-20251205",
+    "plan_provider": "FIDELITY TRUST CO",
+    "pay_date": "2025-12-05",
+    "wire_date": "2025-12-10",
+    "wire_id": "WIRE-658938115",
+    "employees": [
+      {
+        "name": "Chelsea Barrera",
+        "ssn": "***-**-8373",
+        "pre_tax": "0.00",
+        "roth": "91.45",
+        "loan": "0.00",
+        "match": "73.16",
+        "total": "164.61"
+      },
+      {
+        "name": "Sean Graves",
+        "ssn": "***-**-3279",
+        "pre_tax": "449.20",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "179.68",
+        "total": "628.88"
+      },
+      {
+        "name": "Don Stewart",
+        "ssn": "***-**-7313",
+        "pre_tax": "0.00",
+        "roth": "124.92",
+        "loan": "0.00",
+        "match": "166.56",
+        "total": "291.48"
+      },
+      {
+        "name": "Stephanie Thomas",
+        "ssn": "***-**-8093",
+        "pre_tax": "124.80",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "166.40",
+        "total": "291.20"
+      },
+      {
+        "name": "Erika Oneal",
+        "ssn": "***-**-8892",
+        "pre_tax": "190.38",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "76.15",
+        "total": "266.53"
+      },
+      {
+        "name": "Amanda Moore",
+        "ssn": "***-**-2838",
+        "pre_tax": "284.69",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "113.88",
+        "total": "398.57"
+      },
+      {
+        "name": "Jessica Gay",
+        "ssn": "***-**-0098",
+        "pre_tax": "0.00",
+        "roth": "69.59",
+        "loan": "0.00",
+        "match": "92.79",
+        "total": "162.38"
+      },
+      {
+        "name": "Jordan Harris",
+        "ssn": "***-**-9445",
+        "pre_tax": "105.40",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "140.53",
+        "total": "245.93"
+      },
+      {
+        "name": "Donna Huber",
+        "ssn": "***-**-2052",
+        "pre_tax": "386.98",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "154.79",
+        "total": "541.77"
+      },
+      {
+        "name": "Jared Miller",
+        "ssn": "***-**-2295",
+        "pre_tax": "55.00",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "73.34",
+        "total": "128.34"
+      },
+      {
+        "name": "Tyler Thompson",
+        "ssn": "***-**-7705",
+        "pre_tax": "377.17",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "150.87",
+        "total": "528.04"
+      }
+    ],
+    "totals": {
+      "pre_tax": "1,973.62",
+      "roth": "285.96",
+      "loan": "0.00",
+      "match": "1,388.15",
+      "grand_total": "3,647.73"
+    }
+  },
+  {
+    "document_id": "REMIT-20251219",
+    "plan_provider": "FIDELITY TRUST CO",
+    "pay_date": "2025-12-19",
+    "wire_date": "2025-12-23",
+    "wire_id": "WIRE-881664073",
+    "employees": [
+      {
+        "name": "Vicki Hanson",
+        "ssn": "***-**-6323",
+        "pre_tax": "0.00",
+        "roth": "301.05",
+        "loan": "0.00",
+        "match": "120.42",
+        "total": "421.47"
+      },
+      {
+        "name": "Mark Klein",
+        "ssn": "***-**-8984",
+        "pre_tax": "0.00",
+        "roth": "116.54",
+        "loan": "50.00",
+        "match": "93.23",
+        "total": "259.77"
+      },
+      {
+        "name": "Eugene Santos",
+        "ssn": "***-**-7693",
+        "pre_tax": "0.00",
+        "roth": "58.12",
+        "loan": "0.00",
+        "match": "77.49",
+        "total": "135.61"
+      },
+      {
+        "name": "Stephanie Whitehead",
+        "ssn": "***-**-4709",
+        "pre_tax": "418.15",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "167.26",
+        "total": "585.41"
+      },
+      {
+        "name": "Mr. Brian Dixon",
+        "ssn": "***-**-5807",
+        "pre_tax": "0.00",
+        "roth": "268.44",
+        "loan": "0.00",
+        "match": "107.37",
+        "total": "375.81"
+      },
+      {
+        "name": "Chad Williams",
+        "ssn": "***-**-9137",
+        "pre_tax": "0.00",
+        "roth": "130.14",
+        "loan": "0.00",
+        "match": "173.52",
+        "total": "303.66"
+      },
+      {
+        "name": "Robert Weaver",
+        "ssn": "***-**-5609",
+        "pre_tax": "0.00",
+        "roth": "114.84",
+        "loan": "0.00",
+        "match": "153.12",
+        "total": "267.96"
+      },
+      {
+        "name": "Thomas Whitaker",
+        "ssn": "***-**-3660",
+        "pre_tax": "282.06",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "112.82",
+        "total": "394.88"
+      },
+      {
+        "name": "Catherine Brown",
+        "ssn": "***-**-9775",
+        "pre_tax": "117.55",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "156.73",
+        "total": "274.28"
+      },
+      {
+        "name": "Jose Brown",
+        "ssn": "***-**-8305",
+        "pre_tax": "0.00",
+        "roth": "164.33",
+        "loan": "0.00",
+        "match": "131.46",
+        "total": "295.79"
+      },
+      {
+        "name": "Alicia Andrews",
+        "ssn": "***-**-1717",
+        "pre_tax": "88.24",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "117.65",
+        "total": "205.89"
+      },
+      {
+        "name": "Jeffrey Duran",
+        "ssn": "***-**-5961",
+        "pre_tax": "378.15",
+        "roth": "0.00",
+        "loan": "0.00",
+        "match": "151.26",
+        "total": "529.41"
+      },
+      {
+        "name": "April Green",
+        "ssn": "***-**-6164",
+        "pre_tax": "0.00",
+        "roth": "201.64",
+        "loan": "0.00",
+        "match": "161.31",
+        "total": "362.95"
+      },
+      {
+        "name": "Angela Henderson",
+        "ssn": "***-**-1244",
+        "pre_tax": "0.00",
+        "roth": "151.08",
+        "loan": "50.00",
+        "match": "120.87",
+        "total": "321.95"
+      }
+    ],
+    "totals": {
+      "pre_tax": "1,284.15",
+      "roth": "1,506.18",
+      "loan": "100.00",
+      "match": "1,844.51",
+      "grand_total": "4,734.84"
+    }
+  }
+]

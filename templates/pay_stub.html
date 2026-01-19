@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pay Stub</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        body { font-family: "Courier New", Courier, monospace; font-size: 9pt; }
+        .header { border-bottom: 1px dashed #000; padding-bottom: 15px; margin-bottom: 15px; }
+        .company-info { font-weight: bold; font-size: 11pt; }
+        .row { display: flex; justify-content: space-between; }
+        table { width: 100%; margin-top: 10px; border-collapse: collapse; }
+        th { text-align: left; border-bottom: 1px solid #000; }
+        td { padding: 4px 0; }
+        .amount { text-align: right; }
+        .total-line { border-top: 1px dashed #000; font-weight: bold; padding-top: 5px; margin-top: 5px; }
+        .box { border: 1px solid #000; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-info">{{ data.company_name }}</div>
+        <div>{{ data.company_address }}</div>
+    </div>
+
+    <div class="row">
+        <div>
+            <strong>Employee:</strong> {{ data.employee_name }}<br>
+            <strong>ID:</strong> {{ data.employee_id }}
+        </div>
+        <div style="text-align: right;">
+            <strong>Pay Date:</strong> {{ data.pay_date }}<br>
+            <strong>Pay Period:</strong> {{ data.pay_period }}<br>
+            <strong>Check #:</strong> {{ data.check_number }}
+        </div>
+    </div>
+
+    <div class="box">
+        <table style="margin-top: 0;">
+            <thead>
+                <tr>
+                    <th>Earnings</th>
+                    <th>Rate</th>
+                    <th>Hours</th>
+                    <th class="amount">Current</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data.earnings %}
+                <tr>
+                    <td>{{ item.desc }}</td>
+                    <td>{{ item.rate }}</td>
+                    <td>{{ item.hours }}</td>
+                    <td class="amount">{{ item.amount }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="box" style="width: 48%;">
+            <table>
+                <thead><tr><th>Taxes</th><th class="amount">Amount</th></tr></thead>
+                <tbody>
+                    {% for tax in data.taxes %}
+                    <tr><td>{{ tax.desc }}</td><td class="amount">{{ tax.amount }}</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="box" style="width: 48%;">
+            <table>
+                <thead><tr><th>Deductions</th><th class="amount">Amount</th></tr></thead>
+                <tbody>
+                    {% for ded in data.deductions %}
+                    <tr><td>{{ ded.desc }}</td><td class="amount">{{ ded.amount }}</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="row">
+            <div><strong>Total Gross Pay:</strong> {{ data.totals.gross }}</div>
+            <div><strong>Net Pay:</strong> {{ data.totals.net }}</div>
+        </div>
+    </div>
+</body>
+</html>

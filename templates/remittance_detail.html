@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remittance Detail</title>
+    <style>
+        @page { size: letter landscape; margin: 0.5in; }
+        body { font-family: "Helvetica", sans-serif; font-size: 8pt; }
+        .header { border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; }
+        h1 { margin: 0; font-size: 14pt; }
+        
+        table { width: 100%; border-collapse: collapse; }
+        th { background-color: #333; color: white; padding: 5px; text-align: right; }
+        th.text-left { text-align: left; }
+        td { padding: 4px; border-bottom: 1px solid #ccc; text-align: right; }
+        td.text-left { text-align: left; }
+        
+        .total-row { font-weight: bold; background-color: #eee; border-top: 2px solid #000; }
+        
+        .verify-box { margin-top: 20px; border: 1px solid #999; padding: 10px; width: 40%; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>Contribution Remittance Detail</h1>
+            <div><strong>To:</strong> {{ data.plan_provider }}</div>
+        </div>
+        <div style="text-align: right;">
+            <div><strong>Pay Date:</strong> {{ data.pay_date }}</div>
+            <div><strong>Wire Date:</strong> {{ data.wire_date }}</div>
+            <div><strong>Ref:</strong> {{ data.wire_id }}</div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="text-left" width="25%">Participant Name</th>
+                <th class="text-left" width="15%">SSN (Last 4)</th>
+                <th width="12%">Pre-Tax</th>
+                <th width="12%">Roth</th>
+                <th width="12%">Loan Repay</th>
+                <th width="12%">Employer Match</th>
+                <th width="12%">Total Deposit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in data.employees %}
+            <tr>
+                <td class="text-left">{{ emp.name }}</td>
+                <td class="text-left">{{ emp.ssn }}</td>
+                <td>{{ emp.pre_tax }}</td>
+                <td>{{ emp.roth }}</td>
+                <td>{{ emp.loan }}</td>
+                <td>{{ emp.match }}</td>
+                <td style="background-color: #f9f9f9;">{{ emp.total }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="total-row">
+                <td colspan="2" class="text-left">PERIOD TOTALS</td>
+                <td>{{ data.totals.pre_tax }}</td>
+                <td>{{ data.totals.roth }}</td>
+                <td>{{ data.totals.loan }}</td>
+                <td>{{ data.totals.match }}</td>
+                <td>{{ data.totals.grand_total }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="verify-box">
+        <strong>Validation Control:</strong><br>
+        The "Grand Total" above must match the outgoing wire transfer amount exactly.<br>
+        Discrepancies must be reconciled within 24 hours.
+    </div>
+</body>
+</html>

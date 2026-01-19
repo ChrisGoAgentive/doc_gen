@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retirement Election Form</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        body { font-family: "Helvetica", "Arial", sans-serif; font-size: 10pt; color: #333; }
+        .header { border-bottom: 3px solid #005580; margin-bottom: 20px; padding-bottom: 10px; }
+        .title { font-size: 18pt; font-weight: bold; color: #005580; text-transform: uppercase; }
+        .subtitle { font-size: 10pt; color: #666; margin-top: 5px; }
+        
+        .section { margin-bottom: 25px; border: 1px solid #ccc; padding: 15px; background: #fafafa; }
+        .section-title { font-weight: bold; font-size: 11pt; margin-bottom: 10px; color: #005580; text-transform: uppercase; border-bottom: 1px dotted #999; padding-bottom: 5px; }
+        
+        .row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .label { font-weight: bold; width: 150px; }
+        
+        .option-box { background: #fff; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; display: flex; align-items: center; }
+        .checkbox { width: 15px; height: 15px; border: 1px solid #000; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .input-line { border-bottom: 1px solid #000; display: inline-block; width: 80px; margin: 0 5px; text-align: center; font-weight: bold; font-family: "Courier New", monospace; }
+        
+        .signature-section { margin-top: 40px; }
+        .sig-line { border-top: 1px solid #000; width: 45%; padding-top: 5px; font-size: 9pt; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">Salary Deferral Agreement</div>
+        <div class="subtitle">{{ data.plan_name }}</div>
+    </div>
+
+    <div class="row">
+        <div><strong>Participant:</strong> {{ data.participant_name }}</div>
+        <div><strong>ID:</strong> {{ data.participant_id }}</div>
+    </div>
+    <div style="margin-bottom: 20px; font-style: italic; font-size: 9pt;">
+        Effective Date: {{ data.effective_date }}
+    </div>
+
+    <div class="section">
+        <div class="section-title">Contribution Election</div>
+        <p>I hereby authorize my employer to deduct the following amount from my eligible compensation for deposit into the retirement plan.</p>
+
+        <!-- PRE-TAX SECTION -->
+        <div class="option-box">
+            <div class="checkbox">
+                {% if data.data.pre_tax_value > 0 %}X{% endif %}
+            </div>
+            <div style="flex-grow: 1;">
+                <strong>Pre-Tax 401(k) Deferral</strong>
+            </div>
+            <div>
+                Enter Amount: 
+                {% if data.data.method == 'Percent' %}
+                    <span class="input-line">{{ data.data.pre_tax_value if data.data.pre_tax_value > 0 else '' }}</span> %
+                {% else %}
+                    $ <span class="input-line">{{ data.data.pre_tax_value if data.data.pre_tax_value > 0 else '' }}</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- ROTH SECTION -->
+        <div class="option-box">
+            <div class="checkbox">
+                {% if data.data.roth_value > 0 %}X{% endif %}
+            </div>
+            <div style="flex-grow: 1;">
+                <strong>Roth 401(k) Deferral (After-Tax)</strong>
+            </div>
+            <div>
+                Enter Amount: 
+                {% if data.data.method == 'Percent' %}
+                    <span class="input-line">{{ data.data.roth_value if data.data.roth_value > 0 else '' }}</span> %
+                {% else %}
+                    $ <span class="input-line">{{ data.data.roth_value if data.data.roth_value > 0 else '' }}</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Authorization</div>
+        <p style="font-size: 9pt; text-align: justify;">
+            This agreement shall remain in effect until I modify or terminate it. I understand that my elections must comply with plan limits and IRS regulations.
+        </p>
+        
+        <div class="signature-section row">
+            <div class="sig-line">
+                <span style="font-family: 'Brush Script MT', cursive; font-size: 16pt;">{{ data.participant_name }}</span><br>
+                Employee Signature
+            </div>
+            <div class="sig-line">
+                {{ data.sign_date }}<br>
+                Date
+            </div>
+        </div>
+    </div>
+</body>
+</html>

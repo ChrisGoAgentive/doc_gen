@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employer Fund Statement</title>
+    <style>
+        @page { size: letter landscape; margin: 0.5in; }
+        body { font-family: "Times New Roman", Times, serif; color: #000; font-size: 10pt; }
+        .header { border-bottom: 4px double #000; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; }
+        .logo { font-size: 16pt; font-weight: bold; font-family: Arial, sans-serif; }
+        .meta { text-align: right; }
+        
+        .section-title { font-weight: bold; font-size: 12pt; margin-top: 20px; border-bottom: 1px solid #000; margin-bottom: 10px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th { border-bottom: 1px solid #000; text-align: left; padding: 4px; font-style: italic; }
+        td { padding: 4px; }
+        .num { text-align: right; font-family: "Courier New", monospace; }
+        .total-row { border-top: 1px solid #000; border-bottom: 4px double #000; font-weight: bold; }
+        
+        .footer { position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 8pt; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <div class="logo">{{ data.trustee }}</div>
+            <div>Institutional Trust Services</div>
+        </div>
+        <div class="meta">
+            <strong>PLAN TRUST STATEMENT</strong><br>
+            Account: {{ data.account_number }}<br>
+            Period: {{ data.period }}
+        </div>
+    </div>
+
+    <div><strong>Plan Name:</strong> {{ data.plan_name }}</div>
+
+    <div class="section-title">Investment Holdings & Activity Summary</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="40%">Fund Description</th>
+                <th width="10%">Ticker</th>
+                <th class="num" width="15%">Opening Balance</th>
+                <th class="num" width="15%">Investment Gain/Loss</th>
+                <th class="num" width="15%">Closing Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fund in data.funds %}
+            <tr>
+                <td>{{ fund.fund_name }}</td>
+                <td>{{ fund.ticker }}</td>
+                <td class="num">{{ fund.opening_balance }}</td>
+                <td class="num">{{ fund.earnings }}</td>
+                <td class="num">{{ fund.closing_balance }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="total-row">
+                <td colspan="2">TOTAL PLAN ASSETS</td>
+                <td class="num">{{ data.summary.opening_balance }}</td>
+                <td class="num">{{ data.summary.total_earnings }}</td>
+                <td class="num">{{ data.summary.closing_balance }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="font-size: 9pt; margin-top: 20px;">
+        <strong>Note to Auditors:</strong> Investment Gain/Loss reflects market appreciation, dividends, and interest credited during the period.
+    </div>
+
+    <div class="footer">
+        {{ data.trustee }} | Institutional Services | Page 1 of 1
+    </div>
+</body>
+</html>

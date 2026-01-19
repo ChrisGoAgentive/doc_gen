@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 import shutil
-from expenses.expense_generator import HTMLGenerator
+from html_generator import HTMLGenerator
 from pdf_engine import PDFGenerator
 # Import the new robust loader
 from utils.data_utils import DataLoader

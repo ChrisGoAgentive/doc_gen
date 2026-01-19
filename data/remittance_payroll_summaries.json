@@ -5,12 +5,12 @@
     "pay_date": "2025-11-21",
     "period": "11/01/2025 - 11/14/2025",
     "totals": {
-      "gross_pay": "41,750.65",
-      "401k_pre_tax": "1,186.53",
-      "401k_roth": "1,291.03",
-      "401k_loans": "50.00",
-      "employer_match": "1,252.71",
-      "total_remittance_liability": "3,780.27"
+      "gross_pay": "43,467.92",
+      "401k_pre_tax": "707.07",
+      "401k_roth": "1,173.30",
+      "401k_loans": "0.00",
+      "employer_match": "1,169.33",
+      "total_remittance_liability": "3,049.70"
     }
   },
   {
@@ -19,12 +19,12 @@
     "pay_date": "2025-12-05",
     "period": "11/15/2025 - 11/28/2025",
     "totals": {
-      "gross_pay": "47,165.80",
-      "401k_pre_tax": "1,973.62",
-      "401k_roth": "285.96",
-      "401k_loans": "0.00",
-      "employer_match": "1,388.15",
-      "total_remittance_liability": "3,647.73"
+      "gross_pay": "38,358.41",
+      "401k_pre_tax": "853.03",
+      "401k_roth": "1,231.71",
+      "401k_loans": "150.00",
+      "employer_match": "1,242.68",
+      "total_remittance_liability": "3,477.42"
     }
   },
   {
@@ -33,12 +33,12 @@
     "pay_date": "2025-12-19",
     "period": "11/29/2025 - 12/12/2025",
     "totals": {
-      "gross_pay": "47,903.49",
-      "401k_pre_tax": "1,284.15",
-      "401k_roth": "1,506.18",
-      "401k_loans": "100.00",
-      "employer_match": "1,844.51",
-      "total_remittance_liability": "4,734.84"
+      "gross_pay": "52,661.60",
+      "401k_pre_tax": "860.93",
+      "401k_roth": "1,955.37",
+      "401k_loans": "50.00",
+      "employer_match": "1,804.51",
+      "total_remittance_liability": "4,670.81"
     }
   }
 ]
